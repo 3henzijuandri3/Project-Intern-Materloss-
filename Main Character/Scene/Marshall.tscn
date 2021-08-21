@@ -1,0 +1,71 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Main Character/Asset/Bawah_2.png" type="Texture" id=1]
+[ext_resource path="res://Main Character/Asset/Bawah_4.png" type="Texture" id=2]
+[ext_resource path="res://Main Character/Asset/Bawah_3.png" type="Texture" id=3]
+[ext_resource path="res://Main Character/Asset/Bawah_1.png" type="Texture" id=4]
+[ext_resource path="res://Main Character/Asset/Depan_3.png" type="Texture" id=5]
+[ext_resource path="res://Main Character/Asset/Depan_1.png" type="Texture" id=6]
+[ext_resource path="res://Main Character/Asset/Walk_2.png" type="Texture" id=7]
+[ext_resource path="res://Main Character/Asset/Depan_2.png" type="Texture" id=8]
+[ext_resource path="res://Main Character/Asset/Depan_4.png" type="Texture" id=9]
+[ext_resource path="res://Main Character/Asset/Walk_1.png" type="Texture" id=10]
+[ext_resource path="res://Main Character/Asset/Walk_3.png" type="Texture" id=11]
+[ext_resource path="res://Main Character/Asset/Walk_4.png" type="Texture" id=12]
+[ext_resource path="res://Main Character/Script/Marshall.gd" type="Script" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "Idle Depan",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "Idle Samping",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Depan",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Bawah",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Samping",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "Idle Bawah",
+"speed": 0.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 34.1674
+height = 119.653
+
+[node name="Marshall" type="KinematicBody2D"]
+position = Vector2( 467, 263 )
+script = ExtResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.0503883, 0.0488637 )
+frames = SubResource( 1 )
+animation = "Bawah"
+
+[node name="Body Collision" type="CollisionShape2D" parent="."]
+position = Vector2( -6.04993, -7.0313 )
+shape = SubResource( 2 )
+
+[node name="Detection Area" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detection Area"]
+position = Vector2( -8.33643, -82.7517 )
+polygon = PoolVector2Array( -8.46286, -18.4223, -18.7639, -13.3769, -24.6501, -6.85994, -36.6155, -1.68764, -43.3503, 6.45021, -40.5442, 18.5167, -43.7609, 37.0755, -33.5288, 57.5222, -45.8759, 121.503, -43.0697, 131.605, -33.9483, 138.427, -31.6123, 148.271, -27.9415, 157.782, -20.3398, 165.279, -3.08008, 172.465, 23.4362, 173.136, 30.7915, 165.791, 33.1275, 155.113, 33.1275, 151.442, 35.5027, 138.059, 41.115, 134.411, 47.0079, 128.518, 48.1303, 94.5635, 35.222, 58.0835, 45.0435, 32.5475, 44.0931, 0.70813, 31.0128, -12.0704, 15.5301, -18.7297 )
