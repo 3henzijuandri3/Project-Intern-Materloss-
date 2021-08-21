@@ -1,0 +1,59 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Enemy/Asset/Demon Panda/Bawah_4.png" type="Texture" id=1]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Bawah_3.png" type="Texture" id=2]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Bawah_2.png" type="Texture" id=3]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Bawah_1.png" type="Texture" id=4]
+[ext_resource path="res://Enemy/Script/Demon Panda.gd" type="Script" id=5]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Samping_3.png" type="Texture" id=6]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Atas_1.png" type="Texture" id=7]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Atas_3.png" type="Texture" id=8]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Samping_2.png" type="Texture" id=9]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Samping_1.png" type="Texture" id=10]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Samping_4.png" type="Texture" id=11]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Atas_2.png" type="Texture" id=12]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Atas_4.png" type="Texture" id=13]
+[ext_resource path="res://Enemy/Asset/Demon Panda/Shadow.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Atas",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Bawah",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "KIri",
+"speed": 6.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 40.5876
+height = 158.453
+
+[node name="Demon Panda" type="KinematicBody2D"]
+position = Vector2( 474.627, 389.655 )
+script = ExtResource( 5 )
+
+[node name="Shadow" type="Sprite" parent="."]
+modulate = Color( 0.32549, 0.309804, 0.309804, 1 )
+position = Vector2( 3.61462, 159.235 )
+scale = Vector2( 0.192544, 0.395301 )
+texture = ExtResource( 14 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3.17847, -9.5354 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 1 )
+animation = "KIri"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4.17834, -8.53519 )
+shape = SubResource( 2 )
