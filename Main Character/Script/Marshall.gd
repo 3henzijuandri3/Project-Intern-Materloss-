@@ -1,9 +1,23 @@
 extends KinematicBody2D
 
+# Variable Abilities #
+var dash = true
+var inner_beam = true
+var shriek = true
+
+# Variable Movement #
 var speed = 200
 var velocity = Vector2()
 
 
+
+func _physics_process(_delta: float) -> void:
+	movement()
+	animasi()
+	fix_collision()
+	abilities()
+
+# Func ready untuk setiap awal level #
 func _ready() -> void:
 	$AnimatedSprite.play("Idle Bawah")
 	$"Body Collision".position = $"Posisi Bawah".position
@@ -11,14 +25,9 @@ func _ready() -> void:
 	$"Detection Area/Anim Depan".disabled = true
 	$"Detection Area/Anim Kiri".disabled = true
 	$"Detection Area/Anim Kanan".disabled = true
-	
-
-func _physics_process(_delta: float) -> void:
-	movement()
-	animasi()
-	fix_collision()
 
 
+# Func pergerakan Marshall #
 func movement():
 	velocity = Vector2.ZERO
 	
@@ -35,6 +44,7 @@ func movement():
 	velocity = move_and_slide(velocity * speed)
 
 
+# Func animasi Marshall #
 func animasi():
 	
 	if velocity != Vector2.ZERO:
@@ -58,6 +68,70 @@ func animasi():
 			$AnimatedSprite.play("Idle Kiri")
 
 
+func abilities():
+	
+	if inner_beam == true:
+		if Input.is_action_just_pressed("Inner Beam"):
+			
+			inner_beam = false
+			$Light2D.texture_scale = 2.2
+			
+			$"Inner Beam Timer".start()
+			$"Inner Beam Cooldown".start()
+	
+	if dash == true:
+		if Input.is_action_just_pressed("Desperate Dash") && (
+			Input.is_action_pressed("ui_right") || 
+			Input.is_action_pressed("ui_left") || 
+			Input.is_action_pressed("ui_up") || 
+			Input.is_action_pressed("ui_down")):
+			
+			dash = false
+			speed = 600
+			
+			$"Dash Timer".start()
+			$"Dash Cooldown".start()
+	
+	if shriek == true:
+		if Input.is_action_just_pressed("Shriek"):
+			
+			shriek = false
+			$Light2D.color = "0194ff"
+			$"Shriek Area/Shriek Collision".disabled = false
+			$"Shriek Timer".start()
+			$"Shriek Cooldown".start()
+
+
+# Timer Inner Beam #
+func _on_Inner_Beam_Timer_timeout() -> void:
+	$Light2D.texture_scale = 1.5
+
+func _on_Inner_Beam_Cooldown_timeout() -> void:
+	inner_beam = true
+
+
+# Timer Desperate Dash #
+func _on_Dash_Timer_timeout() -> void:
+	speed = 140
+	$"Dash Side Effect Timer".start()
+
+func _on_Dash_Side_Effect_Timer_timeout() -> void:
+	speed = 200
+
+func _on_Dash_Cooldown_timeout() -> void:
+	dash = true
+
+
+# Timer Shriek #
+func _on_Shriek_Timer_timeout() -> void:
+	$Light2D.color = "ffffff"
+	$"Shriek Area/Shriek Collision".disabled = true
+
+func _on_Shriek_Cooldown_timeout() -> void:
+	shriek = true
+
+
+# Func memperbaiki collision saat player bergerak #
 func fix_collision():
 	if velocity.x > 0:
 		$"Body Collision".position = $"Posisi Samping".position
@@ -86,7 +160,6 @@ func fix_collision():
 		$"Detection Area/Anim Bawah".disabled = true
 		$"Detection Area/Anim Kiri".disabled = true
 		$"Detection Area/Anim Kanan".disabled = true
-
 
 # Unused Function #
 func debug_collision():
@@ -117,3 +190,5 @@ func debug_collision():
 		$"Detection Area/Anim Depan".visible = false
 		$"Detection Area/Anim Kanan".visible = false
 		print("Kiri berjalan")
+
+
