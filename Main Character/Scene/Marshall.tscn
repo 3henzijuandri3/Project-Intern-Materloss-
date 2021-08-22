@@ -25,6 +25,11 @@ animations = [ {
 "name": "Kiri",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "Idle Depan",
+"speed": 0.0
+}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": false,
 "name": "Idle Kanan",
@@ -35,15 +40,10 @@ animations = [ {
 "name": "Idle Bawah",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": false,
-"name": "Idle Depan",
+"name": "Idle Kiri",
 "speed": 0.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Depan",
-"speed": 8.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
@@ -55,10 +55,10 @@ animations = [ {
 "name": "Kanan",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 16 ) ],
-"loop": false,
-"name": "Idle Kiri",
-"speed": 0.0
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Depan",
+"speed": 8.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]

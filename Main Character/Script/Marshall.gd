@@ -17,7 +17,6 @@ func _physics_process(_delta: float) -> void:
 	movement()
 	animasi()
 	fix_collision()
-	#debug()
 
 
 func movement():
@@ -89,7 +88,8 @@ func fix_collision():
 		$"Detection Area/Anim Kanan".disabled = true
 
 
-func debug():
+# Unused Function #
+func debug_collision():
 	if $"Detection Area/Anim Bawah".disabled == false :
 		$"Detection Area/Anim Bawah".visible = true
 		$"Detection Area/Anim Depan".visible = false
