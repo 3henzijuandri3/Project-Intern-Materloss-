@@ -21,34 +21,34 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Bawah",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "Idle Kanan",
+"speed": 0.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "Idle Bawah",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Depan",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": false,
-"name": "Idle Kiri",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Kanan",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Kiri",
-"speed": 8.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": false,
-"name": "Idle Kanan",
+"name": "Idle Kiri",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -56,20 +56,21 @@ animations = [ {
 "name": "Idle Depan",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "Bawah",
-"speed": 8.0
+"name": "Depan",
+"speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 33.3977
-height = 98.7206
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 35.8705, 98.4174 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 223.032
 
-[node name="Marshall" type="KinematicBody2D"]
+[node name="Marshall" type="KinematicBody2D" groups=[
+"Player",
+]]
 position = Vector2( 467, 263 )
 script = ExtResource( 13 )
 
@@ -120,8 +121,9 @@ position = Vector2( -7, -4.39426 )
 position = Vector2( 1.56561, -0.501495 )
 
 [node name="Body Collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -6.87045, -4.58258 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="Detection Area" type="Area2D" parent="."]
 visible = false
@@ -158,6 +160,7 @@ __meta__ = {
 }
 
 [node name="Shriek Area" type="Area2D" parent="."]
+visible = false
 
 [node name="Shriek Collision" type="CollisionShape2D" parent="Shriek Area"]
 position = Vector2( -7, -4.58258 )
