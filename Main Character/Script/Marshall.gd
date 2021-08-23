@@ -6,7 +6,7 @@ var inner_beam = true
 var shriek = true
 
 # Variable Movement #
-var speed = 200
+var speed = 220
 var velocity = Vector2()
 
 

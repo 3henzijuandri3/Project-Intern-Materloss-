@@ -1,0 +1,106 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Environment/Asset/Panda House/Bg House.png" type="Texture" id=1]
+[ext_resource path="res://Main Character/Scene/Marshall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/Asset/Panda House/Lantai.png" type="Texture" id=3]
+[ext_resource path="res://Environment/Asset/Panda House/Rak Buku'.png" type="Texture" id=4]
+[ext_resource path="res://Environment/Asset/Panda House/Sofa.png" type="Texture" id=5]
+[ext_resource path="res://Environment/Asset/Panda House/Bed_1.png" type="Texture" id=7]
+[ext_resource path="res://Environment/Asset/Panda House/Lemari.png" type="Texture" id=8]
+[ext_resource path="res://Environment/Asset/Panda House/Plant.png" type="Texture" id=9]
+[ext_resource path="res://Environment/Asset/Panda House/Window_1.png" type="Texture" id=10]
+[ext_resource path="res://Environment/Asset/Panda House/Window_2.png" type="Texture" id=11]
+[ext_resource path="res://Environment/Asset/Panda House/Something.png" type="Texture" id=13]
+[ext_resource path="res://Environment/Asset/Panda House/Kompor.png" type="Texture" id=14]
+[ext_resource path="res://Environment/Asset/Panda House/Bed_2.png" type="Texture" id=15]
+[ext_resource path="res://Environment/Asset/Panda House/Gantungan.png" type="Texture" id=16]
+[ext_resource path="res://Environment/Asset/Panda House/Something_2.png" type="Texture" id=17]
+[ext_resource path="res://Environment/Asset/Panda House/Picture.png" type="Texture" id=18]
+
+[node name="Panda House" type="Node2D"]
+
+[node name="Bg House" type="Sprite" parent="."]
+position = Vector2( 920.375, 706.907 )
+scale = Vector2( 1.0874, 1.4051 )
+texture = ExtResource( 1 )
+
+[node name="Lantai" type="Sprite" parent="."]
+position = Vector2( 969.692, 745.815 )
+scale = Vector2( 1.37276, 1.40789 )
+texture = ExtResource( 3 )
+
+[node name="Window_1" type="Sprite" parent="."]
+position = Vector2( 755.845, 506.108 )
+texture = ExtResource( 10 )
+
+[node name="Window_2" type="Sprite" parent="."]
+position = Vector2( 791.094, 498.262 )
+texture = ExtResource( 11 )
+
+[node name="Window_3" type="Sprite" parent="."]
+position = Vector2( 1414.73, 508.958 )
+texture = ExtResource( 10 )
+
+[node name="Bed_1" type="Sprite" parent="."]
+position = Vector2( 850.991, 591.145 )
+texture = ExtResource( 7 )
+
+[node name="Bed_2" type="Sprite" parent="."]
+position = Vector2( 875.949, 600.208 )
+texture = ExtResource( 15 )
+
+[node name="Sofa" type="Sprite" parent="."]
+position = Vector2( 965.787, 653.208 )
+texture = ExtResource( 5 )
+
+[node name="Rak Buku\'" type="Sprite" parent="."]
+position = Vector2( 940.125, 650.103 )
+texture = ExtResource( 4 )
+
+[node name="Lemari" type="Sprite" parent="."]
+position = Vector2( 889.058, 668.337 )
+scale = Vector2( 1.00636, 1.10967 )
+texture = ExtResource( 8 )
+
+[node name="Plant" type="Sprite" parent="."]
+position = Vector2( 788.579, 646.776 )
+texture = ExtResource( 9 )
+
+[node name="Plant2" type="Sprite" parent="."]
+position = Vector2( 935.857, 649.926 )
+texture = ExtResource( 9 )
+
+[node name="Picture" type="Sprite" parent="."]
+position = Vector2( 776.238, 506.032 )
+texture = ExtResource( 18 )
+
+[node name="Kompor" type="Sprite" parent="."]
+position = Vector2( 912.738, 893.015 )
+texture = ExtResource( 14 )
+
+[node name="Gantungan" type="Sprite" parent="."]
+position = Vector2( 264.453, 138.629 )
+scale = Vector2( 0.49324, 0.586212 )
+texture = ExtResource( 16 )
+
+[node name="Something_2" type="Sprite" parent="."]
+position = Vector2( 711.688, 683.092 )
+scale = Vector2( 2.23221, 2.76719 )
+texture = ExtResource( 17 )
+
+[node name="Something" type="Sprite" parent="."]
+position = Vector2( -46.8573, 1063.18 )
+texture = ExtResource( 13 )
+
+[node name="Marshall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 916.288, 509.349 )
+
+[node name="Camera2D" type="Camera2D" parent="Marshall"]
+current = true
+zoom = Vector2( 1.8, 1.8 )
+limit_left = 5
+limit_top = 0
+limit_right = 1854
+limit_bottom = 1414
+editor_draw_limits = true
+editor_draw_drag_margin = true
