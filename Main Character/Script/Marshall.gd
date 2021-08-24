@@ -1,9 +1,11 @@
 extends KinematicBody2D
 
 # Variable Abilities #
+var light = true
 var dash = true
 var inner_beam = true
 var shriek = true
+signal stun_enemy(value)
 
 # Variable Movement #
 var speed = 350
@@ -16,6 +18,7 @@ func _physics_process(_delta: float) -> void:
 	animasi()
 	fix_collision()
 	abilities()
+	is_light_on()
 
 # Func ready untuk setiap awal level #
 func _ready() -> void:
@@ -124,6 +127,11 @@ func _on_Dash_Cooldown_timeout() -> void:
 
 
 # Timer Shriek #
+func _on_Shriek_Area_body_entered(body: Node) -> void:
+	if body.is_in_group("Enemy"):
+		var nama = body.name
+		emit_signal("stun_enemy", nama)
+
 func _on_Shriek_Timer_timeout() -> void:
 	$Light2D.color = "ffffff"
 	$"Shriek Area/Shriek Collision".disabled = true
@@ -131,6 +139,12 @@ func _on_Shriek_Timer_timeout() -> void:
 func _on_Shriek_Cooldown_timeout() -> void:
 	shriek = true
 
+
+func is_light_on():
+	if light == true:
+		$Light2D.visible = true
+	elif light == false:
+		$Light2D.visible = false
 
 # Func memperbaiki collision saat player bergerak #
 func fix_collision():
@@ -191,5 +205,8 @@ func debug_collision():
 		$"Detection Area/Anim Depan".visible = false
 		$"Detection Area/Anim Kanan".visible = false
 		print("Kiri berjalan")
+
+
+
 
 
