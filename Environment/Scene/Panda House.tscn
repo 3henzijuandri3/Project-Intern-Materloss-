@@ -36,13 +36,13 @@ extents = Vector2( 56.0001, 80 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 176, 10 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 392, 122.8 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 152, 56 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -56,7 +56,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -213,20 +213,20 @@ texture = ExtResource( 16 )
 
 [node name="Bawah Gantungan" type="CollisionShape2D" parent="Wall Bawah"]
 position = Vector2( 948.357, 55.765 )
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 
 [node name="Pintu Keluar" type="Area2D" parent="."]
 position = Vector2( 1464, 1028.46 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu Keluar"]
 position = Vector2( -8, 11.54 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Scene Transition" type="CanvasModulate" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Scene Transition"]
-anims/Fade_To_black = SubResource( 8 )
-anims/Fade_to_normal = SubResource( 9 )
+anims/Fade_To_black = SubResource( 9 )
+anims/Fade_to_normal = SubResource( 10 )
 
 [connection signal="body_entered" from="Pintu Keluar" to="." method="_on_Pintu_Keluar_body_entered"]
 [connection signal="animation_finished" from="Scene Transition/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

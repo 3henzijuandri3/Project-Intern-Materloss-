@@ -1,6 +1,11 @@
 extends Node2D
 
+onready var marshall = get_node("/root/Panda House/YSort/Marshall")
 
+
+func _ready() -> void:
+	marshall.light = false
+	
 func _on_Pintu_Keluar_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		$"Scene Transition/AnimationPlayer".play("Fade_To_black")
