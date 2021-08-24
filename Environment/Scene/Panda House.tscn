@@ -18,29 +18,28 @@
 [ext_resource path="res://Environment/Asset/Panda House/Kompor.png" type="Texture" id=16]
 [ext_resource path="res://Environment/Script/Panda House.gd" type="Script" id=17]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 980.667, 114.716 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 194.195, 95.4106 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 504 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 815.21, 128 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 40, 88 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 176, 10 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 152, 52.4573 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "Fade_To_black"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -54,8 +53,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "Fade_to_normal"
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -107,7 +105,7 @@ position = Vector2( 387.416, 123.719 )
 
 [node name="Bagian Atas" type="CollisionShape2D" parent="Wall Atas"]
 position = Vector2( 260.584, -51.7193 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sofa" type="Sprite" parent="Wall Atas"]
 position = Vector2( 356.175, 402.702 )
@@ -159,17 +157,17 @@ texture = ExtResource( 3 )
 
 [node name="Bed Collision" type="CollisionShape2D" parent="Tempat Tidur"]
 position = Vector2( 0, 6.77661 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Wall Samping" type="StaticBody2D" parent="."]
 position = Vector2( -328, 608 )
 
 [node name="Kanan" type="CollisionShape2D" parent="Wall Samping"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Kiri" type="CollisionShape2D" parent="Wall Samping"]
 position = Vector2( 1944, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -191,15 +189,15 @@ position = Vector2( -44.3574, 933.294 )
 
 [node name="Bagian Bawah" type="CollisionShape2D" parent="Wall Bawah"]
 position = Vector2( 532.357, 55.7656 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Collision Gantungan" type="CollisionShape2D" parent="Wall Bawah"]
 position = Vector2( 876.357, -173.294 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Pintu Keluar" type="CollisionShape2D" parent="Wall Bawah"]
 position = Vector2( 1500.36, 178.706 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 
 [node name="Gantungan" type="Sprite" parent="Wall Bawah"]
 position = Vector2( 254.86, -578.324 )
@@ -216,13 +214,13 @@ position = Vector2( 1464, 1028.46 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu Keluar"]
 position = Vector2( -8, 43.5427 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Scene Transition" type="CanvasModulate" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Scene Transition"]
-anims/Fade_To_black = SubResource( 7 )
-anims/Fade_to_normal = SubResource( 8 )
+anims/Fade_To_black = SubResource( 8 )
+anims/Fade_to_normal = SubResource( 9 )
 
 [connection signal="body_entered" from="Pintu Keluar" to="." method="_on_Pintu_Keluar_body_entered"]
 [connection signal="animation_finished" from="Scene Transition/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
