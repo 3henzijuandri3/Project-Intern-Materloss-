@@ -15,12 +15,12 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Kanan",
-"speed": 7.8
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Kiri",
-"speed": 7.8
+"speed": 8.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -30,6 +30,10 @@ height = 122.396
 [node name="Fox" type="KinematicBody2D"]
 position = Vector2( 510.531, 288.5 )
 script = ExtResource( 9 )
+
+[node name="Horizontal Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.196496, 0.274746 )
@@ -46,3 +50,17 @@ position = Vector2( -22.849, 34.9602 )
 
 [node name="Posisi Kanan" type="Position2D" parent="."]
 position = Vector2( 19.8857, 27.9779 )
+
+[node name="Kanan" type="RayCast2D" parent="."]
+position = Vector2( 6.10352e-05, -0.5 )
+rotation = -1.57079
+scale = Vector2( 36.606, 5.79345 )
+enabled = true
+
+[node name="Kiri" type="RayCast2D" parent="."]
+position = Vector2( 1.46896, -0.5 )
+rotation = 1.57079
+scale = Vector2( 36.606, 5.79345 )
+enabled = true
+
+[connection signal="timeout" from="Horizontal Timer" to="." method="_on_Horizontal_Timer_timeout"]
