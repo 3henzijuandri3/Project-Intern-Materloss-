@@ -6,7 +6,7 @@ var inner_beam = true
 var shriek = true
 
 # Variable Movement #
-var speed = 400
+var speed = 350
 var velocity = Vector2()
 
 
@@ -68,6 +68,7 @@ func animasi():
 			$AnimatedSprite.play("Idle Kiri")
 
 
+# Func abilities Marshall #
 func abilities():
 	
 	if inner_beam == true:
@@ -112,11 +113,11 @@ func _on_Inner_Beam_Cooldown_timeout() -> void:
 
 # Timer Desperate Dash #
 func _on_Dash_Timer_timeout() -> void:
-	speed = 140
+	speed = 200
 	$"Dash Side Effect Timer".start()
 
 func _on_Dash_Side_Effect_Timer_timeout() -> void:
-	speed = 200
+	speed = 300
 
 func _on_Dash_Cooldown_timeout() -> void:
 	dash = true

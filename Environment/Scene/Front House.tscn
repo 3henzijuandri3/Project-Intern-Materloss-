@@ -1,0 +1,651 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Main Character/Scene/Marshall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environment/Asset/Front House/Forest bg (cropped).png" type="Texture" id=2]
+[ext_resource path="res://Environment/Asset/Front House/Bamboo.png" type="Texture" id=3]
+[ext_resource path="res://Environment/Asset/Front House/Little House.png" type="Texture" id=4]
+[ext_resource path="res://Environment/Asset/Front House/Tanah Cropped.png" type="Texture" id=5]
+[ext_resource path="res://Environment/Asset/Front House/Pohon.png" type="Texture" id=6]
+[ext_resource path="res://Environment/Asset/Front House/Jalan (1).png" type="Texture" id=7]
+[ext_resource path="res://Environment/Asset/Front House/Sumur.png" type="Texture" id=8]
+[ext_resource path="res://Environment/Asset/Front House/Jalan (3).png" type="Texture" id=9]
+[ext_resource path="res://Environment/Asset/Village/Jalan.png" type="Texture" id=10]
+[ext_resource path="res://Environment/Asset/Front House/Jalan (2).png" type="Texture" id=11]
+[ext_resource path="res://Environment/Asset/Front House/Leafs.png" type="Texture" id=12]
+[ext_resource path="res://Environment/Script/Front House.gd" type="Script" id=13]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2088, 10 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 344, 64 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 40, 120 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 20.0
+height = 248.0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 808, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 280, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 2088, 10 )
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 80.0
+height = 0.0
+
+[sub_resource type="Animation" id=9]
+resource_name = "Fade_to_black"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Fade_to_normal"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Front House" type="Node2D"]
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_vertical_guides_": [ -1776.0 ]
+}
+
+[node name="Non Ysort Sprite" type="Node2D" parent="."]
+
+[node name="Forest bg (cropped)" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 1260.25, 1272 )
+scale = Vector2( 4.98161, 3.26733 )
+texture = ExtResource( 2 )
+
+[node name="Tanah Cropped11" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 2928, 1264 )
+scale = Vector2( 2.62791, 1.95122 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped10" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 2912, 1032 )
+scale = Vector2( 2.30233, 1.83415 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped9" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 2194.5, 1332 )
+scale = Vector2( 2.26453, 1.36585 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped8" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 1504, 1305 )
+scale = Vector2( 2.18605, 1.39512 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped7" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 1560, 980 )
+scale = Vector2( 2.18605, 2.84878 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped6" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 2224, 1048 )
+scale = Vector2( 2.18605, 2.30244 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped5" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 888, 1000 )
+scale = Vector2( 2.27907, 2.41951 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped4" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 248, 1376 )
+scale = Vector2( 2.18605, 1.32683 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped3" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 324, 1048 )
+scale = Vector2( 2.25581, 2.80976 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped2" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( -336, 1316 )
+scale = Vector2( 2.18605, 1.7561 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( -320, 1032 )
+scale = Vector2( 2.18605, 2.41951 )
+texture = ExtResource( 5 )
+
+[node name="Jalan" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 2488.79, 1736 )
+scale = Vector2( 0.999173, 1 )
+texture = ExtResource( 10 )
+
+[node name="Jalan (3)_2" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 1040, 2464 )
+scale = Vector2( 1.51886, 1 )
+texture = ExtResource( 9 )
+
+[node name="Jalan (3)" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 1576, 2464 )
+texture = ExtResource( 9 )
+
+[node name="Jalan (2)" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 1736, 2144.66 )
+rotation = -1.57079
+scale = Vector2( 1.08231, 1.03452 )
+texture = ExtResource( 11 )
+
+[node name="Jalan (1)" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 809.13, 2144 )
+rotation = 1.57079
+scale = Vector2( 1.07806, 1 )
+texture = ExtResource( 7 )
+
+[node name="Tanah Cropped12" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( -248, 1664 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped13" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( -264, 1912 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped14" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( -256, 2144 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped15" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 168, 1672 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped16" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 160, 1920 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped17" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 168, 2160 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped18" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 2160, 2048 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped19" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 2552, 2041.5 )
+texture = ExtResource( 5 )
+
+[node name="Tanah Cropped20" type="Sprite" parent="Non Ysort Sprite"]
+position = Vector2( 2928, 2032 )
+texture = ExtResource( 5 )
+
+[node name="YSort - Player" type="YSort" parent="."]
+
+[node name="Marshall" parent="YSort - Player" instance=ExtResource( 1 )]
+position = Vector2( 872, 1912 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
+position = Vector2( -16, -5.52649 )
+current = true
+zoom = Vector2( 1.23, 1.23 )
+limit_left = -830
+limit_top = -26
+limit_right = 3332
+limit_bottom = 2562
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 6.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="YSort - Atas" type="YSort" parent="YSort - Player"]
+
+[node name="Wall Atas" type="StaticBody2D" parent="YSort - Player/YSort - Atas"]
+position = Vector2( 931.274, 800 )
+
+[node name="Bamboo" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -875.275, -568 )
+rotation = 3.14159
+scale = Vector2( 2.00638, 3.73789 )
+texture = ExtResource( 3 )
+
+[node name="Bamboo2" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 812.726, -560 )
+rotation = -3.14159
+scale = Vector2( 2.00638, 3.73789 )
+texture = ExtResource( 3 )
+
+[node name="Bamboo3" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1628.73, -552 )
+rotation = -3.14159
+scale = Vector2( 2.00638, 3.73789 )
+texture = ExtResource( 3 )
+
+[node name="Pohon" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -1371.27, -176 )
+scale = Vector2( 1.63488, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon3" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 2284.73, -160 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon4" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -1079.27, -192 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon5" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -587.274, -96 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon6" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 2244.73, -88 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon7" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1948.73, -200 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon8" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1820.73, -80 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon9" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1676.73, -232 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon10" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1428.73, -216 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon14" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1572.73, -88 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon15" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -451.274, -200 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon16" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -267.274, -160 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon17" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 4.72552, -232 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon18" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 188.726, -192 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon19" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 340.726, -120 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon20" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 492.725, -224 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon21" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 644.726, -200 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon22" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 820.726, -184 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon23" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1028.73, -152 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon24" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1196.73, -200 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon25" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 1300.73, -96 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon26" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 2060.73, -120 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon11" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -1219.27, -152 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon12" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -835.274, -112 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Pohon13" type="Sprite" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( -1507.27, -136 )
+scale = Vector2( 1.70027, 1.93939 )
+texture = ExtResource( 6 )
+
+[node name="Collision atas" type="CollisionShape2D" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 316.726, 64 )
+shape = SubResource( 4 )
+
+[node name="Rumah" type="StaticBody2D" parent="YSort - Player/YSort - Atas"]
+position = Vector2( 800, 1488 )
+
+[node name="Little House" type="Sprite" parent="YSort - Player/YSort - Atas/Rumah"]
+position = Vector2( 56.0001, -72.0002 )
+scale = Vector2( 3.22112, 2.68456 )
+texture = ExtResource( 4 )
+
+[node name="Collision Rumah" type="CollisionShape2D" parent="YSort - Player/YSort - Atas/Rumah"]
+position = Vector2( 80, 24 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort - Player/YSort - Atas/Rumah"]
+position = Vector2( -144, 128 )
+rotation = -1.57079
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort - Player/YSort - Atas/Rumah"]
+position = Vector2( 264, 128 )
+rotation = -1.57079
+shape = SubResource( 11 )
+
+[node name="Sumur" type="StaticBody2D" parent="YSort - Player/YSort - Atas"]
+position = Vector2( 1632, 1292 )
+
+[node name="Sumur" type="Sprite" parent="YSort - Player/YSort - Atas/Sumur"]
+position = Vector2( 24.0001, -12 )
+scale = Vector2( 1.15497, 1.15517 )
+texture = ExtResource( 8 )
+
+[node name="Collision Sumur" type="CollisionShape2D" parent="YSort - Player/YSort - Atas/Sumur"]
+position = Vector2( 0, 4 )
+rotation = 1.57079
+shape = SubResource( 3 )
+
+[node name="YSort - Kiri" type="YSort" parent="YSort - Player"]
+
+[node name="Wall Kiri" type="StaticBody2D" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -832, 1432 )
+
+[node name="Collision Kiri" type="CollisionShape2D" parent="YSort - Player/YSort - Kiri/Wall Kiri"]
+position = Vector2( 8, 328 )
+rotation = -1.57079
+shape = SubResource( 5 )
+
+[node name="Pohon" type="Sprite" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -832, 680 )
+scale = Vector2( 1.56948, 2.14141 )
+texture = ExtResource( 6 )
+
+[node name="Pohon2" type="Sprite" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -832, 864 )
+scale = Vector2( 1.56948, 2.14141 )
+texture = ExtResource( 6 )
+
+[node name="Pohon3" type="Sprite" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -832, 1112 )
+scale = Vector2( 1.56948, 2.14141 )
+texture = ExtResource( 6 )
+
+[node name="Pohon4" type="Sprite" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -839.5, 1360 )
+scale = Vector2( 1.56948, 2.14141 )
+texture = ExtResource( 6 )
+
+[node name="Pohon5" type="Sprite" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -839.5, 1552 )
+scale = Vector2( 1.56948, 2.14141 )
+texture = ExtResource( 6 )
+
+[node name="Pohon6" type="Sprite" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -832, 1808 )
+scale = Vector2( 1.56948, 2.14141 )
+texture = ExtResource( 6 )
+
+[node name="Pohon7" type="Sprite" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -824, 2080 )
+scale = Vector2( 1.56948, 2.14141 )
+texture = ExtResource( 6 )
+
+[node name="Pohon8" type="Sprite" parent="YSort - Player/YSort - Kiri"]
+position = Vector2( -839.5, 2320 )
+scale = Vector2( 1.56948, 2.14141 )
+texture = ExtResource( 6 )
+
+[node name="YSort - Kanan" type="YSort" parent="YSort - Player"]
+position = Vector2( 3944, 1848 )
+
+[node name="Pohon" type="Sprite" parent="YSort - Player/YSort - Kanan"]
+position = Vector2( -544, -984 )
+scale = Vector2( 1.78747, 2.06061 )
+texture = ExtResource( 6 )
+
+[node name="Pohon2" type="Sprite" parent="YSort - Player/YSort - Kanan"]
+position = Vector2( -584, -872 )
+scale = Vector2( 1.78747, 2.06061 )
+texture = ExtResource( 6 )
+
+[node name="Pohon3" type="Sprite" parent="YSort - Player/YSort - Kanan"]
+position = Vector2( -576, -752 )
+scale = Vector2( 1.78747, 2.06061 )
+texture = ExtResource( 6 )
+
+[node name="Pohon5" type="Sprite" parent="YSort - Player/YSort - Kanan"]
+position = Vector2( -656, 320 )
+scale = Vector2( 1.78747, 2.06061 )
+texture = ExtResource( 6 )
+
+[node name="Pohon6" type="Sprite" parent="YSort - Player/YSort - Kanan"]
+position = Vector2( -680, 475.281 )
+scale = Vector2( 1.78747, 2.06061 )
+texture = ExtResource( 6 )
+
+[node name="Wall Kanan" type="StaticBody2D" parent="YSort - Player/YSort - Kanan"]
+position = Vector2( -624, -672 )
+
+[node name="Collision Kanan" type="CollisionShape2D" parent="YSort - Player/YSort - Kanan/Wall Kanan"]
+position = Vector2( 16, -16 )
+rotation = -1.57079
+shape = SubResource( 7 )
+
+[node name="Collision Kanan2" type="CollisionShape2D" parent="YSort - Player/YSort - Kanan/Wall Kanan"]
+position = Vector2( 24, 1032 )
+rotation = -1.57079
+shape = SubResource( 7 )
+
+[node name="YSort - Bawah" type="YSort" parent="YSort - Player"]
+
+[node name="Wall Bawah" type="StaticBody2D" parent="YSort - Player/YSort - Bawah"]
+position = Vector2( 1248, 2562.86 )
+
+[node name="Pohon" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -1968, -98.8572 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon2" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -1848, -42.8574 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon3" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -1728, -90.8574 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon4" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -1568, 37.1428 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon5" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -1336, 21.1426 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon6" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -1096, 29.1423 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon7" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -808, 13.1426 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon8" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -688, -194.857 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon9" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( -680, -98.8577 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon10" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 736, -67.3572 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon11" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 856, -11.3572 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon12" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 976, -59.3572 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon13" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 1096, -18.8577 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon14" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 1312, -42.8572 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon15" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 1568, -66.8574 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon16" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 1432, -50.8574 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon17" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 1896, -122.858 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Pohon18" type="Sprite" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 1744, -106.858 )
+scale = Vector2( 1.43869, 1.77525 )
+texture = ExtResource( 6 )
+
+[node name="Collision Bawah" type="CollisionShape2D" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
+position = Vector2( 8, 0 )
+shape = SubResource( 6 )
+
+[node name="YSort - Tanaman" type="YSort" parent="YSort - Player"]
+
+[node name="Leafs" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( -248, 1648 )
+texture = ExtResource( 12 )
+
+[node name="Leafs2" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( 176, 1640 )
+texture = ExtResource( 12 )
+
+[node name="Leafs3" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( -264, 1896 )
+texture = ExtResource( 12 )
+
+[node name="Leafs4" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( 176, 1896 )
+texture = ExtResource( 12 )
+
+[node name="Leafs5" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( -264, 2136 )
+texture = ExtResource( 12 )
+
+[node name="Leafs6" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( 176, 2152 )
+texture = ExtResource( 12 )
+
+[node name="Leafs7" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( 2160, 2008 )
+texture = ExtResource( 12 )
+
+[node name="Leafs8" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( 2568, 2008 )
+texture = ExtResource( 12 )
+
+[node name="Leafs9" type="Sprite" parent="YSort - Player/YSort - Tanaman"]
+position = Vector2( 2960, 2000 )
+texture = ExtResource( 12 )
+
+[node name="Pintu Masuk" type="Area2D" parent="."]
+position = Vector2( 856, 1624 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu Masuk"]
+position = Vector2( 6.21826, -52.9727 )
+shape = SubResource( 8 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate"]
+anims/Fade_to_black = SubResource( 9 )
+anims/Fade_to_normal = SubResource( 10 )
+
+[connection signal="body_entered" from="Pintu Masuk" to="." method="_on_Pintu_Masuk_body_entered"]
+[connection signal="animation_finished" from="CanvasModulate/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
