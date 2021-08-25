@@ -1,12 +1,18 @@
 extends KinematicBody2D
 
-func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_down"):
-		$AnimatedSprite.play("Bawah")
-	elif Input.is_action_just_pressed("ui_right"):
-		$AnimatedSprite.play("Kanan")
-	elif Input.is_action_just_pressed("ui_left"):
-		$AnimatedSprite.play("Kiri")
-	elif Input.is_action_just_pressed("ui_up"):
-		$AnimatedSprite.play("Atas")
+# Variable Movement #
+var speed = 200
 
+
+func _physics_process(_delta: float) -> void:
+	pass
+
+
+# Function movement Demon Panda #
+func move_to_marshall():
+	pass
+
+
+# Timer Stun signal dari Player #
+func _on_Stun_Timer_timeout() -> void:
+	pass 

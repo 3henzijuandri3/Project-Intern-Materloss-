@@ -26,9 +26,9 @@ animations = [ {
 "name": "Atas",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
-"name": "Kanan",
+"name": "Bawah",
 "speed": 7.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ) ],
@@ -36,9 +36,9 @@ animations = [ {
 "name": "Kiri",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "Bawah",
+"name": "Kanan",
 "speed": 7.0
 } ]
 
@@ -60,8 +60,14 @@ texture = ExtResource( 14 )
 position = Vector2( 3.17847, -9.5354 )
 scale = Vector2( 0.176868, 0.193943 )
 frames = SubResource( 1 )
-animation = "Kiri"
+animation = "Bawah"
 
 [node name="Body Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0.843501, -3.52616 )
 shape = SubResource( 2 )
+
+[node name="Stun Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Stun Timer" to="." method="_on_Stun_Timer_timeout"]
