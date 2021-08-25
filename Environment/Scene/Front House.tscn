@@ -13,6 +13,7 @@
 [ext_resource path="res://Environment/Asset/Front House/Jalan (2).png" type="Texture" id=11]
 [ext_resource path="res://Environment/Asset/Front House/Leafs.png" type="Texture" id=12]
 [ext_resource path="res://Environment/Script/Front House.gd" type="Script" id=13]
+[ext_resource path="res://UI/Scene/Scene Transition.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2088, 10 )
@@ -40,35 +41,8 @@ extents = Vector2( 2088, 10 )
 radius = 80.0
 height = 0.0
 
-[sub_resource type="Animation" id=9]
-resource_name = "Fade_to_black"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "Fade_to_normal"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
-}
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 36.2622, 222.522 )
 
 [node name="Front House" type="Node2D"]
 script = ExtResource( 13 )
@@ -76,127 +50,125 @@ __meta__ = {
 "_edit_vertical_guides_": [ -1776.0 ]
 }
 
-[node name="Non Ysort Sprite" type="Node2D" parent="."]
-
-[node name="Forest bg (cropped)" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Forest bg (cropped)" type="Sprite" parent="."]
 position = Vector2( 1260.25, 1272 )
 scale = Vector2( 4.98161, 3.26733 )
 texture = ExtResource( 2 )
 
-[node name="Tanah Cropped11" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped11" type="Sprite" parent="."]
 position = Vector2( 2928, 1264 )
 scale = Vector2( 2.62791, 1.95122 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped10" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped10" type="Sprite" parent="."]
 position = Vector2( 2912, 1032 )
 scale = Vector2( 2.30233, 1.83415 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped9" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped9" type="Sprite" parent="."]
 position = Vector2( 2194.5, 1332 )
 scale = Vector2( 2.26453, 1.36585 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped8" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped8" type="Sprite" parent="."]
 position = Vector2( 1504, 1305 )
 scale = Vector2( 2.18605, 1.39512 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped7" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped7" type="Sprite" parent="."]
 position = Vector2( 1560, 980 )
 scale = Vector2( 2.18605, 2.84878 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped6" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped6" type="Sprite" parent="."]
 position = Vector2( 2224, 1048 )
 scale = Vector2( 2.18605, 2.30244 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped5" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped5" type="Sprite" parent="."]
 position = Vector2( 888, 1000 )
 scale = Vector2( 2.27907, 2.41951 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped4" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped4" type="Sprite" parent="."]
 position = Vector2( 248, 1376 )
 scale = Vector2( 2.18605, 1.32683 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped3" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped3" type="Sprite" parent="."]
 position = Vector2( 324, 1048 )
 scale = Vector2( 2.25581, 2.80976 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped2" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped2" type="Sprite" parent="."]
 position = Vector2( -336, 1316 )
 scale = Vector2( 2.18605, 1.7561 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped" type="Sprite" parent="."]
 position = Vector2( -320, 1032 )
 scale = Vector2( 2.18605, 2.41951 )
 texture = ExtResource( 5 )
 
-[node name="Jalan" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Jalan" type="Sprite" parent="."]
 position = Vector2( 2488.79, 1736 )
 scale = Vector2( 0.999173, 1 )
 texture = ExtResource( 10 )
 
-[node name="Jalan (3)_2" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Jalan (3)_2" type="Sprite" parent="."]
 position = Vector2( 1040, 2464 )
 scale = Vector2( 1.51886, 1 )
 texture = ExtResource( 9 )
 
-[node name="Jalan (3)" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Jalan (3)" type="Sprite" parent="."]
 position = Vector2( 1576, 2464 )
 texture = ExtResource( 9 )
 
-[node name="Jalan (2)" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Jalan (2)" type="Sprite" parent="."]
 position = Vector2( 1736, 2144.66 )
 rotation = -1.57079
 scale = Vector2( 1.08231, 1.03452 )
 texture = ExtResource( 11 )
 
-[node name="Jalan (1)" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Jalan (1)" type="Sprite" parent="."]
 position = Vector2( 809.13, 2144 )
 rotation = 1.57079
 scale = Vector2( 1.07806, 1 )
 texture = ExtResource( 7 )
 
-[node name="Tanah Cropped12" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped12" type="Sprite" parent="."]
 position = Vector2( -248, 1664 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped13" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped13" type="Sprite" parent="."]
 position = Vector2( -264, 1912 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped14" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped14" type="Sprite" parent="."]
 position = Vector2( -256, 2144 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped15" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped15" type="Sprite" parent="."]
 position = Vector2( 168, 1672 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped16" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped16" type="Sprite" parent="."]
 position = Vector2( 160, 1920 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped17" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped17" type="Sprite" parent="."]
 position = Vector2( 168, 2160 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped18" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped18" type="Sprite" parent="."]
 position = Vector2( 2160, 2048 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped19" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped19" type="Sprite" parent="."]
 position = Vector2( 2552, 2041.5 )
 texture = ExtResource( 5 )
 
-[node name="Tanah Cropped20" type="Sprite" parent="Non Ysort Sprite"]
+[node name="Tanah Cropped20" type="Sprite" parent="."]
 position = Vector2( 2928, 2032 )
 texture = ExtResource( 5 )
 
@@ -475,6 +447,7 @@ scale = Vector2( 1.78747, 2.06061 )
 texture = ExtResource( 6 )
 
 [node name="Pohon5" type="Sprite" parent="YSort - Player/YSort - Kanan"]
+visible = false
 position = Vector2( -656, 320 )
 scale = Vector2( 1.78747, 2.06061 )
 texture = ExtResource( 6 )
@@ -641,12 +614,18 @@ position = Vector2( 856, 1624 )
 position = Vector2( 6.21826, -52.9727 )
 shape = SubResource( 8 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+[node name="To Forest" type="Area2D" parent="."]
+position = Vector2( 3330.37, 1739.79 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate"]
-anims/Fade_to_black = SubResource( 9 )
-anims/Fade_to_normal = SubResource( 10 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="To Forest"]
+position = Vector2( -16.0178, -54.7284 )
+shape = SubResource( 9 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.0666667, 0.0627451, 0.0627451, 1 )
+
+[node name="Scene Transition" parent="." instance=ExtResource( 14 )]
 
 [connection signal="body_entered" from="Pintu Masuk" to="." method="_on_Pintu_Masuk_body_entered"]
-[connection signal="animation_finished" from="CanvasModulate/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="To Forest" to="." method="_on_To_Forest_body_entered"]
+[connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]

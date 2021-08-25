@@ -8,9 +8,7 @@ func _ready() -> void:
 	
 func _on_Pintu_Keluar_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
-		$"Scene Transition/AnimationPlayer".play("Fade_To_black")
+		$"Scene Transition".transisi()
 
-func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
-	if anim_name == "Fade_To_black":
-		$"Scene Transition/AnimationPlayer".play("Fade_to_normal")
-		get_tree().change_scene("res://Environment/Scene/Front House.tscn")
+func _on_Scene_Transition_transisi_berjalan() -> void:
+	get_tree().change_scene("res://Environment/Scene/Front House.tscn")
