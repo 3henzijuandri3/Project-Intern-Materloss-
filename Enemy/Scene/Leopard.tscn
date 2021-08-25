@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemy/Script/Leopard.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 229.831
+
+[node name="Leopard" type="KinematicBody2D"]
+position = Vector2( 897.208, 543.528 )
+script = ExtResource( 1 )
+
+[node name="Trigger Timer" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="Stun Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+
+[node name="Trigger Area" type="Area2D" parent="."]
+
+[node name="Trigger Collision" type="CollisionShape2D" parent="Trigger Area"]
+shape = SubResource( 3 )
+
+[connection signal="timeout" from="Trigger Timer" to="." method="_on_Trigger_Timer_timeout"]
+[connection signal="timeout" from="Stun Timer" to="." method="_on_Stun_Timer_timeout"]
+[connection signal="body_entered" from="Trigger Area" to="." method="_on_Trigger_Area_body_entered"]
