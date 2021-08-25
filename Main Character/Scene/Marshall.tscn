@@ -21,9 +21,34 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Kiri",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Kanan",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "Idle Bawah",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Bawah",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "Idle Kanan",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": false,
+"name": "Idle Kiri",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ) ],
@@ -31,35 +56,10 @@ animations = [ {
 "name": "Depan",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "Bawah",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": false,
-"name": "Idle Kiri",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
 "name": "Idle Depan",
 "speed": 0.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": false,
-"name": "Idle Kanan",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Kanan",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "Kiri",
-"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -112,6 +112,8 @@ animation = "Bawah"
 position = Vector2( -5.66321, -4.71939 )
 texture = ExtResource( 18 )
 texture_scale = 1.5
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
 
 [node name="Posisi Bawah" type="Position2D" parent="."]
 position = Vector2( -7, -4.39426 )
