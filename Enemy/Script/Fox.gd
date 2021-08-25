@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+
+# NOTE : SIGNAL STUN DAN TRIGGER BELUM
+
+
 # Variabel state Fox #
 enum {
 	HORIZONTAL,
@@ -33,7 +37,7 @@ func _physics_process(_delta: float) -> void:
 			# State TRIGGER, Fox bergerak ke arah player
 			TRIGGER:
 				pass
-				#trigger_move()
+				
 		
 		# Menjalankan function Animasi
 		animasi()
@@ -44,19 +48,34 @@ func _physics_process(_delta: float) -> void:
 		$AnimatedSprite.stop()
 
 
+
 # Function Animasi
 func animasi():
 	if state == HORIZONTAL:
 		if velocity.x < 0:
 			$AnimatedSprite.play("Kiri")
+			
+			$"Body Collision".position = $"Posisi Kiri".position
+			$"Body Collision".rotation_degrees = -43
+		
 		elif velocity.x > 0: 
 			$AnimatedSprite.play("Kanan")
 			
+			$"Body Collision".position = $"Posisi Kanan".position
+			$"Body Collision".rotation_degrees = 43
+	
 	elif state == TRIGGER:
 		if $Kanan.is_colliding():
 			$AnimatedSprite.play("Kanan")
+			
+			$"Body Collision".position = $"Posisi Kanan".position
+			$"Body Collision".rotation = 42.7
+		
 		elif $Kiri.is_colliding():
 			$AnimatedSprite.play("Kiri")
+			$"Body Collision".position = $"Posisi Kiri".position
+			$"Body Collision".rotation = -42.7
+
 
 
 # Function HORIZONTAL state #
@@ -78,6 +97,27 @@ func _on_Horizontal_Timer_timeout() -> void:
 		i = 0
 
 
+
 # Function Trigger #
 func trigger():
 	pass
+
+func _on_Trigger_Area_body_entered(body: Node) -> void:
+	if body.is_in_group("Player"):
+		state = TRIGGER
+
+func _on_Trigger_Area_body_exited(body: Node) -> void:
+	if body.is_in_group("Player"):
+		state = HORIZONTAL
+		i = 0
+
+
+
+# Function Stun signal dari player #
+func _on_Stun_Timer_timeout() -> void:
+	pass # Replace with function body.
+
+
+
+
+
