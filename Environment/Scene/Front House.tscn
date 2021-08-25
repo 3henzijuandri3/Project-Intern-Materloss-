@@ -642,6 +642,7 @@ position = Vector2( 6.21826, -52.9727 )
 shape = SubResource( 8 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate"]
 anims/Fade_to_black = SubResource( 9 )
