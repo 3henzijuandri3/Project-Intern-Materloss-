@@ -12,7 +12,6 @@ var speed = 350
 var velocity = Vector2()
 
 
-
 func _physics_process(_delta: float) -> void:
 	movement()
 	animasi()
@@ -146,6 +145,9 @@ func is_light_on():
 	elif light == false:
 		$Light2D.visible = false
 
+
+#######################################################
+
 # Func memperbaiki collision saat player bergerak #
 func fix_collision():
 	if velocity.x > 0:
@@ -205,7 +207,6 @@ func debug_collision():
 		$"Detection Area/Anim Depan".visible = false
 		$"Detection Area/Anim Kanan".visible = false
 		print("Kiri berjalan")
-
 
 
 
