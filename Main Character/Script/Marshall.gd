@@ -11,7 +11,6 @@ signal stun_enemy(value)
 var speed = 350
 var velocity = Vector2()
 
-
 func _physics_process(_delta: float) -> void:
 	movement()
 	animasi()

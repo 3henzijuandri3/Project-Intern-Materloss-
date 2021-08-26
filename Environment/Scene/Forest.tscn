@@ -632,6 +632,7 @@ scale = Vector2( 1.54386, 1.77425 )
 texture = ExtResource( 8 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( -8, 8 )
 color = Color( 0.0666667, 0.0627451, 0.0627451, 1 )
 
 [node name="To Front House" type="Area2D" parent="."]

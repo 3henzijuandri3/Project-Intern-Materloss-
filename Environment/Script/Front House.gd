@@ -1,8 +1,6 @@
 extends Node2D
 
 var tujuan = null
-onready var marshall = get_node("YSort - Player/Marshall")
-
 
 func _on_Pintu_Masuk_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
