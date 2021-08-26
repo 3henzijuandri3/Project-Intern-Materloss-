@@ -175,7 +175,7 @@ texture = ExtResource( 5 )
 [node name="YSort - Player" type="YSort" parent="."]
 
 [node name="Marshall" parent="YSort - Player" instance=ExtResource( 1 )]
-position = Vector2( 843.716, 1832.8 )
+position = Vector2( 835.519, 1823.86 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
 position = Vector2( -16, -5.52649 )
@@ -622,10 +622,11 @@ position = Vector2( -16.0178, -54.7284 )
 shape = SubResource( 9 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0666667, 0.0627451, 0.0627451, 1 )
+color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
 
 [node name="Scene Transition" parent="." instance=ExtResource( 14 )]
 
+[connection signal="change_place" from="YSort - Player/Marshall" to="." method="_on_Marshall_change_place"]
 [connection signal="body_entered" from="Pintu Masuk" to="." method="_on_Pintu_Masuk_body_entered"]
 [connection signal="body_entered" from="To Forest" to="." method="_on_To_Forest_body_entered"]
 [connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]

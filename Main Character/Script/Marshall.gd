@@ -11,12 +11,20 @@ signal stun_enemy(value)
 var speed = 350
 var velocity = Vector2()
 
+
+# Signal perpindahan maps #
+signal change_place
+
+
+
 func _physics_process(_delta: float) -> void:
 	movement()
 	animasi()
 	fix_collision()
 	abilities()
 	is_light_on()
+
+
 
 # Func ready untuk setiap awal level #
 func _ready() -> void:
@@ -26,6 +34,16 @@ func _ready() -> void:
 	$"Detection Area/Anim Depan".disabled = true
 	$"Detection Area/Anim Kiri".disabled = true
 	$"Detection Area/Anim Kanan".disabled = true
+
+
+
+# Function agar light tidak menyala di rumah #
+func is_light_on():
+	if light == true:
+		$Light2D.visible = true
+	elif light == false:
+		$Light2D.visible = false
+
 
 
 # Func pergerakan Marshall #
@@ -138,13 +156,6 @@ func _on_Shriek_Cooldown_timeout() -> void:
 	shriek = true
 
 
-func is_light_on():
-	if light == true:
-		$Light2D.visible = true
-	elif light == false:
-		$Light2D.visible = false
-
-
 #######################################################
 
 # Func memperbaiki collision saat player bergerak #
@@ -206,7 +217,4 @@ func debug_collision():
 		$"Detection Area/Anim Depan".visible = false
 		$"Detection Area/Anim Kanan".visible = false
 		print("Kiri berjalan")
-
-
-
 
