@@ -1,0 +1,82 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Ada apa bu ? Apakah sakit Ibu kambuh lagi ?"
+		},
+		{
+			"action": "join",
+			"character": "character-1630072236.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1630072236.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tidak nak....."
+		},
+		{
+			"character": "character-1630072236.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tapi obat ibu sudah hampir habis...."
+		},
+		{
+			"character": "character-1630072236.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ibu minta tolong temui Paman Sam di desa dan mintalah obat ibu ke dia. Seperti biasa, temui Paman Sam di depan rumahnya."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Baik bu....."
+		},
+		{
+			"character": "character-1630072236.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Berhati-hatilah nak, terutama dengan gelap di luar..."
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"emit_signal": "done_talking",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630072218.json",
+		"name": "Talk to Mom"
+	}
+}

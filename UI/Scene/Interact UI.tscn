@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Asset/interface/counter/label_bg.png" type="Texture" id=1]
+[ext_resource path="res://UI/Asset/interface/theme/font/comfortaa_tips.tres" type="DynamicFont" id=2]
+
+[node name="Interact UI" type="TextureRect"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_right = 0.0410625
+anchor_bottom = 0.061163
+margin_right = 41.16
+margin_bottom = -20.056
+rect_scale = Vector2( 0.657, 1.436 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.308333
+anchor_top = 0.0434782
+anchor_right = 0.698333
+anchor_bottom = 1.04348
+margin_right = -20.8
+rect_scale = Vector2( 1.8, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "T"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}

@@ -1,0 +1,20 @@
+{
+	"color": "#ff0e00ff",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1630072236.json",
+	"mirror_portraits": false,
+	"name": "Mom",
+	"nickname": "Ibu",
+	"nickname_bool": true,
+	"offset_x": 320,
+	"offset_y": 350,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://NPC/Asset/Mom.png"
+		}
+	],
+	"scale": 80
+}
