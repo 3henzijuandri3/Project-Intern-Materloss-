@@ -1,0 +1,34 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1630080399.cfg"
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hmmmm....."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sudah 3 bulan fenomena kegelapan ini tidak menghilang....."
+		},
+		{
+			"emit_signal": "done_front_house",
+			"event_id": "dialogic_040"
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630080747.json",
+		"name": "Front House"
+	}
+}

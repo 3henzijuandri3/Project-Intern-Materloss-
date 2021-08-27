@@ -24,7 +24,8 @@ func _on_Pintu_Keluar_body_entered(body: Node) -> void:
 			$"Mom Pop Out".visible = true
 
 func _on_Pintu_Keluar_body_exited(body: Node) -> void:
-	$"Mom Pop Out".visible = false
+	if body.is_in_group("Player"):
+		$"Mom Pop Out".visible = false
 
 func _on_Scene_Transition_transisi_berjalan() -> void:
 	if tujuan == "front_house":

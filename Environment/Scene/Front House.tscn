@@ -175,7 +175,7 @@ texture = ExtResource( 5 )
 [node name="YSort - Player" type="YSort" parent="."]
 
 [node name="Marshall" parent="YSort - Player" instance=ExtResource( 1 )]
-position = Vector2( 839.294, 1786.11 )
+position = Vector2( 858.796, 1773.11 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
 position = Vector2( -19.7754, 20.9021 )
