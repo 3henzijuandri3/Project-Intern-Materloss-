@@ -12,9 +12,8 @@ var speed = 350
 var velocity = Vector2()
 
 
-# Signal perpindahan maps #
-signal change_place
-
+# Signal posisi maps #
+signal to_front_house
 
 
 func _physics_process(_delta: float) -> void:
@@ -34,6 +33,8 @@ func _ready() -> void:
 	$"Detection Area/Anim Depan".disabled = true
 	$"Detection Area/Anim Kiri".disabled = true
 	$"Detection Area/Anim Kanan".disabled = true
+	
+	position = Global.player_position
 
 
 
@@ -156,6 +157,10 @@ func _on_Shriek_Cooldown_timeout() -> void:
 	shriek = true
 
 
+func _on_Forest_move_to_front_house() -> void:
+	emit_signal("to_front_house")
+
+
 #######################################################
 
 # Func memperbaiki collision saat player bergerak #
@@ -217,4 +222,7 @@ func debug_collision():
 		$"Detection Area/Anim Depan".visible = false
 		$"Detection Area/Anim Kanan".visible = false
 		print("Kiri berjalan")
+
+
+
 

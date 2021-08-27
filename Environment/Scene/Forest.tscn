@@ -632,6 +632,7 @@ scale = Vector2( 1.54386, 1.77425 )
 texture = ExtResource( 8 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2( -8, 8 )
 color = Color( 0.0666667, 0.0627451, 0.0627451, 1 )
 
@@ -644,5 +645,6 @@ shape = SubResource( 9 )
 
 [node name="Scene Transition" parent="." instance=ExtResource( 11 )]
 
+[connection signal="move_to_front_house" from="." to="YSort - Player/Marshall" method="_on_Forest_move_to_front_house"]
 [connection signal="body_entered" from="To Front House" to="." method="_on_To_Front_House_body_entered"]
 [connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]

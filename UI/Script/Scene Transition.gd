@@ -10,3 +10,6 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 		$AnimationPlayer.play("Fade_to_normal")
 		emit_signal("transisi_berjalan")
 
+func _on_Forest_move_to(value) -> void:
+	print(value)
+	emit_signal("to_front_house")
