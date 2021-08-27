@@ -35,6 +35,10 @@
 			}
 		},
 		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1630080399.cfg"
+		},
+		{
 			"character": "character-1630072236.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
