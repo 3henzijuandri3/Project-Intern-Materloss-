@@ -1,8 +1,46 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="Level UI" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[ext_resource path="res://UI/Scene/Shriek.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Scene/Desperate Dash.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/Scene/Inner Beam.tscn" type="PackedScene" id=3]
+
+[node name="Level UI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+anchor_left = 21.0
+anchor_top = 23.2
+anchor_right = 31.5225
+anchor_bottom = 26.62
+margin_right = 2385.1
+margin_bottom = 775.2
+rect_scale = Vector2( 0.15, 0.15 )
+custom_constants/separation = 50
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Shriek" parent="Control/HBoxContainer" instance=ExtResource( 1 )]
+margin_right = 912.0
+margin_bottom = 912.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="Desperate Dash" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 962.0
+margin_right = 1860.0
+margin_bottom = 912.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="Inner Beam" parent="Control/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 1910.0
+margin_right = 2806.0
+margin_bottom = 912.0
+rect_scale = Vector2( 1, 1 )

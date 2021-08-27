@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Asset/Abilities/Shriek.png" type="Texture" id=1]
+[ext_resource path="res://UI/Asset/interface/theme/font/comfortaa_tips.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Script/Shriek.gd" type="Script" id=3]
+
+[node name="Shriek" type="TextureButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.15, 0.15 )
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sweep" type="TextureProgress" parent="."]
+modulate = Color( 0.145098, 0.145098, 0.145098, 0.87451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+fill_mode = 5
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Shriek Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Counter" type="MarginContainer" parent="."]
+anchor_left = 0.331541
+anchor_top = 0.372047
+anchor_right = 0.649523
+anchor_bottom = 0.617661
+custom_constants/margin_right = 5
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Value" type="Label" parent="Counter"]
+margin_left = 5.0
+margin_right = 285.0
+margin_bottom = 224.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0.0"
+
+[connection signal="pressed" from="." to="." method="_on_Shriek_pressed"]
+[connection signal="timeout" from="Shriek Timer" to="." method="_on_Shriek_Timer_timeout"]

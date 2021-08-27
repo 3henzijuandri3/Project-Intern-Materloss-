@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Asset/Abilities/Inner Beam.png" type="Texture" id=1]
+[ext_resource path="res://UI/Asset/interface/theme/font/comfortaa_tips.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Script/Inner Beam.gd" type="Script" id=3]
+
+[node name="Inner Beam" type="TextureButton"]
+margin_right = 896.0
+margin_bottom = 897.0
+rect_scale = Vector2( 0.15, 0.15 )
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sweep" type="TextureProgress" parent="."]
+modulate = Color( 0.145098, 0.145098, 0.145098, 0.87451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+fill_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inner Beam Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Counter" type="MarginContainer" parent="."]
+anchor_left = 0.331926
+anchor_top = 0.360042
+anchor_right = 0.655586
+anchor_bottom = 0.609763
+custom_constants/margin_right = 5
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Value" type="Label" parent="Counter"]
+margin_left = 5.0
+margin_right = 285.0
+margin_bottom = 224.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0.0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="." to="." method="_on_Inner_Beam_pressed"]
+[connection signal="timeout" from="Inner Beam Cooldown" to="." method="_on_Inner_Beam_Cooldown_timeout"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Script/Desperate Dash.gd" type="Script" id=1]
+[ext_resource path="res://UI/Asset/interface/theme/font/comfortaa_tips.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Asset/Abilities/Desperate Dash.png" type="Texture" id=3]
+
+[node name="Desperate Dash" type="TextureButton"]
+anchor_right = 0.0701563
+anchor_bottom = 0.124722
+margin_right = -94.7
+margin_bottom = -94.7
+rect_scale = Vector2( 0.15, 0.15 )
+texture_normal = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sweep" type="TextureProgress" parent="."]
+modulate = Color( 0.145098, 0.145098, 0.145098, 0.87451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+fill_mode = 5
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Desperate Dash Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Counter" type="MarginContainer" parent="."]
+anchor_left = 0.365125
+anchor_top = 0.389343
+anchor_right = 0.688064
+anchor_bottom = 0.638786
+custom_constants/margin_right = 5
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Value" type="Label" parent="Counter"]
+margin_left = 5.0
+margin_right = 285.0
+margin_bottom = 224.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0.0"
+
+[connection signal="pressed" from="." to="." method="_on_Desperate_Dash_pressed"]
+[connection signal="timeout" from="Desperate Dash Cooldown" to="." method="_on_Desperate_Dash_Cooldown_timeout"]

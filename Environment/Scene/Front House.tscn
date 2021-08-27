@@ -626,7 +626,6 @@ color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
 
 [node name="Scene Transition" parent="." instance=ExtResource( 14 )]
 
-[connection signal="to_front_house" from="YSort - Player/Marshall" to="." method="_on_Marshall_to_front_house"]
 [connection signal="body_entered" from="Pintu Masuk" to="." method="_on_Pintu_Masuk_body_entered"]
 [connection signal="body_entered" from="To Forest" to="." method="_on_To_Forest_body_entered"]
 [connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]
