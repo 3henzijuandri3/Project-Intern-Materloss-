@@ -1,6 +1,13 @@
 extends Node2D
 
+onready var marshall = $"YSort - Player/Marshall"
 var tujuan = null
+
+
+func _ready() -> void:
+	marshall.inner_beam = false
+	marshall.shriek = false
+	marshall.dash = false
 
 # Area2D untuk ke Front House #
 func _on_To_Front_House_body_entered(body: Node) -> void:

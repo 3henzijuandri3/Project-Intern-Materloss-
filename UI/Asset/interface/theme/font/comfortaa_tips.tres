@@ -3,7 +3,7 @@
 [ext_resource path="res://UI/Asset/interface/theme/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 40
+size = 60
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true

@@ -3,6 +3,7 @@ extends Node2D
 var tujuan = null
 var dialogue = Dialogic.start("Front House")
 var dialogue_2 = Dialogic.start("Level 1 Trigger")
+onready var marshall = $"YSort - Player/Marshall"
 
 
 func _process(delta: float) -> void:
@@ -12,10 +13,14 @@ func _process(delta: float) -> void:
 
 # Function dialogue yang ada di Front House #
 func _ready() -> void:
+	marshall.inner_beam = false
+	marshall.shriek = false
+	marshall.dash = false
+	
 	if Global.dialogue_front_door == false:
 		add_child(dialogue)
 		dialogue.connect("dialogic_signal",self,"dialogic_signal")
-	if Global.level_1 == true:
+	if Global.level_1_interact == true:
 		$"Fragment Trigger".visible = false
 		$"Fragment Trigger/CollisionShape2D".disabled = true
 
@@ -23,7 +28,7 @@ func dialogic_signal(argument):
 	if argument == "done_front_house":
 		Global.dialogue_front_door = true
 	elif argument == "done_level_1":
-		Global.level_1 = true
+		Global.level_1_interact = true
 
 
 # Function Perpindahan maps #

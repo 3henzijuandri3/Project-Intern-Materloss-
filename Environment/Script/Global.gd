@@ -6,4 +6,4 @@ var is_talk_to_mom = false
 
 var dialogue_front_door = false
 
-var level_1 = false
+var level_1_interact = false

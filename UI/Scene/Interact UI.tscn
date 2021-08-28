@@ -5,21 +5,23 @@
 
 [node name="Interact UI" type="TextureRect"]
 self_modulate = Color( 0, 0, 0, 1 )
+margin_top = -3.0
 margin_right = 120.0
-margin_bottom = 46.0
-rect_scale = Vector2( 0.657, 1.436 )
+margin_bottom = 43.0
+rect_scale = Vector2( 1.026, 2.108 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-anchor_left = 0.308333
-anchor_top = 0.0434782
-anchor_right = 0.698333
-anchor_bottom = 1.04348
-margin_right = -20.8
-rect_scale = Vector2( 1.8, 1 )
+anchor_left = 0.192089
+anchor_top = 0.016459
+anchor_right = 0.820089
+anchor_bottom = 1.11333
+margin_right = -35.36
+margin_bottom = 17.544
+rect_scale = Vector2( 1.884, 0.742 )
 custom_fonts/font = ExtResource( 2 )
 text = "T"
 align = 1

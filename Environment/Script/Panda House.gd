@@ -6,6 +6,9 @@ var tujuan = null
 
 func _ready() -> void:
 	marshall.light = false
+	marshall.inner_beam = false
+	marshall.shriek = false
+	marshall.dash = false
 
 func _process(_delta: float) -> void:
 	if $"YSort/Mom/Interact UI".visible == true:

@@ -367,7 +367,7 @@ rotation = -1.57079
 shape = SubResource( 3 )
 
 [node name="Sumur" type="StaticBody2D" parent="YSort - Player/YSort - Atas"]
-position = Vector2( 1632, 1292 )
+position = Vector2( 1840, 1384 )
 
 [node name="Sumur" type="Sprite" parent="YSort - Player/YSort - Atas/Sumur"]
 position = Vector2( 24.0001, -12 )
@@ -628,7 +628,7 @@ color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
 [node name="Scene Transition" parent="." instance=ExtResource( 14 )]
 
 [node name="Fragment Trigger" parent="." instance=ExtResource( 15 )]
-position = Vector2( 2536, 1384 )
+position = Vector2( 2552, 1464 )
 
 [connection signal="body_entered" from="Pintu Masuk" to="." method="_on_Pintu_Masuk_body_entered"]
 [connection signal="body_entered" from="To Forest" to="." method="_on_To_Forest_body_entered"]
