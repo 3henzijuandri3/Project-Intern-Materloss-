@@ -8,17 +8,17 @@
 	"name": "Marshall",
 	"nickname": "nak",
 	"nickname_bool": true,
-	"offset_x": -250,
-	"offset_y": 500,
+	"offset_x": -230,
+	"offset_y": 0,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Main Character/Asset/Bawah_1.png"
+			"path": "res://Main Character/Asset/chara_emotions_1.png"
 		},
 		{
 			"name": "Sad",
-			"path": "res://Main Character/Asset/Bawah_4.png"
+			"path": "res://Main Character/Asset/chara_emotions_2.png"
 		}
 	],
-	"scale": 30
+	"scale": 100
 }

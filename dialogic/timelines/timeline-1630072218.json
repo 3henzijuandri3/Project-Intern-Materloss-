@@ -1,17 +1,21 @@
 {
 	"events": [
 		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1630132086.cfg"
+		},
+		{
 			"action": "join",
 			"character": "character-1630072959.json",
 			"event_id": "dialogic_002",
 			"mirror": false,
 			"portrait": "",
 			"position": {
-				"0": true,
+				"0": false,
 				"1": false,
 				"2": false,
 				"3": false,
-				"4": false
+				"4": true
 			}
 		},
 		{
@@ -25,47 +29,43 @@
 			"character": "character-1630072236.json",
 			"event_id": "dialogic_002",
 			"mirror": false,
-			"portrait": "",
+			"portrait": "Default",
 			"position": {
-				"0": false,
+				"0": true,
 				"1": false,
 				"2": false,
 				"3": false,
-				"4": true
+				"4": false
 			}
-		},
-		{
-			"event_id": "dialogic_024",
-			"set_theme": "theme-1630080399.cfg"
 		},
 		{
 			"character": "character-1630072236.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Tidak nak....."
 		},
 		{
 			"character": "character-1630072236.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Talk_1",
 			"text": "Tapi obat ibu sudah hampir habis...."
 		},
 		{
 			"character": "character-1630072236.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Talk_2",
 			"text": "Ibu minta tolong temui Paman Sam di desa dan mintalah obat ibu ke dia. Seperti biasa, temui Paman Sam di depan rumahnya."
 		},
 		{
 			"character": "character-1630072959.json",
 			"event_id": "dialogic_001",
-			"portrait": "Default",
+			"portrait": "Sad",
 			"text": "Baik bu....."
 		},
 		{
 			"character": "character-1630072236.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Talk_1",
 			"text": "Berhati-hatilah nak, terutama dengan gelap di luar..."
 		},
 		{

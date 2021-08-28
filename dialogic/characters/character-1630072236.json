@@ -8,13 +8,25 @@
 	"name": "Mom",
 	"nickname": "Ibu",
 	"nickname_bool": true,
-	"offset_x": 320,
-	"offset_y": 350,
+	"offset_x": 250,
+	"offset_y": 0,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://NPC/Asset/Mom.png"
+			"path": "res://NPC/Asset/chara_emotions_4.png"
+		},
+		{
+			"name": "Talk_1",
+			"path": "res://NPC/Asset/chara_emotions_5.png"
+		},
+		{
+			"name": "Talk_2",
+			"path": "res://NPC/Asset/chara_emotions_6.png"
+		},
+		{
+			"name": "Talk_3",
+			"path": "res://NPC/Asset/chara_emotions_7.png"
 		}
 	],
-	"scale": 80
+	"scale": 100
 }

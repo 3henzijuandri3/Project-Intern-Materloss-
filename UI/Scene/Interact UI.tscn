@@ -5,14 +5,12 @@
 
 [node name="Interact UI" type="TextureRect"]
 self_modulate = Color( 0, 0, 0, 1 )
-anchor_right = 0.0410625
-anchor_bottom = 0.061163
-margin_right = 41.16
-margin_bottom = -20.056
+margin_right = 120.0
+margin_bottom = 46.0
 rect_scale = Vector2( 0.657, 1.436 )
 texture = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]

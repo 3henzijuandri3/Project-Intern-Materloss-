@@ -1,0 +1,28 @@
+{
+	"events": [
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Wahh benda apa ini ? Apakah tidak apa-apa jika aku menyentuhnya ?"
+		},
+		{
+			"emit_signal": "done_level_1",
+			"event_id": "dialogic_040"
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630134886.json",
+		"name": "Level 1 Trigger"
+	}
+}
