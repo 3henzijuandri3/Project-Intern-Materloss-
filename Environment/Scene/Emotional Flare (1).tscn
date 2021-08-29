@@ -7,19 +7,20 @@
 [ext_resource path="res://Environment/Asset/Front House/Jalan.png" type="Texture" id=5]
 [ext_resource path="res://Enemy/Scene/Fox.tscn" type="PackedScene" id=6]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3736, 10 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 760 )
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 16.0004
 height = 316.0
 
 [node name="Emotional Flare (1)" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
 
 [node name="Flare Bg (cropped)" type="Sprite" parent="."]
@@ -49,19 +50,22 @@ position = Vector2( 3728, 1184 )
 
 [node name="Atas" type="CollisionShape2D" parent="Wall Stage"]
 position = Vector2( -32, -744 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Bawah" type="CollisionShape2D" parent="Wall Stage"]
 position = Vector2( -32, 800 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Kiri" type="CollisionShape2D" parent="Wall Stage"]
 position = Vector2( -3728, 24 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Kanan" type="CollisionShape2D" parent="Wall Stage"]
 position = Vector2( 3704, 24 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
+
+[node name="Fox" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1648, 784 )
 
 [node name="YSort - Player" type="YSort" parent="."]
 
@@ -89,8 +93,4 @@ texture = ExtResource( 4 )
 
 [node name="Collision Sumur" type="CollisionShape2D" parent="YSort - Player/StaticBody2D"]
 rotation = 1.57079
-shape = SubResource( 1 )
-
-[node name="Fox" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 2304, 1232 )
+shape = SubResource( 3 )

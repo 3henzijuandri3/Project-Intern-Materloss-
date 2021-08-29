@@ -6,7 +6,7 @@ var dialogue_2 = Dialogic.start("Level 1 Trigger")
 onready var marshall = $"YSort - Player/Marshall"
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $"Fragment Trigger/Interact UI".visible == true && Input.is_action_just_pressed("Interact"):
 		$"Scene Transition".transisi()
 
