@@ -24,7 +24,7 @@ func _on_Inner_Beam_Cooldown_timeout() -> void:
 	set_process(false)
 
 
-func _on_Inner_Beam_pressed() -> void:
+func _on_Marshall_inner_beam_on() -> void:
 	disabled = true
 	set_process(true)
 	$"Inner Beam Cooldown".start()

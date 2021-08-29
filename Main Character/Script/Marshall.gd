@@ -6,9 +6,12 @@ var dash = true
 var inner_beam = true
 var shriek = true
 signal stun_enemy(value)
+signal inner_beam_on
+signal shriek_on
+signal dash_on
 
 # Variable Movement #
-var speed = 350
+var speed = 400
 var velocity = Vector2()
 
 
@@ -91,8 +94,9 @@ func abilities():
 	if inner_beam == true:
 		if Input.is_action_just_pressed("Inner Beam"):
 			
+			emit_signal("inner_beam_on")
 			inner_beam = false
-			$Light2D.texture_scale = 2.2
+			$Light2D.texture_scale = 2.5
 			
 			$"Inner Beam Timer".start()
 			$"Inner Beam Cooldown".start()
@@ -104,6 +108,7 @@ func abilities():
 			Input.is_action_pressed("ui_up") || 
 			Input.is_action_pressed("ui_down")):
 			
+			emit_signal("dash_on")
 			dash = false
 			speed = 600
 			
@@ -113,7 +118,9 @@ func abilities():
 	if shriek == true:
 		if Input.is_action_just_pressed("Shriek"):
 			
+			emit_signal("shriek_on")
 			shriek = false
+			
 			$Light2D.color = "0194ff"
 			$"Shriek Area/Shriek Collision".disabled = false
 			$"Shriek Timer".start()
@@ -130,11 +137,11 @@ func _on_Inner_Beam_Cooldown_timeout() -> void:
 
 # Timer Desperate Dash #
 func _on_Dash_Timer_timeout() -> void:
-	speed = 200
+	speed = 350
 	$"Dash Side Effect Timer".start()
 
 func _on_Dash_Side_Effect_Timer_timeout() -> void:
-	speed = 300
+	speed = 400
 
 func _on_Dash_Cooldown_timeout() -> void:
 	dash = true

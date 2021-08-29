@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Script/Desperate Dash.gd" type="Script" id=1]
-[ext_resource path="res://UI/Asset/interface/theme/font/comfortaa_tips.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Asset/interface/theme/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://UI/Asset/Abilities/Desperate Dash.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+outline_size = 20
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
 
 [node name="Desperate Dash" type="TextureButton"]
 anchor_right = 0.0701563
@@ -41,11 +48,11 @@ __meta__ = {
 
 [node name="Value" type="Label" parent="Counter"]
 margin_left = 5.0
-margin_right = 285.0
-margin_bottom = 224.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = 27.0
+margin_right = 284.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0.0"
 
-[connection signal="pressed" from="." to="." method="_on_Desperate_Dash_pressed"]
 [connection signal="timeout" from="Desperate Dash Cooldown" to="." method="_on_Desperate_Dash_Cooldown_timeout"]

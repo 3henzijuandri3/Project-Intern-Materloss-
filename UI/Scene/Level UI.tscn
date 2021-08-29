@@ -1,46 +1,64 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Scene/Shriek.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Scene/Desperate Dash.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Scene/Inner Beam.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Scene/Fragment.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/Scene/Health.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Scene/Restart.tscn" type="PackedScene" id=6]
 
-[node name="Level UI" type="CanvasLayer"]
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Level UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-anchor_left = 21.0
-anchor_top = 23.2
-anchor_right = 31.5225
-anchor_bottom = 26.62
-margin_right = 2385.1
+[node name="Health" parent="." instance=ExtResource( 5 )]
+margin_right = 192.0
+
+[node name="Fragment" parent="." instance=ExtResource( 4 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -368.001
+margin_right = 0.0
+
+[node name="Restart" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.433333
+anchor_top = 0.4
+anchor_right = 0.564844
+anchor_bottom = 0.628704
+margin_right = 252.5
+margin_bottom = 247.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.420833
+anchor_top = 0.859259
+anchor_right = 0.647865
+anchor_bottom = 0.985926
+margin_right = 2278.1
 margin_bottom = 775.2
 rect_scale = Vector2( 0.15, 0.15 )
+size_flags_stretch_ratio = 0.0
 custom_constants/separation = 50
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Shriek" parent="Control/HBoxContainer" instance=ExtResource( 1 )]
-margin_right = 912.0
+[node name="Inner Beam" parent="HBoxContainer" instance=ExtResource( 3 )]
 margin_bottom = 912.0
 rect_scale = Vector2( 1, 1 )
 
-[node name="Desperate Dash" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+[node name="Desperate Dash" parent="HBoxContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 962.0
-margin_right = 1860.0
+margin_left = 946.0
+margin_right = 1844.0
 margin_bottom = 912.0
 rect_scale = Vector2( 1, 1 )
 
-[node name="Inner Beam" parent="Control/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 1910.0
+[node name="Shriek" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 1894.0
 margin_right = 2806.0
 margin_bottom = 912.0
 rect_scale = Vector2( 1, 1 )

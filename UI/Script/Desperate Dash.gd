@@ -21,7 +21,7 @@ func _on_Desperate_Dash_Cooldown_timeout() -> void:
 	time_label.hide()
 	set_process(false)
 
-func _on_Desperate_Dash_pressed() -> void:
+func _on_Marshall_dash_on() -> void:
 	disabled = true
 	set_process(true)
 	$"Desperate Dash Cooldown".start()

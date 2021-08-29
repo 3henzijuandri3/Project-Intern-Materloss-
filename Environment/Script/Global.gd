@@ -1,9 +1,11 @@
 extends Node
 
+# Variable posisi player yang dapat diubah saat berganti scene #
 var player_position = Vector2(1456, 824)
 
-var is_talk_to_mom = false
+# Panda House global variable #
+var is_talk_to_mom = false 
 
+# Front House global variable #
 var dialogue_front_door = false
-
 var level_1_interact = false

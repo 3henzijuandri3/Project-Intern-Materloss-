@@ -21,7 +21,7 @@ func _on_Shriek_Timer_timeout() -> void:
 	time_label.hide()
 	set_process(false)
 
-func _on_Shriek_pressed() -> void:
+func _on_Marshall_shriek_on() -> void:
 	disabled = true
 	set_process(true)
 	$"Shriek Timer".start()

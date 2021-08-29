@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Environment/Asset/Emotional Flare/Heart.png" type="Texture" id=1]
+[ext_resource path="res://Environment/Script/Health Piece.gd" type="Script" id=2]
+
+[node name="Health Piece" type="Area2D"]
+position = Vector2( 864, 480 )
+script = ExtResource( 2 )
+
+[node name="Heart" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0.661377, -10.7346, 13.6761, -22.4144, 28.0256, -27.2532, 39.8723, -21.747, 44.8779, -1.05701, 35.5341, 14.9611, 13.3423, 28.9769, -6.51337, 34.65, -27.0366, 27.4752, -39.3838, 9.28802, -42.0535, -9.56659, -37.2147, -26.7527, -26.536, -38.0988, -16.191, -36.2634, -4.67798, -29.4223, 0.661377, -18.243 )
+
+[connection signal="body_entered" from="." to="." method="_on_Health_Piece_body_entered"]
