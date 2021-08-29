@@ -30,7 +30,9 @@ height = 122.396
 [sub_resource type="CircleShape2D" id=3]
 radius = 390.664
 
-[node name="Fox" type="KinematicBody2D"]
+[node name="Fox" type="KinematicBody2D" groups=[
+"Enemy",
+]]
 position = Vector2( 888, 480 )
 script = ExtResource( 9 )
 
@@ -45,24 +47,23 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
-animation = "Kanan"
+animation = "Kiri"
 
 [node name="Body Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 79.0586, 22.7356 )
-rotation = 0.750492
+position = Vector2( -61.1647, 25.4745 )
+rotation = -0.750492
 shape = SubResource( 2 )
 
 [node name="Trigger Area" type="Area2D" parent="."]
-visible = false
 
 [node name="Trigger Collision" type="CollisionShape2D" parent="Trigger Area"]
 shape = SubResource( 3 )
 
 [node name="Posisi Kiri" type="Position2D" parent="."]
-position = Vector2( -22.849, 34.9602 )
+position = Vector2( -61.2096, 25.7678 )
 
 [node name="Posisi Kanan" type="Position2D" parent="."]
-position = Vector2( 19.8857, 27.9779 )
+position = Vector2( 79.0165, 22.7967 )
 
 [node name="Kanan" type="RayCast2D" parent="."]
 position = Vector2( 6.10352e-05, -0.5 )

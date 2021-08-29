@@ -6,6 +6,7 @@ extends KinematicBody2D
 
 # Variabel state Fox #
 enum {
+	IDLE,
 	HORIZONTAL,
 	TRIGGER
 }
@@ -16,12 +17,15 @@ var move_horizontal = true
 # Variabel Movement #
 #onready var mainChar = get_node("/root/Hutan/Player")
 var velocity = Vector2()
-var speed = 150
+var speed = 300
 var i = 0
 
 
 # Variabel Stun untuk signal stun_enemy(value) dari player #
 var stun = false
+
+
+onready var marshall = get_node("/root/Emotional Flare (1)/YSort - Player/Marshall")
 
 
 func _physics_process(_delta: float) -> void:
@@ -30,13 +34,20 @@ func _physics_process(_delta: float) -> void:
 	if stun == false :
 		match state:
 			
+			# State Idle #
+			IDLE:
+				speed = 0
+				$AnimatedSprite.stop()
+			
 			# State Horizontal, Fox bergerak kanan kiri #
 			HORIZONTAL:
+				speed = 250
 				horizontal()
 			
 			# State TRIGGER, Fox bergerak ke arah player
 			TRIGGER:
-				pass
+				speed = 300
+				trigger()
 				
 		
 		# Menjalankan function Animasi
@@ -100,7 +111,9 @@ func _on_Horizontal_Timer_timeout() -> void:
 
 # Function Trigger #
 func trigger():
-	pass
+	if marshall:
+		var direction = (marshall.position - position).normalized()
+		direction = move_and_slide(direction * speed)
 
 func _on_Trigger_Area_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
@@ -114,10 +127,10 @@ func _on_Trigger_Area_body_exited(body: Node) -> void:
 
 
 # Function Stun signal dari player #
+func _on_Marshall_stun_enemy(value) -> void:
+	if value == "Fox":
+		stun = true 
+		$"Stun Timer".start()
+	
 func _on_Stun_Timer_timeout() -> void:
-	pass # Replace with function body.
-
-
-
-
-
+	stun = false

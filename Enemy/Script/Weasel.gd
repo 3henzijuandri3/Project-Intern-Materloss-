@@ -1,11 +1,8 @@
 extends KinematicBody2D
 
-
-# NOTE : SIGNAL STUN DAN TRIGGER BELUM
-
-
 # Variabel state Weasel #
 enum {
+	IDLE,
 	PATROL,
 	TRIGGER
 }
@@ -22,24 +19,67 @@ var i = 0
 var stun = false
 
 
+onready var marshall = get_node("/root/Emotional Flare (1)/YSort - Player/Marshall")
+
+
 func _physics_process(_delta: float) -> void:
 	# State PATROL atau TRIGGER akan dijalankan saat stun tidak terjadi #
 	if stun == false:
 		match state :
 			
+			# State IDLE #
+			IDLE:
+				speed = 0
+				$AnimatedSprite.stop()
+			
 			# State PATROL, Weasel bergerak persegi
 			PATROL:
+				speed = 230
 				gerak_persegi()
 			
 			# State TRIGGER, Weasel bergerak ke arah player sampai player keluar dari Trigger Area 
 			TRIGGER:
-				speed = 200
-				pass
-				#trigger()
+				speed = 280
+				trigger()
 	
 	# Weasel tidak dapat bergerak saat stun #
 	elif stun == true:
 		velocity = move_and_slide(Vector2.ZERO)
+		$AnimatedSprite.stop()
+	
+	animasi()
+
+
+
+# Function animasi #
+func animasi():
+	if state == PATROL:
+		if velocity.x > 0:
+			$AnimatedSprite.play("Kanan")
+			$"Body Collision".position = $Kanan.position
+		elif velocity.x < 0:
+			$AnimatedSprite.play("Kiri")
+			$"Body Collision".position = $Kiri.position
+		elif velocity.y > 0:
+			$AnimatedSprite.play("Bawah")
+			$"Body Collision".position = $Depan.position
+		elif velocity.y < 0:
+			$AnimatedSprite.play("Depan")
+			$"Body Collision".position = $Depan.position
+	
+	elif state == TRIGGER:
+		if $"Trigger Kanan".is_colliding():
+			$AnimatedSprite.play("Kanan")
+			$"Body Collision".position = $Kanan.position
+		elif $"Trigger Kiri".is_colliding():
+			$AnimatedSprite.play("Kiri")
+			$"Body Collision".position = $Kiri.position
+		elif $"Trigger Atas".is_colliding():
+			$AnimatedSprite.play("Depan")
+			$"Body Collision".position = $Depan.position
+		elif $"Trigger Bawah".is_colliding():
+			$AnimatedSprite.play("Bawah")
+			$"Body Collision".position = $Depan.position
 
 
 
@@ -67,7 +107,9 @@ func _on_Patrol_Timer_timeout() -> void:
 
 # Function TRIGGER state #
 func trigger():
-	pass
+	if marshall:
+		var direction = (marshall.position - position).normalized()
+		direction = move_and_slide(direction * speed)
 
 func _on_Trigger_Area_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
@@ -81,9 +123,10 @@ func _on_Trigger_Area_body_exited(body: Node) -> void:
 
 
 # Function Stun signal dari Player #
+func _on_Marshall_stun_enemy(value) -> void:
+	if value == "Weasel":
+		stun = true 
+		$"Stun Timer".start()
+
 func _on_Stun_Timer_timeout() -> void:
-	pass # Replace with function body.
-
-
-
-
+	stun = false
