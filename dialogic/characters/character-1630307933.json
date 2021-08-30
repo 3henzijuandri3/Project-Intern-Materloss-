@@ -1,0 +1,20 @@
+{
+	"color": "#ff000000",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1630307933.json",
+	"mirror_portraits": false,
+	"name": "Leopard",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 300,
+	"offset_y": -300,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Enemy/Asset/Leopard/Bawah_1.png"
+		}
+	],
+	"scale": 30
+}

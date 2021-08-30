@@ -1,0 +1,24 @@
+{
+	"color": "#ffffffff",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1630310221.json",
+	"mirror_portraits": false,
+	"name": "Mellow",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -260,
+	"offset_y": 300,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://NPC/Asset/Mellow_2.png"
+		},
+		{
+			"name": "Sad",
+			"path": "res://NPC/Asset/Mellow.png"
+		}
+	],
+	"scale": 30
+}

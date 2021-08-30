@@ -1,0 +1,155 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Sad",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Aduh kepala ku sakit sekali....."
+		},
+		{
+			"action": "join",
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Perkenalkan aku Mellow....."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Siapa kamu dan di mana aku ?"
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Aku tidak punya cukup waktu untuk menjelaskan semuanya, yang pasti aku di sini untuk memandu dan melindungimu.\nBenda yang barusan kau sentuh, itu merupakan pecahan ingatanmu...."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Pecahan ingatan ? Apa maksud dari semua ini ?"
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Mellow",
+			"text": "Jika kau ingin tau, kumpulkan semua pecahannya.\nSelama kau mencari pecahan ingatanmu, aku akan bersemayam di dalam dirimu."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Aku masih belum mengerti akan semua ini....."
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1630308000.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"action": "join",
+			"character": "character-1630307984.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"action": "join",
+			"character": "character-1630307933.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": true,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"action": "join",
+			"character": "character-1630308037.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Satu lagi, berhati-hatilah terhadap mereka....\nMereka tidak suka dengan orang-orang yang sedang mencari ingatan."
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"emit_signal": "pre_level1_finished",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630307712.json",
+		"name": "Pre Level 1"
+	}
+}

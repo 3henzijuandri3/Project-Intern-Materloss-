@@ -1,0 +1,20 @@
+{
+	"color": "#ff610000",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1630308037.json",
+	"mirror_portraits": false,
+	"name": "Demon Panda",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 500,
+	"offset_y": -300,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Enemy/Asset/Demon Panda/Bawah_1.png"
+		}
+	],
+	"scale": 30
+}

@@ -14,6 +14,11 @@ signal dash_on
 var speed = 400
 var velocity = Vector2()
 
+# Variable get damage #
+signal get_damage
+const whiten_duration = 0.15
+export (ShaderMaterial) var whiten_material
+var is_invincible = false
 
 
 func _physics_process(_delta: float) -> void:
@@ -22,6 +27,7 @@ func _physics_process(_delta: float) -> void:
 	fix_collision()
 	abilities()
 	is_light_on()
+	invincible()
 
 
 
@@ -162,6 +168,43 @@ func _on_Shriek_Cooldown_timeout() -> void:
 
 
 
+# Function menerima damage dari enemy #
+func _on_Detection_Area_body_entered(body: Node) -> void:
+	if body.is_in_group("Enemy"):
+		is_invincible = true
+		emit_signal("get_damage")
+		blink_effect()
+		
+		$"Blink Timer".start()
+		$"Blink Duration".start()
+
+func invincible():
+	if is_invincible == true:
+		$"Detection Area/Anim Bawah".disabled = true
+		$"Detection Area/Anim Depan".disabled = true
+		$"Detection Area/Anim Kanan".disabled = true
+		$"Detection Area/Anim Kiri".disabled = true
+	else:
+		$"Detection Area/Anim Bawah".disabled = false
+		$"Detection Area/Anim Depan".disabled = false
+		$"Detection Area/Anim Kanan".disabled = false
+		$"Detection Area/Anim Kiri".disabled = false
+
+func blink_effect():
+	whiten_material.set_shader_param("whiten", true)
+	yield(get_tree().create_timer(whiten_duration), "timeout")
+	whiten_material.set_shader_param("whiten", false)
+
+func _on_Blink_Timer_timeout() -> void:
+	$AnimatedSprite.visible = !$AnimatedSprite.visible
+
+func _on_Blink_Duration_timeout() -> void:
+	$"Blink Timer".stop()
+	$AnimatedSprite.visible = true
+	is_invincible = false
+
+
+
 # Func memperbaiki collision saat player bergerak #
 func fix_collision():
 	if velocity.x > 0:
@@ -224,6 +267,11 @@ func debug_collision():
 		$"Detection Area/Anim Depan".visible = false
 		$"Detection Area/Anim Kanan".visible = false
 		print("Kiri berjalan")
+
+
+
+
+
 
 
 

@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 # Variabel state Weasel #
 enum {
-	IDLE,
 	PATROL,
 	TRIGGER
 }
@@ -26,11 +25,6 @@ func _physics_process(_delta: float) -> void:
 	# State PATROL atau TRIGGER akan dijalankan saat stun tidak terjadi #
 	if stun == false:
 		match state :
-			
-			# State IDLE #
-			IDLE:
-				speed = 0
-				$AnimatedSprite.stop()
 			
 			# State PATROL, Weasel bergerak persegi
 			PATROL:

@@ -1,0 +1,70 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Kita berhasil Marshall...."
+		},
+		{
+			"action": "join",
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Sad",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Kepala ku semakin sakit.....\nSekilas aku merasakan gambaran  aneh dan mengerikan...\nApakah ini ingatanku ?"
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Aku tidak bisa berkata banyak, tapi yang pasti benda itu merupakan pecahan ingatanmu.\nAgar semuanya jelas, kau harus mengumpulkan semuanya."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Baiklah....."
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"emit_signal": "post_level1_finished",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630317038.json",
+		"name": "Post Level 1"
+	}
+}

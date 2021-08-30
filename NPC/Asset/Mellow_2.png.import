@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mellow Sad.png-c5d113b213b7bd927f28058631176b79.stex"
+path="res://.import/Mellow_2.png-89c0d01560fbfe1ef0fa5886eab32884.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/Asset/Mellow Sad.png"
-dest_files=[ "res://.import/Mellow Sad.png-c5d113b213b7bd927f28058631176b79.stex" ]
+source_file="res://NPC/Asset/Mellow_2.png"
+dest_files=[ "res://.import/Mellow_2.png-89c0d01560fbfe1ef0fa5886eab32884.stex" ]
 
 [params]
 

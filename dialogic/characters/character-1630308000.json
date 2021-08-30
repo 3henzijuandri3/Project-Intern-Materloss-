@@ -1,0 +1,20 @@
+{
+	"color": "#ff000000",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1630308000.json",
+	"mirror_portraits": false,
+	"name": "Fox",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -300,
+	"offset_y": -300,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Enemy/Asset/Fox (Jackal)/jackal sprite a4.png"
+		}
+	],
+	"scale": 30
+}

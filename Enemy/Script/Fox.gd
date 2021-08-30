@@ -6,7 +6,6 @@ extends KinematicBody2D
 
 # Variabel state Fox #
 enum {
-	IDLE,
 	HORIZONTAL,
 	TRIGGER
 }
@@ -33,11 +32,6 @@ func _physics_process(_delta: float) -> void:
 	# State BAWAH, ATAS,  atau TRIGGER akan dijalankan saat stun tidak terjadi #
 	if stun == false :
 		match state:
-			
-			# State Idle #
-			IDLE:
-				speed = 0
-				$AnimatedSprite.stop()
 			
 			# State Horizontal, Fox bergerak kanan kiri #
 			HORIZONTAL:

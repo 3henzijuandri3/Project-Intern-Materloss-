@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mellow Happy.png-2f60f5b0819cb12b6348605a66168718.stex"
+path="res://.import/bg.jpg-738dd5a3a207e2b0d20dd6871ffc31c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/Asset/Mellow Happy.png"
-dest_files=[ "res://.import/Mellow Happy.png-2f60f5b0819cb12b6348605a66168718.stex" ]
+source_file="res://Environment/Asset/Emotional Flare/bg.jpg"
+dest_files=[ "res://.import/bg.jpg-738dd5a3a207e2b0d20dd6871ffc31c3.stex" ]
 
 [params]
 
