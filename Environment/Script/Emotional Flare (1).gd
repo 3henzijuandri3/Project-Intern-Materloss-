@@ -3,21 +3,35 @@ extends Node2D
 onready var needed = $"UI/Level UI/Fragment/Fragment Needed"
 onready var score = $"UI/Level UI/Fragment/Fragment Score"
 onready var health_bar = $"UI/Level UI/Health"
+onready var dialogue = Dialogic.start("In Level 1")
 
 var health = 2
 var fragment_piece = 0
 var finish = false
 
 
-func _ready() -> void: 
+func _ready() -> void:
+	Global.emotional_flare_1 = true
 	needed.text = "/ 3"
 	score.text = "0"
+	
+	$"YSort - Player/Marshall".speed = 0
+	$"YSort - Player/Marshall".inner_beam = false
+	$"YSort - Player/Marshall".shriek = false
+	$"YSort - Player/Marshall".dash = false
+	
+	add_child(dialogue)
+	dialogue.connect("dialogic_signal", self, "dialogic_signal")
 
 func _process(_delta: float) -> void:
 	health_system()
 	fragment_system()
 
 
+
+func dialogic_signal(argument):
+	if argument == "done_in_level1":
+		$"YSort - Player/Marshall".speed = 400
 
 func health_system():
 	if health == 0:

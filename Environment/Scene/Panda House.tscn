@@ -121,7 +121,7 @@ texture = ExtResource( 9 )
 position = Vector2( -112.377, 241.223 )
 
 [node name="Bed_1" type="Sprite" parent="Tempat Tidur"]
-position = Vector2( 620.284, 247.234 )
+position = Vector2( -12.4301, 3.8932 )
 texture = ExtResource( 1 )
 
 [node name="Bed_2" type="Sprite" parent="Tempat Tidur"]

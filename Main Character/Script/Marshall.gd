@@ -41,6 +41,7 @@ func _ready() -> void:
 	$"Detection Area/Anim Kanan".disabled = true
 	
 	position = Global.player_position
+	#whiten_material.set_shader_param("whiten", false)
 
 
 
@@ -192,7 +193,9 @@ func invincible():
 
 func blink_effect():
 	whiten_material.set_shader_param("whiten", true)
-	yield(get_tree().create_timer(whiten_duration), "timeout")
+	$"Whiten Duration".start()
+
+func _on_Whiten_Duration_timeout() -> void:
 	whiten_material.set_shader_param("whiten", false)
 
 func _on_Blink_Timer_timeout() -> void:
@@ -267,12 +270,3 @@ func debug_collision():
 		$"Detection Area/Anim Depan".visible = false
 		$"Detection Area/Anim Kanan".visible = false
 		print("Kiri berjalan")
-
-
-
-
-
-
-
-
-

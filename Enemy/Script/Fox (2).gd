@@ -14,7 +14,7 @@ var move_horizontal = true
 var velocity = Vector2()
 var speed = 300
 var i = 0
-onready var marshall = get_node("/root/Emotional Flare (1)/YSort - Player/Marshall")
+onready var marshall = get_node("/root/Emotional Flare (2)/YSort - Player/Marshall")
 
 
 # Variabel Stun untuk signal stun_enemy(value) dari player #

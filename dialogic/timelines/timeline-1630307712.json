@@ -135,7 +135,7 @@
 			"character": "character-1630310221.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Satu lagi, berhati-hatilah terhadap mereka....\nMereka tidak suka dengan orang-orang yang sedang mencari ingatan."
+			"text": "Satu lagi, berhati-hatilah terhadap mereka....\nMereka tidak suka dengan orang-orang yang berada di wilayah mereka.."
 		},
 		{
 			"action": "leaveall",

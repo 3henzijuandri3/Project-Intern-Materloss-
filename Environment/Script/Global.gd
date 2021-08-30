@@ -15,3 +15,8 @@ var is_talk_to_mom = false
 var dialogue_front_door = false
 var level_1_interact = false
 var debug_dialogue_front_house = false
+
+# Emotional Flare global variable #
+var emotional_flare_1 = false
+var emotional_flare_2 = false
+var emotional_flare_3 = false

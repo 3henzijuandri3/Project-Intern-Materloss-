@@ -35,17 +35,17 @@ extents = Vector2( 808, 10 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 280, 10 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 48, 269.062 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 2088, 10 )
 
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=9]
 radius = 80.0
 height = 0.0
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 36.2622, 222.522 )
 
 [node name="Front House" type="Node2D"]
@@ -476,7 +476,7 @@ shape = SubResource( 6 )
 
 [node name="Blokade ke forest" type="CollisionShape2D" parent="YSort - Player/YSort - Kanan/Wall Kanan"]
 position = Vector2( -40, 509.062 )
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 
 [node name="YSort - Bawah" type="YSort" parent="YSort - Player"]
 
@@ -575,7 +575,7 @@ texture = ExtResource( 6 )
 
 [node name="Collision Bawah" type="CollisionShape2D" parent="YSort - Player/YSort - Bawah/Wall Bawah"]
 position = Vector2( 8, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="YSort - Tanaman" type="YSort" parent="YSort - Player"]
 
@@ -620,14 +620,14 @@ position = Vector2( 856, 1624 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pintu Masuk"]
 position = Vector2( 6.21826, -52.9727 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="To Forest" type="Area2D" parent="."]
 position = Vector2( 3330.37, 1739.79 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="To Forest"]
 position = Vector2( -16.0178, -54.7284 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )

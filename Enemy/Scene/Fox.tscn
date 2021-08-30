@@ -34,6 +34,8 @@ radius = 390.664
 "Enemy",
 ]]
 position = Vector2( 888, 480 )
+collision_layer = 9
+collision_mask = 5
 script = ExtResource( 9 )
 
 [node name="Stun Timer" type="Timer" parent="."]

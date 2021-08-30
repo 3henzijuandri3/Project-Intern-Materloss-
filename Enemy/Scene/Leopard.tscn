@@ -1,22 +1,53 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Enemy/Script/Leopard.gd" type="Script" id=1]
+[ext_resource path="res://Enemy/Asset/Leopard/Bawah_2.png" type="Texture" id=2]
+[ext_resource path="res://Enemy/Asset/Leopard/Bawah_1.png" type="Texture" id=3]
+[ext_resource path="res://Enemy/Asset/Leopard/Bawah_3.png" type="Texture" id=4]
+[ext_resource path="res://Enemy/Asset/Leopard/Kanan_1.png" type="Texture" id=5]
+[ext_resource path="res://Enemy/Asset/Leopard/Kiri_1.png" type="Texture" id=6]
+[ext_resource path="res://Enemy/Asset/Leopard/Depan_3.png" type="Texture" id=7]
+[ext_resource path="res://Enemy/Asset/Leopard/Kiri_2.png" type="Texture" id=8]
+[ext_resource path="res://Enemy/Asset/Leopard/Kanan_3.png" type="Texture" id=9]
+[ext_resource path="res://Enemy/Asset/Leopard/Depan_1.png" type="Texture" id=10]
+[ext_resource path="res://Enemy/Asset/Leopard/Depan_2.png" type="Texture" id=11]
+[ext_resource path="res://Enemy/Asset/Leopard/Kiri_3.png" type="Texture" id=12]
+[ext_resource path="res://Enemy/Asset/Leopard/Kanan_2.png" type="Texture" id=13]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
+radius = 296.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 5 ), ExtResource( 13 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "default",
-"speed": 5.0
+"name": "Kanan",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Kiri",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Depan",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Bawah",
+"speed": 9.0
 } ]
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 229.831
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 97.115
+height = 278.632
 
 [node name="Leopard" type="KinematicBody2D"]
 position = Vector2( 897.208, 543.528 )
+collision_layer = 9
+collision_mask = 4
 script = ExtResource( 1 )
 
 [node name="Trigger Timer" type="Timer" parent="."]
@@ -26,16 +57,55 @@ wait_time = 8.0
 wait_time = 3.0
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="Posisi Bawah" type="Position2D" parent="."]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+[node name="Posisi Depan" type="Position2D" parent="."]
+position = Vector2( -17.208, -15.528 )
+
+[node name="Posisi Kiri" type="Position2D" parent="."]
+position = Vector2( -25.208, 32.472 )
+rotation = 0.523598
+
+[node name="Posisi Kanan" type="Position2D" parent="."]
+position = Vector2( 14.792, 40.472 )
+rotation = 0.523598
 
 [node name="Trigger Area" type="Area2D" parent="."]
 
 [node name="Trigger Collision" type="CollisionShape2D" parent="Trigger Area"]
+position = Vector2( 6.79199, 128.472 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.299, 0.299 )
+frames = SubResource( 2 )
+animation = "Bawah"
+
+[node name="Body Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
+
+[node name="Kanan" type="RayCast2D" parent="."]
+rotation = -1.57079
+scale = Vector2( -45.1542, 7.39433 )
+enabled = true
+collision_mask = 4
+
+[node name="Kiri" type="RayCast2D" parent="."]
+rotation = 1.57079
+scale = Vector2( -45.1542, 7.39433 )
+enabled = true
+collision_mask = 4
+
+[node name="Bawah" type="RayCast2D" parent="."]
+scale = Vector2( -45.1542, 7.39433 )
+enabled = true
+collision_mask = 4
+
+[node name="Atas" type="RayCast2D" parent="."]
+rotation = 3.14159
+scale = Vector2( -45.1542, 7.39433 )
+enabled = true
+collision_mask = 4
 
 [connection signal="timeout" from="Trigger Timer" to="." method="_on_Trigger_Timer_timeout"]
 [connection signal="timeout" from="Stun Timer" to="." method="_on_Stun_Timer_timeout"]

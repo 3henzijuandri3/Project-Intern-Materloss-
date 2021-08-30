@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Aaaaaa di mana aku sekarang ?\nAhhh bukan saatnya mengeluh....\nAku harus mencari pecahan-pecahan ingatan itu."
+		},
+		{
+			"emit_signal": "done_in_level1",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630333908.json",
+		"name": "In Level 1"
+	}
+}

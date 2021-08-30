@@ -12,7 +12,7 @@ var move_patrol = true
 var velocity = Vector2()
 var speed = 200
 var i = 0
-onready var marshall = get_node("/root/Emotional Flare (1)/YSort - Player/Marshall")
+onready var marshall = get_node("/root/Emotional Flare (2)/YSort - Player/Marshall")
 
 # Variabel Stun untuk signal stun_enemy(value) dari player #
 var stun = false
@@ -122,3 +122,5 @@ func _on_Marshall_stun_enemy(value) -> void:
 
 func _on_Stun_Timer_timeout() -> void:
 	stun = false
+
+

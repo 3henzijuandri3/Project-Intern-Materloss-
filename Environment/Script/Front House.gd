@@ -50,7 +50,8 @@ func _on_Fragment_Trigger_body_entered(body: Node) -> void:
 			Global.debug_dialogue_front_house = true
 
 func _on_Fragment_Trigger_body_exited(body: Node) -> void:
-	$"Fragment Trigger/Interact UI".visible = false
+	if body.is_in_group("Player"):
+		$"Fragment Trigger/Interact UI".visible = false
 
 # Area2D untuk ke Panda House #
 func _on_Pintu_Masuk_body_entered(body: Node) -> void:
