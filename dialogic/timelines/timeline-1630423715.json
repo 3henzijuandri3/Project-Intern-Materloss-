@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Aku menemukan benda ini lagi.\nSakit kepala yang disebabkan benda ini memang menyebalkan, tapi aku harus meyentuhnya lagi agar semuanya jelas.\nBaiklah akan aku lakukan....."
+		},
+		{
+			"emit_signal": "done_level3_trigger",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630423715.json",
+		"name": "Level 3 Trigger"
+	}
+}
