@@ -1,0 +1,186 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Aduhh sakit kepala ini benar-benar mengganggu."
+		},
+		{
+			"action": "join",
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Kita bertemu lagi Marshall...."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Langsung saja, yang harus aku lakukan sama seperti sebelumnya bukan ?"
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Benar....\nTapi kali kau akan sedikit terbantu..\nKarena sebelumnya kau telah mengumpulkan beberapa pecahan ingatanmu, jiwamu menjadi sedikit lebih kuat."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Maksudnya ?"
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1630415756.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Pada saat mencari pecahan ingatan nanti, kau dapat memperluas jarak cahaya mu {Press Q}"
+		},
+		{
+			"action": "join",
+			"character": "character-1630415795.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": true,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Kau juga dapat menghindari mereka dengan berlari tetapi hanya sementara {Press W}"
+		},
+		{
+			"action": "join",
+			"character": "character-1630415810.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yang terakhir, kau dapat membuat mereka yang berada di cahaya mu menjadi terdiam tetapi ini hanya berlangsung selama 3 detik {Press E}"
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Sad",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"action": "join",
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Baiklah aku akan mencoba sebisaku....\nAku ingin semuanya menjadi jelas."
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Ayo kita lakukan ini."
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"emit_signal": "pre_level2_finished",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630415177.json",
+		"name": "Pre Level 2"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"color": "#ffff8900",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1630415810.json",
+	"mirror_portraits": false,
+	"name": "Shriek",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 200,
+	"offset_y": -230,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Environment/Asset/Emotional Flare/Light 3.png"
+		}
+	],
+	"scale": 100
+}

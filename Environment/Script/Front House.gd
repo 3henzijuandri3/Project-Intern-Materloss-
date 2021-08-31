@@ -7,9 +7,10 @@ onready var marshall = $"YSort - Player/Marshall"
 
 
 func _process(_delta: float) -> void:
-	if $"Fragment Trigger/Interact UI".visible == true && Input.is_action_just_pressed("Interact"):
-		$Transisi.play()
-	elif Global.level_1_completed == true:
+	if Global.dialogue_tigger_level_1 == true:
+		if $"Fragment Trigger/Interact UI".visible == true && Input.is_action_just_pressed("Interact"):
+			$Transisi.play()
+	if Global.level_1_completed == true:
 		$"Fragment Trigger".visible = false
 		$"Fragment Trigger/CollisionShape2D".disabled = true
 		$"YSort - Player/YSort - Kanan/Wall Kanan/Blokade ke forest".disabled = true
@@ -34,6 +35,7 @@ func dialogic_signal(argument):
 		Global.dialogue_front_door = true
 		$"YSort - Player/Marshall".speed = 400
 	elif argument == "done_level_1":
+		Global.dialogue_tigger_level_1 = true
 		$"YSort - Player/Marshall".speed = 400
 
 
@@ -44,11 +46,10 @@ func _on_Fragment_Trigger_body_entered(body: Node) -> void:
 		tujuan = "level_1"
 		$"Fragment Trigger/Interact UI".visible = true
 		
-		if Global.debug_dialogue_front_house == false:
+		if Global.dialogue_tigger_level_1 == false:
 			marshall.speed = 0
 			add_child(dialogue_2)
 			dialogue_2.connect("dialogic_signal",self,"dialogic_signal")
-			Global.debug_dialogue_front_house = true
 
 func _on_Fragment_Trigger_body_exited(body: Node) -> void:
 	if body.is_in_group("Player"):

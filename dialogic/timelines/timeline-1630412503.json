@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ahh benda aneh itu lagi.....\nAku hanya ingin mengambil obat ibuku dan sialnya hal-hal aneh ini terjadi.\nFenomena gelap yang selama ini tidak pernah berakhir, lalu sekarang pecahan ingatan.\nEntah apa maksudnya pecahan ingatan, tetapi sekilas penglihatan aneh terlintas di pikiranku.\nEntahlah mungkin aku harus benar-benar mengumpulakan benda ini....."
+		},
+		{
+			"emit_signal": "done_level2_trigger",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630412503.json",
+		"name": "Level 2 Trigger"
+	}
+}

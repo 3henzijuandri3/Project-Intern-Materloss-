@@ -30,6 +30,7 @@ func _physics_process(_delta: float) -> void:
 	abilities()
 	is_light_on()
 	invincible()
+	walking_sound()
 
 
 # Func ready untuk setiap awal level #
@@ -45,6 +46,13 @@ func _ready() -> void:
 	#whiten_material.set_shader_param("whiten", false)
 
 
+
+# Function jalan #
+func walking_sound():
+	if velocity != Vector2.ZERO && !$"Walking Sound".playing:
+		$"Walking Sound".play()
+	else:
+		pass
 
 
 # Function agar light tidak menyala di rumah #
@@ -123,7 +131,7 @@ func abilities():
 			
 			emit_signal("dash_on")
 			dash = false
-			speed = 600
+			speed = 700
 			
 			$"Dash Timer".start()
 			$"Dash Cooldown".start()
@@ -150,7 +158,7 @@ func _on_Inner_Beam_Cooldown_timeout() -> void:
 
 # Timer Desperate Dash #
 func _on_Dash_Timer_timeout() -> void:
-	speed = 350
+	speed = 300
 	$"Dash Side Effect Timer".start()
 
 func _on_Dash_Side_Effect_Timer_timeout() -> void:

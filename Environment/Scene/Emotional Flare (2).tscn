@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Environment/Asset/Emotional Flare/Flare Bg (cropped).png" type="Texture" id=1]
 [ext_resource path="res://Main Character/Scene/Marshall.tscn" type="PackedScene" id=2]
@@ -32,6 +32,9 @@
 [ext_resource path="res://Environment/Script/Emotional Flare (2).gd" type="Script" id=30]
 [ext_resource path="res://Environment/Scene/Health Piece.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Environment/Scene/Fragment Piece.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Sound/Emo Flare.wav" type="AudioStream" id=33]
+[ext_resource path="res://UI/Scene/Scene Transition.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Sound/Pickup.wav" type="AudioStream" id=35]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4168, 10 )
@@ -44,14 +47,14 @@ radius = 442.378
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 23 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "Kanan",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 26 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Kiri",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 23 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Kanan",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 24 ), ExtResource( 19 ), ExtResource( 25 ) ],
@@ -70,14 +73,14 @@ radius = 130.106
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Kanan",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Kiri",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Kanan",
 "speed": 8.0
 } ]
 
@@ -344,6 +347,16 @@ layer = 10
 [node name="Restart" parent="CanvasLayer/Level UI" index="2"]
 visible = false
 
+[node name="Bg Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )
+volume_db = 8.5
+
+[node name="Scene Transition" parent="." instance=ExtResource( 34 )]
+
+[node name="Pickup Items" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+volume_db = -5.0
+
 [connection signal="get_health" from="Health Piece" to="." method="_on_Health_Piece_get_health"]
 [connection signal="get_fragment" from="Fragment Piece" to="." method="_on_Fragment_Piece_get_fragment"]
 [connection signal="get_fragment" from="Fragment Piece2" to="." method="_on_Fragment_Piece_get_fragment"]
@@ -353,8 +366,8 @@ visible = false
 [connection signal="get_damage" from="YSort - Player/Marshall" to="." method="_on_Marshall_get_damage"]
 [connection signal="inner_beam_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Inner Beam" method="_on_Marshall_inner_beam_on"]
 [connection signal="shriek_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Shriek" method="_on_Marshall_shriek_on"]
-[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Leopard" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Leopard" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Fox" method="_on_Marshall_stun_enemy"]
 [connection signal="timeout" from="YSort - Player/Weasel/Patrol Timer" to="YSort - Player/Weasel" method="_on_Patrol_Timer_timeout"]
 [connection signal="timeout" from="YSort - Player/Weasel/Stun Timer" to="YSort - Player/Weasel" method="_on_Stun_Timer_timeout"]
@@ -364,5 +377,7 @@ visible = false
 [connection signal="timeout" from="YSort - Player/Fox/Horizontal Timer" to="YSort - Player/Fox" method="_on_Horizontal_Timer_timeout"]
 [connection signal="body_entered" from="YSort - Player/Fox/Trigger Area" to="YSort - Player/Fox" method="_on_Trigger_Area_body_entered"]
 [connection signal="body_exited" from="YSort - Player/Fox/Trigger Area" to="YSort - Player/Fox" method="_on_Trigger_Area_body_exited"]
+[connection signal="finished" from="Bg Sound" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]
 
 [editable path="CanvasLayer/Level UI"]

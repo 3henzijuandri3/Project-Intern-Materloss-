@@ -14,7 +14,12 @@ var is_talk_to_mom = false
 # Front House global variable #
 var dialogue_front_door = false
 var level_1_interact = false
-var debug_dialogue_front_house = false
+var dialogue_tigger_level_1 = false
+
+# Forest global variable #
+var dialogue_trigger_level_2 = false
+
+
 
 # Emotional Flare global variable #
 #var emotional_flare_1 = false

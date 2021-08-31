@@ -1,0 +1,65 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Kau berhasil lagi.\nKerja bagus Marshall..."
+		},
+		{
+			"action": "join",
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Penglihatan yang sebelumnya samar-samar dan hanya sekilas, sekarang terlihat sedikit lebih jelas."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Tapi ini aneh, aku seakan-akan melihat ibu melakukan sesuatu dan aku ada di dalamnya.\nKemudian penglihatan itu kembali samar.\nAneh sekali....."
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Sudah kubilang, itu merupakan pecahan ingatanmu.\nSelanjutnya, mungkin penglihatan itu akan menjadi jelas.\nYang pasti kau harus mengumpulkan pecahan-pecahan yang lain.\nSekarang kau akan kembali ke tempat mu semula...."
+		},
+		{
+			"emit_signal": "post_level2_finished",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630419764.json",
+		"name": "Post Level 2"
+	}
+}

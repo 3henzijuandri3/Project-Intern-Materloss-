@@ -22,10 +22,13 @@ func _ready() -> void:
 	add_child(dialogue)
 	dialogue.connect("dialogic_signal", self, "dialogic_signal")
 
+func dialogic_signal(argument):
+	if argument == "done_in_level1":
+		$"YSort - Player/Marshall".speed = 400
+
 func _process(_delta: float) -> void:
 	health_system()
 	fragment_system()
-
 
 
 func health_system():
@@ -54,6 +57,7 @@ func health_system():
 	
 func _on_Health_Piece_get_health() -> void:
 	health += 1
+	$"Pickup Items".play()
 	
 func _on_Marshall_get_damage() -> void:
 	health -= 1
@@ -69,11 +73,7 @@ func fragment_system():
 	
 func _on_Fragment_Piece_get_fragment() -> void:
 	fragment_piece += 1
-
-
-func dialogic_signal(argument):
-	if argument == "done_in_level1":
-		$"YSort - Player/Marshall".speed = 400
+	$"Pickup Items".play()
 
 func _on_Scene_Transition_transisi_berjalan() -> void:
 	get_tree().change_scene("res://Environment/Scene/Post Level 1.tscn")

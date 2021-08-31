@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Sound/Forest.wav" type="AudioStream" id=1]
 [ext_resource path="res://Environment/Asset/Forest/Forest bg.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://UI/Scene/Scene Transition.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Sound/Transisi Emo Flare.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sound/Scary (1).wav" type="AudioStream" id=13]
+[ext_resource path="res://Environment/Scene/Fragment Trigger.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1088, 40 )
@@ -36,14 +37,21 @@ extents = Vector2( 1424, 16 )
 extents = Vector2( 1496, 10 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 16, 360 )
+extents = Vector2( 16, 424 )
 
 [sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 16, 288 )
+
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 32, 208 )
 
 [node name="Forest" type="Node2D"]
 position = Vector2( -1104, -24 )
 script = ExtResource( 7 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( -8, 8 )
+color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
 
 [node name="Forest bg" type="Sprite" parent="."]
 position = Vector2( 4528, 976 )
@@ -101,7 +109,7 @@ texture = ExtResource( 10 )
 [node name="YSort - Player" type="YSort" parent="."]
 
 [node name="Marshall" parent="YSort - Player" instance=ExtResource( 4 )]
-position = Vector2( 1384, 1464 )
+position = Vector2( 1320, 1448 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
 current = true
@@ -110,8 +118,8 @@ limit_left = 33
 limit_top = -306
 limit_right = 6818
 limit_bottom = 2198
+limit_smoothed = true
 smoothing_enabled = true
-smoothing_speed = 6.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
@@ -544,8 +552,12 @@ position = Vector2( -40, 334.562 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="YSort - Player/YSort - Atas/Wall Atas"]
-position = Vector2( 6752, 204.375 )
+position = Vector2( 6744, 220.375 )
 shape = SubResource( 8 )
+
+[node name="Blokade Village" type="CollisionShape2D" parent="YSort - Player/YSort - Atas/Wall Atas"]
+position = Vector2( 6728, 852.375 )
+shape = SubResource( 9 )
 
 [node name="YSort - Ground" type="YSort" parent="YSort - Player"]
 
@@ -634,16 +646,15 @@ position = Vector2( 3544, 1136 )
 scale = Vector2( 1.54386, 1.77425 )
 texture = ExtResource( 8 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2( -8, 8 )
-color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
-
 [node name="To Front House" type="Area2D" parent="."]
 position = Vector2( 1144, 1472 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="To Front House"]
 position = Vector2( 0, 40 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
+
+[node name="Fragment Trigger" parent="." instance=ExtResource( 14 )]
+position = Vector2( 5304, 952 )
 
 [node name="Scene Transition" parent="." instance=ExtResource( 11 )]
 
@@ -658,6 +669,9 @@ volume_db = 8.0
 stream = ExtResource( 12 )
 
 [connection signal="body_entered" from="To Front House" to="." method="_on_To_Front_House_body_entered"]
+[connection signal="body_entered" from="Fragment Trigger" to="." method="_on_Fragment_Trigger_body_entered"]
+[connection signal="body_exited" from="Fragment Trigger" to="." method="_on_Fragment_Trigger_body_exited"]
 [connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]
 [connection signal="finished" from="Forest" to="." method="_on_Forest_finished"]
 [connection signal="finished" from="Scary" to="." method="_on_Scary_finished"]
+[connection signal="finished" from="Transisi" to="." method="_on_Transisi_finished"]

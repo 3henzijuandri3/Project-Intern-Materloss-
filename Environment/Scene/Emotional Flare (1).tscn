@@ -1,7 +1,7 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Environment/Asset/Emotional Flare/Flare Bg (cropped).png" type="Texture" id=1]
-[ext_resource path="res://Main Character/Asset/Bawah_4.png" type="Texture" id=2]
+[ext_resource path="res://Main Character/Scene/Marshall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Environment/Asset/Front House/Jalan (3).png" type="Texture" id=3]
 [ext_resource path="res://Environment/Asset/Front House/Sumur.png" type="Texture" id=4]
 [ext_resource path="res://Environment/Asset/Front House/Jalan.png" type="Texture" id=5]
@@ -11,7 +11,7 @@
 [ext_resource path="res://Environment/Script/Emotional Flare (1).gd" type="Script" id=9]
 [ext_resource path="res://Environment/Scene/Health Piece.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Environment/Scene/Fragment Piece.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Main Character/Scene/Whiten_Material.tres" type="Material" id=12]
+[ext_resource path="res://Sound/Pickup.wav" type="AudioStream" id=12]
 [ext_resource path="res://UI/Scene/Scene Transition.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite 4.png" type="Texture" id=14]
 [ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite a1.png" type="Texture" id=15]
@@ -33,24 +33,6 @@
 [ext_resource path="res://Enemy/Asset/Weasel/Kiri_1.png" type="Texture" id=31]
 [ext_resource path="res://Enemy/Asset/Weasel/Kanan_3.png" type="Texture" id=32]
 [ext_resource path="res://Enemy/Script/Fox.gd" type="Script" id=33]
-[ext_resource path="res://Main Character/Asset/Walk_3.png" type="Texture" id=34]
-[ext_resource path="res://Main Character/Asset/light.png" type="Texture" id=35]
-[ext_resource path="res://Main Character/Asset/Bawah_2.png" type="Texture" id=36]
-[ext_resource path="res://Main Character/Asset/Depan_1.png" type="Texture" id=37]
-[ext_resource path="res://Main Character/Asset/Depan_3.png" type="Texture" id=38]
-[ext_resource path="res://Main Character/Asset/Depan_4.png" type="Texture" id=39]
-[ext_resource path="res://Main Character/Asset/Kiri_3.png" type="Texture" id=40]
-[ext_resource path="res://Main Character/Asset/Walk_1.png" type="Texture" id=41]
-[ext_resource path="res://Main Character/Asset/Kiri_2.png" type="Texture" id=42]
-[ext_resource path="res://Main Character/Asset/Kiri_1.png" type="Texture" id=43]
-[ext_resource path="res://Main Character/Asset/Bawah_1.png" type="Texture" id=44]
-[ext_resource path="res://Main Character/Asset/Kiri_4.png" type="Texture" id=45]
-[ext_resource path="res://Main Character/Asset/Depan_2.png" type="Texture" id=46]
-[ext_resource path="res://Main Character/Asset/Walk_2.png" type="Texture" id=47]
-[ext_resource path="res://Main Character/Asset/Bawah_3.png" type="Texture" id=48]
-[ext_resource path="res://Main Character/Asset/Walk_4.png" type="Texture" id=49]
-[ext_resource path="res://Main Character/Script/Marshall.gd" type="Script" id=50]
-[ext_resource path="res://Main Character/Asset/Get Hit.wav" type="AudioStream" id=51]
 [ext_resource path="res://Sound/Emo Flare.wav" type="AudioStream" id=52]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -61,86 +43,37 @@ extents = Vector2( 10, 760 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 34 ), ExtResource( 49 ), ExtResource( 41 ), ExtResource( 47 ), ExtResource( 34 ), ExtResource( 49 ), ExtResource( 41 ), ExtResource( 47 ) ],
-"loop": true,
-"name": "Kanan",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 40 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "Kiri",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 44 ), ExtResource( 36 ), ExtResource( 48 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "Bawah",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 37 ), ExtResource( 46 ), ExtResource( 38 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "Depan",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 37 ) ],
-"loop": false,
-"name": "Idle Depan",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 44 ) ],
-"loop": false,
-"name": "Idle Bawah",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 40 ) ],
-"loop": false,
-"name": "Idle Kiri",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 34 ) ],
-"loop": false,
-"name": "Idle Kanan",
-"speed": 0.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 36.1508, 98.4174 )
-
-[sub_resource type="CircleShape2D" id=5]
-radius = 223.032
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "Kanan",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 27 ), ExtResource( 20 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Kiri",
 "speed": 8.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 97.5233
-height = 122.396
-
-[sub_resource type="CircleShape2D" id=8]
-radius = 390.664
-
-[sub_resource type="CircleShape2D" id=9]
-radius = 442.378
-
-[sub_resource type="SpriteFrames" id=10]
-animations = [ {
-"frames": [ ExtResource( 26 ), ExtResource( 28 ), ExtResource( 32 ) ],
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "Kanan",
 "speed": 8.0
-}, {
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 97.5233
+height = 122.396
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 390.664
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 442.378
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
 "frames": [ ExtResource( 31 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Kiri",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 28 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "Kanan",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 29 ), ExtResource( 24 ), ExtResource( 30 ) ],
@@ -154,10 +87,10 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=11]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 130.106
 
-[sub_resource type="CapsuleShape2D" id=12]
+[sub_resource type="CapsuleShape2D" id=9]
 radius = 24.001
 height = 316.0
 
@@ -223,118 +156,19 @@ position = Vector2( 3728, 928 )
 
 [node name="YSort - Player" type="YSort" parent="."]
 
-[node name="Marshall" type="KinematicBody2D" parent="YSort - Player" groups=[
-"Player",
-]]
-position = Vector2( 3464, 1144 )
-collision_layer = 5
-collision_mask = 11
-script = ExtResource( 50 )
-whiten_material = ExtResource( 12 )
-
-[node name="Shriek Timer" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 0.5
-one_shot = true
-
-[node name="Shriek Cooldown" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 20.0
-one_shot = true
-
-[node name="Inner Beam Cooldown" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 15.0
-one_shot = true
-
-[node name="Inner Beam Timer" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 5.0
-one_shot = true
-
-[node name="Dash Side Effect Timer" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 3.0
-one_shot = true
-
-[node name="Dash Cooldown" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 8.0
-one_shot = true
-
-[node name="Dash Timer" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 0.45
-one_shot = true
-
-[node name="Blink Timer" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 0.12
-
-[node name="Blink Duration" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 1.2
-
-[node name="Whiten Duration" type="Timer" parent="YSort - Player/Marshall"]
-wait_time = 0.15
-one_shot = true
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort - Player/Marshall"]
-material = ExtResource( 12 )
-position = Vector2( -0.445313, 0 )
-scale = Vector2( 0.0662825, 0.0613632 )
-frames = SubResource( 3 )
-animation = "Bawah"
-
-[node name="Light2D" type="Light2D" parent="YSort - Player/Marshall"]
-position = Vector2( -5.66321, -4.71939 )
-texture = ExtResource( 35 )
-texture_scale = 1.8
-shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 1 )
-
-[node name="Posisi Bawah" type="Position2D" parent="YSort - Player/Marshall"]
-position = Vector2( -7, -4.39426 )
-
-[node name="Posisi Samping" type="Position2D" parent="YSort - Player/Marshall"]
-position = Vector2( 1.56561, -0.501495 )
-
-[node name="Body Collision" type="CollisionShape2D" parent="YSort - Player/Marshall"]
-position = Vector2( -6.87045, -5.52643 )
-shape = SubResource( 4 )
-
-[node name="Detection Area" type="Area2D" parent="YSort - Player/Marshall"]
-visible = false
-
-[node name="Anim Bawah" type="CollisionPolygon2D" parent="YSort - Player/Marshall/Detection Area"]
-position = Vector2( -6.78595, -76.5248 )
-polygon = PoolVector2Array( -7.74191, -34.7422, -22.375, -30.9578, -37.7765, -32.9752, -45.333, -33.5053, -50.106, -29.4394, -54.747, -18.1259, -50.9899, -8.40297, -53.288, -2.039, -54.879, 13.1638, -52.7577, 25.8917, -48.7309, 36.1734, -40.7128, 43.3006, -34.6993, 44.4142, -45.39, 72.2548, -51.6263, 92.9682, -57.1506, 106.845, -53.1776, 115.586, -50.529, 117.705, -56.8858, 123.002, -55.8263, 129.624, -44.9668, 134.656, -35.4316, 130.683, -36.0369, 148.983, -36.1442, 168.925, -24.368, 179.224, -17.2662, 181.973, 0.131897, 179.728, 6.8667, 184.218, 29.5966, 185.34, 36.6119, 181.973, 37.1732, 173.274, 37.5612, 171.13, 37.8762, 154.121, 37.8762, 150.971, 44.4832, 140.351, 48.7346, 135.011, 51.8022, 130.291, 56.0887, 108.309, 56.0887, 98.2173, 52.3043, 82.0704, 41.2034, 53.0565, 36.6992, 43.0818, 47.0061, 32.116, 49.7814, 16.9783, 51.5474, 10.1663, 49.0245, -5.22369, 51.5474, -19.8568, 49.0245, -28.1825, 42.9694, -32.9761, 31.6161, -29.444, 17.9922, -33.4807 )
-
-[node name="Anim Depan" type="CollisionPolygon2D" parent="YSort - Player/Marshall/Detection Area"]
-position = Vector2( -23.2433, -119.516 )
-polygon = PoolVector2Array( -2.74731, -13.45, -14.061, -13.0964, -20.425, -17.6926, -34.7247, -15.3953, -41.9721, -9.23746, -44.6208, 0.0328369, -39.8532, 9.83287, -45.4153, 17.7788, -45.1505, 32.0816, -40.8684, 46.7454, -33.4964, 58.3033, -39.0586, 69.9574, -39.8532, 82.4061, -37.9991, 99.8872, -39.0649, 113.396, -39.0649, 122.856, -37.1729, 127.691, -34.8236, 137.352, -36.8774, 143.356, -36.2455, 153.467, -32.7697, 158.365, -31.0319, 161.998, -34.8236, 174.479, -32.2958, 181.589, -26.2922, 183.169, -20.2887, 190.12, -20.7627, 212.08, -15.3911, 215.714, -4.96393, 220.454, 12.7307, 217.768, 16.2065, 225.509, 31.0573, 226.299, 45.4342, 220.454, 48.178, 214.724, 53.8541, 212.832, 53.6439, 197.695, 52.803, 185.082, 59.9506, 185.082, 62.4733, 173.73, 57.2177, 162.588, 69.6209, 156.912, 70.4618, 145.35, 66.888, 112.134, 53.0242, 78.2697, 53.0132, 71.1406, 53.552, 58.5803, 60.1411, 60.8519, 65.0107, 45.4942, 66.9027, 26.148, 75.388, 11.6523, 71.1453, -7.43958, 61.2458, -12.7429, 49.9321, -13.45, 40.3862, -9.20734, 28.747, -13.4753, 21.2943, -11.6822, 13.5161, -13.45 )
-
-[node name="Anim Kanan" type="CollisionPolygon2D" parent="YSort - Player/Marshall/Detection Area"]
-position = Vector2( -7.81504, -123.873 )
-polygon = PoolVector2Array( -13.8155, -10.8034, -20.3562, -3.66812, -25.8166, 2.04868, -38.0059, 5.0217, -29.0868, 10.6704, -40.3843, 25.5355, -39.1951, 41.2925, -36.5194, 60.3198, -36.2221, 152.781, -36.1246, 216.429, -27.4482, 218.098, -12.7649, 218.431, -15.4346, 238.454, -5.42331, 243.126, 47.9703, 240.123, 38.9601, 217.097, 38.9601, 193.07, 45.8325, 184.787, 47.2356, 166.828, 47.2356, 118.281, 45.8325, 83.2044, 58.9828, 61.5878, 58.9145, 47.2385, 52.0765, 39.2114, 50.59, 24.6436, 53.8603, 16.9138, 58.0226, 8.58931, 41.671, -8.65419, 23.3472, -11.398 )
-
-[node name="Anim Kiri" type="CollisionPolygon2D" parent="YSort - Player/Marshall/Detection Area"]
-position = Vector2( -12.8969, -121.857 )
-polygon = PoolVector2Array( -12.8628, -12.2548, -27.1742, -5.52003, -34.7508, 1.49535, -38.4489, 22.8603, -29.459, 28.479, -37.3251, 37.0942, -42.9438, 56.1976, -35.0777, 67.0604, -32.3531, 153.857, -33.3531, 197.607, -33.3531, 215.357, -13.8531, 217.107, -14.6031, 223.607, -28.1031, 225.107, -31.3531, 233.357, -28.8531, 240.357, -10.6031, 239.857, 12.6469, 238.357, 21.8969, 238.107, 35.6469, 237.607, 38.1469, 230.357, 35.6469, 217.357, 48.4887, 214.89, 50.4809, 196.811, 51.8967, 122.244, 52.5796, 85.5468, 52.5796, 59.3843, 53.3969, 43.3569, 58.6469, 36.1069, 58.9411, 5.25519, 31.9716, -13.8482, 20.5304, -12.5354 )
-
-[node name="Shriek Area" type="Area2D" parent="YSort - Player/Marshall"]
-
-[node name="Shriek Collision" type="CollisionShape2D" parent="YSort - Player/Marshall/Shriek Area"]
-position = Vector2( -7, -4.58258 )
-shape = SubResource( 5 )
-disabled = true
+[node name="Marshall" parent="YSort - Player" instance=ExtResource( 2 )]
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
-position = Vector2( -16, -10 )
 current = true
 zoom = Vector2( 1.25, 1.25 )
-limit_left = 0
-limit_top = 0
-limit_right = 7433
-limit_bottom = 1984
+limit_left = -18
+limit_top = 7
+limit_right = 7448
+limit_bottom = 1999
 limit_smoothed = true
 smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
-
-[node name="Get Hit" type="AudioStreamPlayer" parent="YSort - Player/Marshall"]
-stream = ExtResource( 51 )
 
 [node name="Fox" type="KinematicBody2D" parent="YSort - Player" groups=[
 "Enemy",
@@ -354,18 +188,18 @@ one_shot = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort - Player/Fox"]
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 6 )
+frames = SubResource( 3 )
 animation = "Kiri"
 
 [node name="Body Collision" type="CollisionShape2D" parent="YSort - Player/Fox"]
 position = Vector2( -61.1647, 25.4745 )
 rotation = -0.750492
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Trigger Area" type="Area2D" parent="YSort - Player/Fox"]
 
 [node name="Trigger Collision" type="CollisionShape2D" parent="YSort - Player/Fox/Trigger Area"]
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="Posisi Kiri" type="Position2D" parent="YSort - Player/Fox"]
 position = Vector2( -61.2096, 25.7678 )
@@ -433,16 +267,16 @@ enabled = true
 
 [node name="Trigger Collision" type="CollisionShape2D" parent="YSort - Player/Weasel/Trigger Area"]
 position = Vector2( 0, 2.29761 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort - Player/Weasel"]
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 10 )
+frames = SubResource( 7 )
 animation = "Bawah"
 
 [node name="Body Collision" type="CollisionShape2D" parent="YSort - Player/Weasel"]
 position = Vector2( -5.58588, -6.31778 )
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="YSort - Player"]
 position = Vector2( 3728, 1184 )
@@ -454,7 +288,7 @@ texture = ExtResource( 4 )
 
 [node name="Collision Sumur" type="CollisionShape2D" parent="YSort - Player/StaticBody2D"]
 rotation = 1.57079
-shape = SubResource( 12 )
+shape = SubResource( 9 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 10
@@ -487,7 +321,11 @@ margin_right = 912.0
 
 [node name="Bg Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 52 )
-volume_db = 5.0
+volume_db = 8.5
+
+[node name="Pickup Items" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -5.0
 
 [connection signal="get_health" from="Health Piece" to="." method="_on_Health_Piece_get_health"]
 [connection signal="get_fragment" from="Fragment Piece" to="." method="_on_Fragment_Piece_get_fragment"]
@@ -497,20 +335,8 @@ volume_db = 5.0
 [connection signal="get_damage" from="YSort - Player/Marshall" to="." method="_on_Marshall_get_damage"]
 [connection signal="inner_beam_on" from="YSort - Player/Marshall" to="UI/Level UI/HBoxContainer/Inner Beam" method="_on_Marshall_inner_beam_on"]
 [connection signal="shriek_on" from="YSort - Player/Marshall" to="UI/Level UI/HBoxContainer/Shriek" method="_on_Marshall_shriek_on"]
-[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Fox" method="_on_Marshall_stun_enemy"]
-[connection signal="timeout" from="YSort - Player/Marshall/Shriek Timer" to="YSort - Player/Marshall" method="_on_Shriek_Timer_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Shriek Cooldown" to="YSort - Player/Marshall" method="_on_Shriek_Cooldown_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Inner Beam Cooldown" to="YSort - Player/Marshall" method="_on_Inner_Beam_Cooldown_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Inner Beam Timer" to="YSort - Player/Marshall" method="_on_Inner_Beam_Timer_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Dash Side Effect Timer" to="YSort - Player/Marshall" method="_on_Dash_Side_Effect_Timer_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Dash Cooldown" to="YSort - Player/Marshall" method="_on_Dash_Cooldown_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Dash Timer" to="YSort - Player/Marshall" method="_on_Dash_Timer_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Blink Timer" to="YSort - Player/Marshall" method="_on_Blink_Timer_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Blink Duration" to="YSort - Player/Marshall" method="_on_Blink_Duration_timeout"]
-[connection signal="timeout" from="YSort - Player/Marshall/Whiten Duration" to="YSort - Player/Marshall" method="_on_Whiten_Duration_timeout"]
-[connection signal="body_entered" from="YSort - Player/Marshall/Detection Area" to="YSort - Player/Marshall" method="_on_Detection_Area_body_entered"]
-[connection signal="body_entered" from="YSort - Player/Marshall/Shriek Area" to="YSort - Player/Marshall" method="_on_Shriek_Area_body_entered"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
 [connection signal="timeout" from="YSort - Player/Fox/Stun Timer" to="YSort - Player/Fox" method="_on_Stun_Timer_timeout"]
 [connection signal="timeout" from="YSort - Player/Fox/Horizontal Timer" to="YSort - Player/Fox" method="_on_Horizontal_Timer_timeout"]
 [connection signal="body_entered" from="YSort - Player/Fox/Trigger Area" to="YSort - Player/Fox" method="_on_Trigger_Area_body_entered"]

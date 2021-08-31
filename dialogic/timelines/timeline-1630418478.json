@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Mengapa ada tempat tidur berdarah di sini ?\nTetapi entah mengapa tempat tidur ini terlihat familiar......\nAh lupakan, aku harus mencari pecahan ingatan yang ada."
+		},
+		{
+			"emit_signal": "done_in_level2",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630418478.json",
+		"name": "In Level 2"
+	}
+}
