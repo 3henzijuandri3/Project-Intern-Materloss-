@@ -34,6 +34,7 @@ func _physics_process(_delta: float) -> void:
 	# Leopard tidak dapat bergerak saat stun #
 	elif stun == true:
 		velocity = move_and_slide(Vector2.ZERO)
+		$AnimatedSprite.stop()
 	
 	animasi()
 

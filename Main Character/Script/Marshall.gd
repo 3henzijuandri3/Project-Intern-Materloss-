@@ -13,6 +13,7 @@ signal dash_on
 # Variable Movement #
 var speed = 400
 var velocity = Vector2()
+var is_walking = false
 
 # Variable get damage #
 signal get_damage
@@ -30,7 +31,6 @@ func _physics_process(_delta: float) -> void:
 	invincible()
 
 
-
 # Func ready untuk setiap awal level #
 func _ready() -> void:
 	$AnimatedSprite.play("Idle Bawah")
@@ -42,6 +42,7 @@ func _ready() -> void:
 	
 	position = Global.player_position
 	#whiten_material.set_shader_param("whiten", false)
+
 
 
 
@@ -69,7 +70,11 @@ func movement():
 	
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * speed)
-
+	
+	if velocity != Vector2.ZERO:
+		is_walking = true
+	elif velocity == Vector2.ZERO:
+		is_walking = false
 
 # Func animasi Marshall #
 func animasi():

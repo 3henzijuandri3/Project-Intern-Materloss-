@@ -18,7 +18,7 @@
 			"character": "character-1630072959.json",
 			"event_id": "dialogic_001",
 			"portrait": "Sad",
-			"text": "Aduh kepala ku sakit sekali....."
+			"text": "Pandanganku tiba-tiba gelap saat menyentuh bendah aneh tadi.\nSekarang kepala ku sakit sekali......."
 		},
 		{
 			"action": "join",
@@ -35,16 +35,16 @@
 			}
 		},
 		{
-			"character": "character-1630310221.json",
-			"event_id": "dialogic_001",
-			"portrait": "Default",
-			"text": "Perkenalkan aku Mellow....."
-		},
-		{
 			"character": "character-1630072959.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
 			"text": "Siapa kamu dan di mana aku ?"
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Perkenalkan aku Mellow....."
 		},
 		{
 			"character": "character-1630310221.json",
