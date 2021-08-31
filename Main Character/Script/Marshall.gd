@@ -14,6 +14,7 @@ signal dash_on
 var speed = 400
 var velocity = Vector2()
 var is_walking = false
+var audio = false
 
 # Variable get damage #
 signal get_damage
@@ -177,6 +178,7 @@ func _on_Shriek_Cooldown_timeout() -> void:
 # Function menerima damage dari enemy #
 func _on_Detection_Area_body_entered(body: Node) -> void:
 	if body.is_in_group("Enemy"):
+		$"Get Hit".play()
 		is_invincible = true
 		emit_signal("get_damage")
 		blink_effect()
@@ -275,3 +277,6 @@ func debug_collision():
 		$"Detection Area/Anim Depan".visible = false
 		$"Detection Area/Anim Kanan".visible = false
 		print("Kiri berjalan")
+
+
+

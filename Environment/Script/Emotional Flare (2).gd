@@ -21,6 +21,10 @@ func health_system():
 		$"CanvasLayer/Level UI/Restart".visible = true
 		$"YSort - Player/Marshall".speed = 0
 		$"YSort - Player/Marshall/AnimatedSprite".visible = false
+		$"YSort - Player/Marshall/Detection Area/Anim Bawah".disabled = true
+		$"YSort - Player/Marshall/Detection Area/Anim Depan".disabled = true
+		$"YSort - Player/Marshall/Detection Area/Anim Kanan".disabled = true
+		$"YSort - Player/Marshall/Detection Area/Anim Kiri".disabled = true
 		
 		$"YSort - Player/Weasel".speed = 0
 		$"YSort - Player/Fox".speed = 0

@@ -8,8 +8,10 @@ onready var marshall = $"YSort - Player/Marshall"
 
 func _process(_delta: float) -> void:
 	if $"Fragment Trigger/Interact UI".visible == true && Input.is_action_just_pressed("Interact"):
-		$"Scene Transition".transisi()
+		$Transisi.play()
 	elif Global.level_1_completed == true:
+		$"Fragment Trigger".visible = false
+		$"Fragment Trigger/CollisionShape2D".disabled = true
 		$"YSort - Player/YSort - Kanan/Wall Kanan/Blokade ke forest".disabled = true
 
 
@@ -23,16 +25,15 @@ func _ready() -> void:
 		marshall.speed = 0
 		add_child(dialogue)
 		dialogue.connect("dialogic_signal",self,"dialogic_signal")
-	elif Global.level_1_interact == true:
-		$"Fragment Trigger".visible = false
-		$"Fragment Trigger/CollisionShape2D".disabled = true
+	
+	$Forest.play()
+	$Scary.play()
 
 func dialogic_signal(argument):
 	if argument == "done_front_house":
 		Global.dialogue_front_door = true
 		$"YSort - Player/Marshall".speed = 400
 	elif argument == "done_level_1":
-		Global.level_1_interact = true
 		$"YSort - Player/Marshall".speed = 400
 
 
@@ -76,6 +77,11 @@ func _on_Scene_Transition_transisi_berjalan() -> void:
 	elif tujuan == "level_1":
 		get_tree().change_scene("res://Environment/Scene/Pre Level 1 Dialogue.tscn")
 
+func _on_Transisi_finished() -> void:
+	$"Scene Transition".transisi()
 
+func _on_Forest_finished() -> void:
+	$Forest.play()
 
-
+func _on_Scary_finished() -> void:
+	$Scary.play()

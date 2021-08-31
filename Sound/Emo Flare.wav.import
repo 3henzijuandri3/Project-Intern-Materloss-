@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Emo Flare.wav-681af6eca77b181bad59ff57a0b3bd0b.sample"
+
+[deps]
+
+source_file="res://Sound/Emo Flare.wav"
+dest_files=[ "res://.import/Emo Flare.wav-681af6eca77b181bad59ff57a0b3bd0b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

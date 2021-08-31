@@ -10,6 +10,7 @@ var fragment_piece = 0
 
 
 func _ready() -> void:
+	$"Bg Sound".play()
 	needed.text = "/ 3"
 	score.text = "0"
 	
@@ -32,6 +33,10 @@ func health_system():
 		$"UI/Level UI/Restart".visible = true
 		$"YSort - Player/Marshall/AnimatedSprite".visible = false
 		$"YSort - Player/Marshall".speed = 0
+		$"YSort - Player/Marshall/Detection Area/Anim Bawah".disabled = true
+		$"YSort - Player/Marshall/Detection Area/Anim Depan".disabled = true
+		$"YSort - Player/Marshall/Detection Area/Anim Kanan".disabled = true
+		$"YSort - Player/Marshall/Detection Area/Anim Kiri".disabled = true
 		
 		$"YSort - Player/Fox".speed = 0
 		$"YSort - Player/Weasel".speed = 0

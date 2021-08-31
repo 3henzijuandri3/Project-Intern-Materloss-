@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
+[ext_resource path="res://Sound/Forest.wav" type="AudioStream" id=1]
 [ext_resource path="res://Environment/Asset/Forest/Forest bg.png" type="Texture" id=2]
 [ext_resource path="res://Environment/Asset/Front House/Pohon.png" type="Texture" id=3]
 [ext_resource path="res://Main Character/Scene/Marshall.tscn" type="PackedScene" id=4]
@@ -10,6 +11,8 @@
 [ext_resource path="res://Environment/Asset/Front House/Leafs.png" type="Texture" id=9]
 [ext_resource path="res://Environment/Asset/Front House/Tanah Cropped.png" type="Texture" id=10]
 [ext_resource path="res://UI/Scene/Scene Transition.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Sound/Transisi Emo Flare.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sound/Scary (1).wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1088, 40 )
@@ -644,5 +647,17 @@ shape = SubResource( 9 )
 
 [node name="Scene Transition" parent="." instance=ExtResource( 11 )]
 
+[node name="Forest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="Scary" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 8.0
+
+[node name="Transisi" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
 [connection signal="body_entered" from="To Front House" to="." method="_on_To_Front_House_body_entered"]
 [connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]
+[connection signal="finished" from="Forest" to="." method="_on_Forest_finished"]
+[connection signal="finished" from="Scary" to="." method="_on_Scary_finished"]
