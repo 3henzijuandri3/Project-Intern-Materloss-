@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Sound/Forest.wav" type="AudioStream" id=1]
 [ext_resource path="res://Environment/Asset/Forest/Forest bg.png" type="Texture" id=2]
@@ -44,6 +44,9 @@ extents = Vector2( 16, 288 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 32, 208 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 40, 240 )
 
 [node name="Forest" type="Node2D"]
 position = Vector2( -1104, -24 )
@@ -109,9 +112,10 @@ texture = ExtResource( 10 )
 [node name="YSort - Player" type="YSort" parent="."]
 
 [node name="Marshall" parent="YSort - Player" instance=ExtResource( 4 )]
-position = Vector2( 1320, 1448 )
+position = Vector2( 3576, 1288 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
+position = Vector2( -8, -16 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
 limit_left = 33
@@ -556,7 +560,7 @@ position = Vector2( 6744, 220.375 )
 shape = SubResource( 8 )
 
 [node name="Blokade Village" type="CollisionShape2D" parent="YSort - Player/YSort - Atas/Wall Atas"]
-position = Vector2( 6728, 852.375 )
+position = Vector2( 6704, 852.375 )
 shape = SubResource( 9 )
 
 [node name="YSort - Ground" type="YSort" parent="YSort - Player"]
@@ -656,6 +660,13 @@ shape = SubResource( 10 )
 [node name="Fragment Trigger" parent="." instance=ExtResource( 14 )]
 position = Vector2( 5304, 952 )
 
+[node name="To Village" type="Area2D" parent="."]
+position = Vector2( 7920, 1447.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="To Village"]
+position = Vector2( 16, 32.5015 )
+shape = SubResource( 11 )
+
 [node name="Scene Transition" parent="." instance=ExtResource( 11 )]
 
 [node name="Forest" type="AudioStreamPlayer" parent="."]
@@ -671,6 +682,7 @@ stream = ExtResource( 12 )
 [connection signal="body_entered" from="To Front House" to="." method="_on_To_Front_House_body_entered"]
 [connection signal="body_entered" from="Fragment Trigger" to="." method="_on_Fragment_Trigger_body_entered"]
 [connection signal="body_exited" from="Fragment Trigger" to="." method="_on_Fragment_Trigger_body_exited"]
+[connection signal="body_entered" from="To Village" to="." method="_on_To_Village_body_entered"]
 [connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]
 [connection signal="finished" from="Forest" to="." method="_on_Forest_finished"]
 [connection signal="finished" from="Scary" to="." method="_on_Scary_finished"]

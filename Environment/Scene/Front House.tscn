@@ -57,6 +57,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ -1776.0 ]
 }
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
+
 [node name="Forest bg (cropped)" type="Sprite" parent="."]
 position = Vector2( 1260.25, 1272 )
 scale = Vector2( 4.98161, 3.26733 )
@@ -631,9 +634,6 @@ position = Vector2( 3330.37, 1739.79 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="To Forest"]
 position = Vector2( -16.0178, -54.7284 )
 shape = SubResource( 10 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
 
 [node name="Scene Transition" parent="." instance=ExtResource( 14 )]
 

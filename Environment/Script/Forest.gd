@@ -47,7 +47,14 @@ func _on_Fragment_Trigger_body_exited(body: Node) -> void:
 func _on_To_Front_House_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		tujuan = "front_house"
-		$"Scene Transition".transisi() 
+		$"Scene Transition".transisi()
+
+# Area2D ke Village #
+func _on_To_Village_body_entered(body: Node) -> void:
+	if body.is_in_group("Player"):
+		tujuan = "village"
+		$"Scene Transition".transisi()
+
 
 # Function transisi scene #
 func _on_Scene_Transition_transisi_berjalan() -> void: 
@@ -56,6 +63,9 @@ func _on_Scene_Transition_transisi_berjalan() -> void:
 		get_tree().change_scene("res://Environment/Scene/Front House.tscn")
 	elif tujuan == "level_2":
 		get_tree().change_scene("res://Environment/Scene/Pre Level 2.tscn")
+	elif tujuan == "village":
+		Global.player_position = Vector2(104,6595.605)
+		get_tree().change_scene("res://Environment/Scene/Village.tscn")
 
 func _on_Forest_finished() -> void:
 	$Forest.play()
@@ -65,3 +75,5 @@ func _on_Scary_finished() -> void:
 
 func _on_Transisi_finished() -> void:
 	$"Scene Transition".transisi()
+
+

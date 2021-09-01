@@ -99,7 +99,7 @@ position = Vector2( 304, 0 )
 script = ExtResource( 9 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0352941, 0.0313726, 0.0313726, 1 )
+color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 
 [node name="Flare Bg (cropped)" type="Sprite" parent="."]
 position = Vector2( 3411.19, 1008 )
@@ -335,8 +335,8 @@ volume_db = -5.0
 [connection signal="get_damage" from="YSort - Player/Marshall" to="." method="_on_Marshall_get_damage"]
 [connection signal="inner_beam_on" from="YSort - Player/Marshall" to="UI/Level UI/HBoxContainer/Inner Beam" method="_on_Marshall_inner_beam_on"]
 [connection signal="shriek_on" from="YSort - Player/Marshall" to="UI/Level UI/HBoxContainer/Shriek" method="_on_Marshall_shriek_on"]
-[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Fox" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Fox" method="_on_Marshall_stun_enemy"]
 [connection signal="timeout" from="YSort - Player/Fox/Stun Timer" to="YSort - Player/Fox" method="_on_Stun_Timer_timeout"]
 [connection signal="timeout" from="YSort - Player/Fox/Horizontal Timer" to="YSort - Player/Fox" method="_on_Horizontal_Timer_timeout"]
 [connection signal="body_entered" from="YSort - Player/Fox/Trigger Area" to="YSort - Player/Fox" method="_on_Trigger_Area_body_entered"]
