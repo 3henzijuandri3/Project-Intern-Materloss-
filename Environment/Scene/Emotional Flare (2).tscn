@@ -47,14 +47,14 @@ radius = 442.378
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 26 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "Kiri",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 23 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "Kanan",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Kiri",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 24 ), ExtResource( 19 ), ExtResource( 25 ) ],
@@ -73,14 +73,14 @@ radius = 130.106
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Kiri",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Kanan",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Kiri",
 "speed": 8.0
 } ]
 
@@ -367,8 +367,8 @@ volume_db = -5.0
 [connection signal="inner_beam_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Inner Beam" method="_on_Marshall_inner_beam_on"]
 [connection signal="shriek_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Shriek" method="_on_Marshall_shriek_on"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Leopard" method="_on_Marshall_stun_enemy"]
-[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Fox" method="_on_Marshall_stun_enemy"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
 [connection signal="timeout" from="YSort - Player/Weasel/Patrol Timer" to="YSort - Player/Weasel" method="_on_Patrol_Timer_timeout"]
 [connection signal="timeout" from="YSort - Player/Weasel/Stun Timer" to="YSort - Player/Weasel" method="_on_Stun_Timer_timeout"]
 [connection signal="body_entered" from="YSort - Player/Weasel/Trigger Area" to="YSort - Player/Weasel" method="_on_Trigger_Area_body_entered"]

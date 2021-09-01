@@ -1,0 +1,76 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Marshall......"
+		},
+		{
+			"action": "join",
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Mellow, ayo segera kita cari pecahan ingatan yang lain.\nAku harus secepatnya kembali ke rumah...."
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sebelum itu, sepertinya ini adalah terakhir kalinya kau akan mencari pecahan ingatan.\nKau akan memahami semuanya setelah ini."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Memahami semuanya, memang itulah yang aku inginkan.\nAyo segera kita lakukan, aku juga harus secepatnya kembali ke pada ibuku."
+		},
+		{
+			"character": "character-1630310221.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ayo....."
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"emit_signal": "pre_level3_finished",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630510579.json",
+		"name": "Pre Level 3"
+	}
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Environment/Asset/Village/Village Bg.png" type="Texture" id=1]
 [ext_resource path="res://Environment/Asset/Front House/Jalan.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Environment/Asset/Front House/Jalan (1).png" type="Texture" id=11]
 [ext_resource path="res://Environment/Asset/Village/Tenda.png" type="Texture" id=12]
 [ext_resource path="res://Environment/Asset/Front House/Leafs.png" type="Texture" id=13]
+[ext_resource path="res://NPC/Scene/Paman Sam.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1312, 128 )
@@ -196,7 +197,7 @@ texture = ExtResource( 8 )
 position = Vector2( 1104, 1360 )
 
 [node name="Marshall" parent="YSort - Player" instance=ExtResource( 5 )]
-position = Vector2( 104, 6595.61 )
+position = Vector2( 2157.75, 2822.15 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
 position = Vector2( 1.56567, 0 )
@@ -730,6 +731,9 @@ texture = ExtResource( 13 )
 position = Vector2( 4683.13, 4843.43 )
 scale = Vector2( 1.61102, 2.2309 )
 texture = ExtResource( 13 )
+
+[node name="Paman Sam" parent="YSort - Player/YSort - Ground" instance=ExtResource( 14 )]
+position = Vector2( 1888, 2784 )
 
 [node name="Wall Vilage" type="StaticBody2D" parent="."]
 position = Vector2( 3458.69, 5640.1 )

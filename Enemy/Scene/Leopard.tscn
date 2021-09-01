@@ -19,6 +19,16 @@ radius = 296.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 13 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Kanan",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Kiri",
+"speed": 9.0
+}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Bawah",
@@ -27,16 +37,6 @@ animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Depan",
-"speed": 9.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Kiri",
-"speed": 9.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 13 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Kanan",
 "speed": 9.0
 } ]
 

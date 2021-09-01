@@ -1,0 +1,595 @@
+[gd_scene load_steps=64 format=2]
+
+[ext_resource path="res://Environment/Asset/Emotional Flare/Flare Bg (cropped).png" type="Texture" id=1]
+[ext_resource path="res://Environment/Asset/Front House/Jalan.png" type="Texture" id=2]
+[ext_resource path="res://Environment/Asset/Emotional Flare/blood_c_0001-removebg-preview.png" type="Texture" id=3]
+[ext_resource path="res://Environment/Asset/Front House/Jalan (3).png" type="Texture" id=4]
+[ext_resource path="res://Environment/Asset/Front House/Sumur.png" type="Texture" id=5]
+[ext_resource path="res://Environment/Asset/Emotional Flare/Mayat.png" type="Texture" id=6]
+[ext_resource path="res://Main Character/Scene/Marshall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemy/Asset/Weasel/Kanan_3.png" type="Texture" id=8]
+[ext_resource path="res://Enemy/Asset/Weasel/Kiri_1.png" type="Texture" id=9]
+[ext_resource path="res://Enemy/Asset/Weasel/Kiri_3.png" type="Texture" id=10]
+[ext_resource path="res://Enemy/Asset/Weasel/Depan_1.png" type="Texture" id=11]
+[ext_resource path="res://Enemy/Asset/Weasel/Kanan_2.png" type="Texture" id=12]
+[ext_resource path="res://Enemy/Asset/Weasel/Depan_3.png" type="Texture" id=13]
+[ext_resource path="res://Enemy/Asset/Weasel/Kiri_2.png" type="Texture" id=14]
+[ext_resource path="res://Enemy/Asset/Weasel/Depan_2.png" type="Texture" id=15]
+[ext_resource path="res://Enemy/Asset/Weasel/Kanan_1.png" type="Texture" id=16]
+[ext_resource path="res://Enemy/Asset/Weasel/Bawah_1.png" type="Texture" id=17]
+[ext_resource path="res://Enemy/Asset/Leopard/Bawah_2.png" type="Texture" id=18]
+[ext_resource path="res://Enemy/Asset/Leopard/Bawah_1.png" type="Texture" id=19]
+[ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite 1 (1).png" type="Texture" id=20]
+[ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite a2.png" type="Texture" id=21]
+[ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite 2 (1).png" type="Texture" id=22]
+[ext_resource path="res://Enemy/Asset/Leopard/Kiri_3.png" type="Texture" id=23]
+[ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite 4.png" type="Texture" id=24]
+[ext_resource path="res://Enemy/Asset/Leopard/Kanan_1.png" type="Texture" id=25]
+[ext_resource path="res://Enemy/Asset/Leopard/Kanan_2.png" type="Texture" id=26]
+[ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite a3.png" type="Texture" id=27]
+[ext_resource path="res://Enemy/Asset/Leopard/Kiri_1.png" type="Texture" id=28]
+[ext_resource path="res://Enemy/Asset/Leopard/Depan_2.png" type="Texture" id=29]
+[ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite a4.png" type="Texture" id=30]
+[ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite a1.png" type="Texture" id=31]
+[ext_resource path="res://Enemy/Asset/Fox (Jackal)/jackal sprite 3.png" type="Texture" id=32]
+[ext_resource path="res://Enemy/Asset/Leopard/Depan_1.png" type="Texture" id=33]
+[ext_resource path="res://Enemy/Asset/Weasel/Bawah_2.png" type="Texture" id=34]
+[ext_resource path="res://Enemy/Asset/Weasel/Bawah_3.png" type="Texture" id=35]
+[ext_resource path="res://Enemy/Asset/Leopard/Bawah_3.png" type="Texture" id=36]
+[ext_resource path="res://Enemy/Asset/Leopard/Depan_3.png" type="Texture" id=37]
+[ext_resource path="res://Enemy/Asset/Leopard/Kiri_2.png" type="Texture" id=38]
+[ext_resource path="res://Enemy/Asset/Leopard/Kanan_3.png" type="Texture" id=39]
+[ext_resource path="res://Enemy/Scene/Demon Panda.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Enemy/Script/Weasel (3).gd" type="Script" id=41]
+[ext_resource path="res://Enemy/Script/Fox (3).gd" type="Script" id=42]
+[ext_resource path="res://Enemy/Script/Leopard (2).gd" type="Script" id=43]
+[ext_resource path="res://Environment/Asset/Front House/Jalan (1).png" type="Texture" id=44]
+[ext_resource path="res://Environment/Asset/Panda House/Bed_1.png" type="Texture" id=45]
+[ext_resource path="res://UI/Scene/Level UI.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Environment/Script/Emotional Flare (3).gd" type="Script" id=47]
+[ext_resource path="res://Sound/Pickup.wav" type="AudioStream" id=48]
+[ext_resource path="res://Sound/Emo Flare.wav" type="AudioStream" id=49]
+[ext_resource path="res://Environment/Scene/Fragment Piece.tscn" type="PackedScene" id=50]
+[ext_resource path="res://Environment/Scene/Health Piece.tscn" type="PackedScene" id=51]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 442.378
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Kanan",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 14 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Kiri",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "Bawah",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Depan",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 130.106
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 31 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "Kanan",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 32 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "Kiri",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 97.5233
+height = 122.396
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 390.664
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 296.0
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "Kanan",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 38 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "Kiri",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "Bawah",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 29 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "Depan",
+"speed": 9.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 97.115
+height = 278.632
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 192, 32 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 5248, 16 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 1048, 24 )
+
+[node name="Emotional Flare (3)" type="Node2D"]
+script = ExtResource( 47 )
+
+[node name="Flare Bg (cropped)" type="Sprite" parent="."]
+position = Vector2( 5216, 1392 )
+scale = Vector2( 10, 3.5 )
+texture = ExtResource( 1 )
+
+[node name="Jalan" type="Sprite" parent="."]
+position = Vector2( 1844.83, 1644.32 )
+scale = Vector2( 2.18982, 1 )
+texture = ExtResource( 2 )
+
+[node name="Jalan2" type="Sprite" parent="."]
+position = Vector2( 7481.64, 1688 )
+rotation = 3.14159
+scale = Vector2( 3.50447, 1 )
+texture = ExtResource( 2 )
+
+[node name="Jalan (3)" type="Sprite" parent="."]
+position = Vector2( 3656, 1390.22 )
+rotation = -1.57079
+scale = Vector2( 0.991938, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)2" type="Sprite" parent="."]
+position = Vector2( 4536, 1381.92 )
+rotation = -1.57079
+scale = Vector2( 0.918173, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)3" type="Sprite" parent="."]
+position = Vector2( 4104, 1224 )
+rotation = -3.14159
+scale = Vector2( 1.90446, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)4" type="Sprite" parent="."]
+position = Vector2( 3672, 1902.7 )
+rotation = 1.5708
+scale = Vector2( 0.788707, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)5" type="Sprite" parent="."]
+position = Vector2( 4552, 1902.7 )
+rotation = 1.5708
+scale = Vector2( 0.788706, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)6" type="Sprite" parent="."]
+position = Vector2( 4096.58, 2024 )
+rotation = 8.88506e-06
+scale = Vector2( 1.86547, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)7" type="Sprite" parent="."]
+position = Vector2( 4072, 1011.03 )
+rotation = -1.57079
+scale = Vector2( 0.760031, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)8" type="Sprite" parent="."]
+position = Vector2( 4112, 2405.87 )
+rotation = -1.57079
+scale = Vector2( 1.54677, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)9" type="Sprite" parent="."]
+position = Vector2( 784, 1248 )
+rotation = -1.57079
+scale = Vector2( 1.81624, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (3)10" type="Sprite" parent="."]
+position = Vector2( 1792, 2255.99 )
+rotation = -1.57079
+scale = Vector2( 2.35917, 1 )
+texture = ExtResource( 4 )
+
+[node name="Jalan (1)" type="Sprite" parent="."]
+position = Vector2( 7184, 1212.32 )
+rotation = 1.57079
+scale = Vector2( 1.53282, 1 )
+texture = ExtResource( 44 )
+
+[node name="Jalan (1)2" type="Sprite" parent="."]
+position = Vector2( 7120, 2252.07 )
+rotation = -1.57079
+scale = Vector2( 2.18744, 1 )
+texture = ExtResource( 44 )
+
+[node name="Jalan (1)3" type="Sprite" parent="."]
+position = Vector2( 9256, 2272 )
+rotation = -1.57079
+scale = Vector2( 2.18744, 1 )
+texture = ExtResource( 44 )
+
+[node name="blood_c_0001-removebg-preview" type="Sprite" parent="."]
+position = Vector2( 4008, 1688.2 )
+rotation = -2.61799
+scale = Vector2( 1.36655, 1.48538 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview6" type="Sprite" parent="."]
+position = Vector2( 3952, 1592 )
+rotation = -1.309
+scale = Vector2( 1.36655, 1.48538 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview7" type="Sprite" parent="."]
+position = Vector2( 4248, 1600 )
+rotation = 1.309
+scale = Vector2( 1.36655, 1.48538 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview2" type="Sprite" parent="."]
+position = Vector2( 4016, 1512 )
+rotation = -0.523598
+scale = Vector2( 1, 1.48538 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview3" type="Sprite" parent="."]
+position = Vector2( 4169.75, 1508.76 )
+rotation = 0.261799
+scale = Vector2( 1.1678, 1.48538 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview4" type="Sprite" parent="."]
+position = Vector2( 4155.99, 1671.84 )
+rotation = 2.61799
+scale = Vector2( 1.46302, 1.48538 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview5" type="Sprite" parent="."]
+position = Vector2( 312, 1088 )
+scale = Vector2( 1.29689, 1 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview8" type="Sprite" parent="."]
+position = Vector2( 296, 1212.32 )
+rotation = 2.87979
+scale = Vector2( 1.29689, 1 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview9" type="Sprite" parent="."]
+position = Vector2( 160, 1136 )
+rotation = 4.71238
+scale = Vector2( 0.956429, 1 )
+texture = ExtResource( 3 )
+
+[node name="blood_c_0001-removebg-preview10" type="Sprite" parent="."]
+position = Vector2( 452.204, 1155.08 )
+rotation = 7.06857
+scale = Vector2( 1.35876, 1.23607 )
+texture = ExtResource( 3 )
+
+[node name="Mayat" type="Sprite" parent="."]
+position = Vector2( 288, 1064 )
+scale = Vector2( 0.18283, 0.171615 )
+texture = ExtResource( 6 )
+
+[node name="YSort - Player" type="YSort" parent="."]
+
+[node name="Marshall" parent="YSort - Player" instance=ExtResource( 7 )]
+position = Vector2( 4168, 1224 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
+position = Vector2( 1.56567, -8 )
+current = true
+zoom = Vector2( 1.3, 1.3 )
+limit_smoothed = true
+smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Sumur" type="Sprite" parent="YSort - Player"]
+position = Vector2( 4104, 1582.71 )
+scale = Vector2( 1.50128, 1.52365 )
+texture = ExtResource( 5 )
+
+[node name="Mayat" type="Sprite" parent="YSort - Player"]
+position = Vector2( 4080, 1736 )
+scale = Vector2( 0.210297, 0.194823 )
+texture = ExtResource( 6 )
+
+[node name="Weasel" type="KinematicBody2D" parent="YSort - Player" groups=[
+"Enemy",
+]]
+position = Vector2( 8216, 2130 )
+collision_layer = 9
+collision_mask = 5
+script = ExtResource( 41 )
+
+[node name="Patrol Timer" type="Timer" parent="YSort - Player/Weasel"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Stun Timer" type="Timer" parent="YSort - Player/Weasel"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Kiri" type="Position2D" parent="YSort - Player/Weasel"]
+position = Vector2( -59.3693, 16.6186 )
+
+[node name="Kanan" type="Position2D" parent="YSort - Player/Weasel"]
+position = Vector2( 58.5361, 14.6543 )
+
+[node name="Depan" type="Position2D" parent="YSort - Player/Weasel"]
+position = Vector2( -3.9798, -7.55682 )
+
+[node name="Trigger Bawah" type="RayCast2D" parent="YSort - Player/Weasel"]
+scale = Vector2( 50.1132, 7.76835 )
+enabled = true
+
+[node name="Trigger Atas" type="RayCast2D" parent="YSort - Player/Weasel"]
+rotation = 3.14159
+scale = Vector2( 50.1132, 7.76835 )
+enabled = true
+
+[node name="Trigger Kanan" type="RayCast2D" parent="YSort - Player/Weasel"]
+rotation = -1.5708
+scale = Vector2( 50.1132, 7.76835 )
+enabled = true
+
+[node name="Trigger Kiri" type="RayCast2D" parent="YSort - Player/Weasel"]
+rotation = 1.57079
+scale = Vector2( 50.1132, 7.76835 )
+enabled = true
+
+[node name="Trigger Area" type="Area2D" parent="YSort - Player/Weasel"]
+
+[node name="Trigger Collision" type="CollisionShape2D" parent="YSort - Player/Weasel/Trigger Area"]
+position = Vector2( 0, 2.29761 )
+shape = SubResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort - Player/Weasel"]
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 2 )
+animation = "Bawah"
+
+[node name="Body Collision" type="CollisionShape2D" parent="YSort - Player/Weasel"]
+position = Vector2( -5.58588, -6.31778 )
+shape = SubResource( 1 )
+
+[node name="Fox" type="KinematicBody2D" parent="YSort - Player" groups=[
+"Enemy",
+]]
+position = Vector2( 5744, 2304 )
+collision_layer = 9
+collision_mask = 5
+script = ExtResource( 42 )
+
+[node name="Stun Timer" type="Timer" parent="YSort - Player/Fox"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Horizontal Timer" type="Timer" parent="YSort - Player/Fox"]
+wait_time = 3.0
+one_shot = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort - Player/Fox"]
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 4 )
+animation = "Kiri"
+
+[node name="Body Collision" type="CollisionShape2D" parent="YSort - Player/Fox"]
+position = Vector2( -61.1647, 25.4745 )
+rotation = -0.750492
+shape = SubResource( 5 )
+
+[node name="Trigger Area" type="Area2D" parent="YSort - Player/Fox"]
+
+[node name="Trigger Collision" type="CollisionShape2D" parent="YSort - Player/Fox/Trigger Area"]
+shape = SubResource( 6 )
+
+[node name="Posisi Kiri" type="Position2D" parent="YSort - Player/Fox"]
+position = Vector2( -61.2096, 25.7678 )
+
+[node name="Posisi Kanan" type="Position2D" parent="YSort - Player/Fox"]
+position = Vector2( 79.0165, 22.7967 )
+
+[node name="Kanan" type="RayCast2D" parent="YSort - Player/Fox"]
+position = Vector2( 6.10352e-05, -0.5 )
+rotation = -1.57079
+scale = Vector2( -53.6807, 6.74996 )
+enabled = true
+
+[node name="Kiri" type="RayCast2D" parent="YSort - Player/Fox"]
+position = Vector2( 1.46896, -0.5 )
+rotation = 1.57079
+scale = Vector2( -53.681, 6.75 )
+enabled = true
+
+[node name="Leopard" type="KinematicBody2D" parent="YSort - Player" groups=[
+"Enemy",
+]]
+position = Vector2( 2192, 936 )
+collision_layer = 9
+collision_mask = 4
+script = ExtResource( 43 )
+
+[node name="Trigger Timer" type="Timer" parent="YSort - Player/Leopard"]
+wait_time = 8.0
+
+[node name="Stun Timer" type="Timer" parent="YSort - Player/Leopard"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Posisi Bawah" type="Position2D" parent="YSort - Player/Leopard"]
+
+[node name="Posisi Depan" type="Position2D" parent="YSort - Player/Leopard"]
+position = Vector2( -17.208, -15.528 )
+
+[node name="Posisi Kiri" type="Position2D" parent="YSort - Player/Leopard"]
+position = Vector2( -25.208, 32.472 )
+rotation = 0.523598
+
+[node name="Posisi Kanan" type="Position2D" parent="YSort - Player/Leopard"]
+position = Vector2( 14.792, 40.472 )
+rotation = 0.523598
+
+[node name="Trigger Area" type="Area2D" parent="YSort - Player/Leopard"]
+
+[node name="Trigger Collision" type="CollisionShape2D" parent="YSort - Player/Leopard/Trigger Area"]
+position = Vector2( 6.79199, 128.472 )
+shape = SubResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort - Player/Leopard"]
+scale = Vector2( 0.299, 0.299 )
+frames = SubResource( 8 )
+animation = "Bawah"
+
+[node name="Body Collision" type="CollisionShape2D" parent="YSort - Player/Leopard"]
+shape = SubResource( 9 )
+
+[node name="Kanan" type="RayCast2D" parent="YSort - Player/Leopard"]
+rotation = -1.57079
+scale = Vector2( -45.1542, 7.39433 )
+enabled = true
+collision_mask = 4
+
+[node name="Kiri" type="RayCast2D" parent="YSort - Player/Leopard"]
+rotation = 1.57079
+scale = Vector2( -45.1542, 7.39433 )
+enabled = true
+collision_mask = 4
+
+[node name="Bawah" type="RayCast2D" parent="YSort - Player/Leopard"]
+scale = Vector2( -45.1542, 7.39433 )
+enabled = true
+collision_mask = 4
+
+[node name="Atas" type="RayCast2D" parent="YSort - Player/Leopard"]
+rotation = 3.14159
+scale = Vector2( -45.1542, 7.39433 )
+enabled = true
+collision_mask = 4
+
+[node name="Demon Panda" parent="YSort - Player" instance=ExtResource( 40 )]
+position = Vector2( 9888, 1152 )
+
+[node name="Bed" type="StaticBody2D" parent="YSort - Player"]
+position = Vector2( 344, 1128 )
+
+[node name="Sprite" type="Sprite" parent="YSort - Player/Bed"]
+texture = ExtResource( 45 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort - Player/Bed"]
+position = Vector2( 0, 24 )
+shape = SubResource( 10 )
+
+[node name="Fragment Piece" parent="." instance=ExtResource( 50 )]
+position = Vector2( 396.875, 1352 )
+
+[node name="Fragment Piece2" parent="." instance=ExtResource( 50 )]
+position = Vector2( 2184, 1336 )
+
+[node name="Fragment Piece3" parent="." instance=ExtResource( 50 )]
+position = Vector2( 8212.02, 1432 )
+
+[node name="Fragment Piece4" parent="." instance=ExtResource( 50 )]
+position = Vector2( 8952, 2176 )
+
+[node name="Fragment Piece5" parent="." instance=ExtResource( 50 )]
+position = Vector2( 5384, 2360 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Level UI" parent="CanvasLayer" instance=ExtResource( 46 )]
+
+[node name="Restart" parent="CanvasLayer/Level UI" index="2"]
+visible = false
+
+[node name="Bg Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 49 )
+volume_db = 8.0
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 48 )
+
+[node name="Health Piece" parent="." instance=ExtResource( 51 )]
+position = Vector2( 4096, 1936 )
+
+[node name="Wall Stage" type="StaticBody2D" parent="."]
+position = Vector2( 4096, 1635.92 )
+
+[node name="Atas" type="CollisionShape2D" parent="Wall Stage"]
+position = Vector2( 1120, -1003.92 )
+shape = SubResource( 11 )
+
+[node name="Bawah" type="CollisionShape2D" parent="Wall Stage"]
+position = Vector2( 1112, 1116.08 )
+shape = SubResource( 11 )
+
+[node name="Kiri" type="CollisionShape2D" parent="Wall Stage"]
+position = Vector2( -4096, 68.0786 )
+rotation = -1.57079
+shape = SubResource( 12 )
+
+[node name="Kanan" type="CollisionShape2D" parent="Wall Stage"]
+position = Vector2( 6352, 52.0786 )
+rotation = -1.57079
+shape = SubResource( 12 )
+
+[connection signal="dash_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Desperate Dash" method="_on_Marshall_dash_on"]
+[connection signal="get_damage" from="YSort - Player/Marshall" to="." method="_on_Marshall_get_damage"]
+[connection signal="inner_beam_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Inner Beam" method="_on_Marshall_inner_beam_on"]
+[connection signal="shriek_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Shriek" method="_on_Marshall_shriek_on"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Fox" method="_on_Marshall_stun_enemy"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Leopard" method="_on_Marshall_stun_enemy"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Demon Panda" method="_on_Marshall_stun_enemy"]
+[connection signal="timeout" from="YSort - Player/Weasel/Patrol Timer" to="YSort - Player/Weasel" method="_on_Patrol_Timer_timeout"]
+[connection signal="timeout" from="YSort - Player/Weasel/Stun Timer" to="YSort - Player/Weasel" method="_on_Stun_Timer_timeout"]
+[connection signal="body_entered" from="YSort - Player/Weasel/Trigger Area" to="YSort - Player/Weasel" method="_on_Trigger_Area_body_entered"]
+[connection signal="body_exited" from="YSort - Player/Weasel/Trigger Area" to="YSort - Player/Weasel" method="_on_Trigger_Area_body_exited"]
+[connection signal="timeout" from="YSort - Player/Fox/Stun Timer" to="YSort - Player/Fox" method="_on_Stun_Timer_timeout"]
+[connection signal="timeout" from="YSort - Player/Fox/Horizontal Timer" to="YSort - Player/Fox" method="_on_Horizontal_Timer_timeout"]
+[connection signal="body_entered" from="YSort - Player/Fox/Trigger Area" to="YSort - Player/Fox" method="_on_Trigger_Area_body_entered"]
+[connection signal="body_exited" from="YSort - Player/Fox/Trigger Area" to="YSort - Player/Fox" method="_on_Trigger_Area_body_exited"]
+[connection signal="timeout" from="YSort - Player/Leopard/Trigger Timer" to="YSort - Player/Leopard" method="_on_Trigger_Timer_timeout"]
+[connection signal="timeout" from="YSort - Player/Leopard/Stun Timer" to="YSort - Player/Leopard" method="_on_Stun_Timer_timeout"]
+[connection signal="body_entered" from="YSort - Player/Leopard/Trigger Area" to="YSort - Player/Leopard" method="_on_Trigger_Area_body_entered"]
+[connection signal="get_fragment" from="Fragment Piece" to="." method="_on_Fragment_Piece_get_fragment"]
+[connection signal="get_fragment" from="Fragment Piece2" to="." method="_on_Fragment_Piece_get_fragment"]
+[connection signal="get_fragment" from="Fragment Piece3" to="." method="_on_Fragment_Piece_get_fragment"]
+[connection signal="get_fragment" from="Fragment Piece4" to="." method="_on_Fragment_Piece_get_fragment"]
+[connection signal="get_fragment" from="Fragment Piece5" to="." method="_on_Fragment_Piece_get_fragment"]
+[connection signal="finished" from="Bg Sound" to="." method="_on_Bg_Sound_finished"]
+[connection signal="get_health" from="Health Piece" to="." method="_on_Health_Piece_get_health"]
+
+[editable path="CanvasLayer/Level UI"]

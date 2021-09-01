@@ -1,0 +1,124 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630073371.json",
+			"event_id": "dialogic_002",
+			"mirror": true,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630073371.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Halo nak Marshall.....\nAda perlu apa ke sini ?\nMau mengambil obat untuk ibumu ya ?"
+		},
+		{
+			"action": "join",
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Uhhh halo Paman Sam....\nBenar, aku ke sini untuk mengambil ibu"
+		},
+		{
+			"character": "character-1630073371.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Bagaimana kondisi ibumu nak ?"
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Akhir-akhir ini ibu sedikit kurang baik paman...\nDia sering memaksakan diri untuk mengurusi rumah."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Omong-omong aku mengalami hal aneh selama perjalanan ke sini paman...."
+		},
+		{
+			"character": "character-1630073371.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hal aneh apa ?"
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Sad",
+			"text": "Saat perjalanan ke sini, aku beberapa kali menemukan benda yang terlihat seperti kristal.\nSaat ku sentuh, aku seperti berpindah ke tempat lain dan di sana ada makhluk-makhluk aneh.\nSetelah itu, perlahan-lahan, ingatan-ingatan samar sekilas terlintas di pikiranku.... "
+		},
+		{
+			"character": "character-1630073371.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..........................................\nNampaknya kau mulai menyadari semuanya ya...."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Apa maksudnya ?"
+		},
+		{
+			"character": "character-1630073371.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Aku tidak dapat berkata banyak, jika aku mengatakan semuanya, mereka akan mengejarku....\nSegeralah pulang ke rumahmu Marshall."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Mereka siapa ?\nMaksudnya apa paman ?"
+		},
+		{
+			"character": "character-1630073371.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Cepatlah pulang ke rumahmu.\nYang aku bisa katakan adalah....\n...Kita selamanya di sini...."
+		},
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Aku semakin bingung....\nBaiklah kalau begitu, aku akan pulang."
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"emit_signal": "done_talk_to_sam",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630508064.json",
+		"name": "Talk to Sam"
+	}
+}

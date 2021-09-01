@@ -21,53 +21,80 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "Atas",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "Bawah",
-"speed": 7.0
+"name": "Kanan",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Kiri",
-"speed": 7.0
+"speed": 8.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
-"name": "Kanan",
-"speed": 7.0
+"name": "Bawah",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Atas",
+"speed": 8.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 37.0289
-height = 212.009
+radius = 60.9703
+height = 308.247
 
-[node name="Demon Panda" type="KinematicBody2D"]
-position = Vector2( 473.627, 237.655 )
+[node name="Demon Panda" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+position = Vector2( 977.627, 429.655 )
+collision_layer = 9
+collision_mask = 4
 script = ExtResource( 5 )
 
 [node name="Shadow" type="Sprite" parent="."]
 modulate = Color( 0.32549, 0.309804, 0.309804, 1 )
-position = Vector2( 2.17834, 178.345 )
+position = Vector2( 0.843506, 269.781 )
 scale = Vector2( 0.214669, 0.190265 )
 texture = ExtResource( 14 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 3.17847, -9.5354 )
-scale = Vector2( 0.176868, 0.193943 )
+position = Vector2( 3.17847, 3.82808 )
+scale = Vector2( 0.284584, 0.271182 )
 frames = SubResource( 1 )
 animation = "Bawah"
 
 [node name="Body Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 0.843501, -3.52616 )
+position = Vector2( 0.176082, -0.189063 )
 shape = SubResource( 2 )
 
 [node name="Stun Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Bawah" type="RayCast2D" parent="."]
+scale = Vector2( 75.213, 7 )
+enabled = true
+collision_mask = 4
+
+[node name="Kanan" type="RayCast2D" parent="."]
+rotation = -1.57079
+scale = Vector2( 75.213, 7 )
+enabled = true
+collision_mask = 4
+
+[node name="Atas" type="RayCast2D" parent="."]
+rotation = -3.14159
+scale = Vector2( 75.213, 7 )
+enabled = true
+collision_mask = 4
+
+[node name="Kiri" type="RayCast2D" parent="."]
+rotation = -4.71238
+scale = Vector2( 75.213, 7 )
+enabled = true
+collision_mask = 4
 
 [connection signal="timeout" from="Stun Timer" to="." method="_on_Stun_Timer_timeout"]

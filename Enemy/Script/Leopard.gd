@@ -43,6 +43,7 @@ func _physics_process(_delta: float) -> void:
 # Function animasi #
 func animasi():
 	if state == TRIGGER:
+		$AnimatedSprite.play("Bawah")
 		
 		if $Kanan.is_colliding():
 			$AnimatedSprite.play("Kanan")

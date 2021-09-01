@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1630072959.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Aaaa mengapa ada sumur dan mayat......\nAneh sekali, ini deperti Déjà vu.\nAhhh pokoknya aku harus segera kembali ke rumah."
+		},
+		{
+			"emit_signal": "done_in_level3",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630512983.json",
+		"name": "In Level 3"
+	}
+}

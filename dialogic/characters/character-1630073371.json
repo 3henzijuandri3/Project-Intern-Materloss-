@@ -7,14 +7,14 @@
 	"mirror_portraits": false,
 	"name": "Paman Sam",
 	"nickname": "",
-	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 0,
+	"nickname_bool": true,
+	"offset_x": -330,
+	"offset_y": 270,
 	"portraits": [
 		{
 			"name": "Default",
 			"path": "res://NPC/Asset/Paman Sam.png"
 		}
 	],
-	"scale": 100
+	"scale": 70
 }

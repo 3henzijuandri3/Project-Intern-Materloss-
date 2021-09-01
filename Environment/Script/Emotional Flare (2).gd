@@ -32,6 +32,9 @@ func _process(_delta: float) -> void:
 	health_system()
 	fragment_system()
 
+
+
+
 func health_system():
 	if health == 0:
 		$"CanvasLayer/Level UI/Restart".visible = true
@@ -68,6 +71,7 @@ func _on_Marshall_get_damage() -> void:
 		health = 0
 
 
+
 func fragment_system():
 	score.text = str(fragment_piece)
 	if fragment_piece == 4:
@@ -76,6 +80,8 @@ func fragment_system():
 func _on_Fragment_Piece_get_fragment() -> void:
 	fragment_piece += 1
 	$"Pickup Items".play()
+
+
 
 func _on_AudioStreamPlayer_finished() -> void:
 	$"Bg Sound".play()
