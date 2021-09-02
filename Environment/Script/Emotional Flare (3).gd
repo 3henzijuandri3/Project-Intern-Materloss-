@@ -19,6 +19,8 @@ func _ready() -> void:
 	$"YSort - Player/Marshall".dash = false
 	$"YSort - Player/Marshall".shriek = false
 	
+	$"YSort - Player/Demon Panda".speed = 0
+	
 	add_child(dialogue)
 	dialogue.connect("dialogic_signal", self, "dialogic_signal")
 
@@ -28,6 +30,8 @@ func dialogic_signal(argument):
 		$"YSort - Player/Marshall".inner_beam = true
 		$"YSort - Player/Marshall".dash = true
 		$"YSort - Player/Marshall".shriek = true
+		
+		$"YSort - Player/Demon Panda".speed = 200
 
 func _process(_delta: float) -> void:
 	health_system()
@@ -38,7 +42,11 @@ func _process(_delta: float) -> void:
 func fragment_system():
 	score.text = str(fragment_piece)
 	if fragment_piece == 5:
-		pass
+		$"Scene Transition".transisi()
+		$"YSort - Player/Weasel".speed = 0
+		$"YSort - Player/Fox".speed = 0
+		$"YSort - Player/Leopard".speed = 0
+		$"YSort - Player/Demon Panda".speed = 0
 
 func _on_Fragment_Piece_get_fragment() -> void:
 	fragment_piece += 1
@@ -48,6 +56,8 @@ func _on_Fragment_Piece_get_fragment() -> void:
 
 func health_system():
 	if health == 0:
+		health_bar.margin_right = 0
+		
 		$"CanvasLayer/Level UI/Restart".visible = true
 		$"YSort - Player/Marshall".speed = 0
 		$"YSort - Player/Marshall/AnimatedSprite".visible = false
@@ -71,8 +81,7 @@ func health_system():
 		health_bar.margin_right = 190
 	elif health == 3:
 		health_bar.margin_right = 290
-	elif health == 0:
-		health_bar.margin_right = 0
+
 
 func _on_Health_Piece_get_health() -> void:
 	health += 1
@@ -80,15 +89,14 @@ func _on_Health_Piece_get_health() -> void:
 
 func _on_Marshall_get_damage() -> void:
 	health -= 1
-	if health <= 0:
-		health = 0
 
 
-
-
-
+func _on_Scene_Transition_transisi_berjalan() -> void:
+	get_tree().change_scene("res://Environment/Scene/Post Level 3.tscn")
 
 func _on_Bg_Sound_finished() -> void:
 	$"Bg Sound".play()
+
+
 
 

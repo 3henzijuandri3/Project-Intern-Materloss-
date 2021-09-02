@@ -19,9 +19,9 @@ radius = 296.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 13 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "Kanan",
+"name": "Bawah",
 "speed": 9.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 12 ) ],
@@ -29,9 +29,9 @@ animations = [ {
 "name": "Kiri",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 13 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "Bawah",
+"name": "Kanan",
 "speed": 9.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ) ],
@@ -42,7 +42,7 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 97.115
-height = 278.632
+height = 188.826
 
 [node name="Leopard" type="KinematicBody2D" groups=[
 "Enemy",
@@ -73,6 +73,7 @@ position = Vector2( 14.792, 40.472 )
 rotation = 0.523598
 
 [node name="Trigger Area" type="Area2D" parent="."]
+visible = false
 
 [node name="Trigger Collision" type="CollisionShape2D" parent="Trigger Area"]
 position = Vector2( 6.79199, 128.472 )

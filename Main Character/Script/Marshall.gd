@@ -158,7 +158,7 @@ func _on_Inner_Beam_Cooldown_timeout() -> void:
 
 # Timer Desperate Dash #
 func _on_Dash_Timer_timeout() -> void:
-	speed = 300
+	speed = 400
 	$"Dash Side Effect Timer".start()
 
 func _on_Dash_Side_Effect_Timer_timeout() -> void:

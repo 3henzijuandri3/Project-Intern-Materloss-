@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Environment/Asset/Village/Village Bg.png" type="Texture" id=1]
 [ext_resource path="res://Environment/Asset/Front House/Jalan.png" type="Texture" id=2]
@@ -14,6 +14,12 @@
 [ext_resource path="res://Environment/Asset/Village/Tenda.png" type="Texture" id=12]
 [ext_resource path="res://Environment/Asset/Front House/Leafs.png" type="Texture" id=13]
 [ext_resource path="res://NPC/Scene/Paman Sam.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Environment/Script/Village.gd" type="Script" id=15]
+[ext_resource path="res://UI/Scene/Scene Transition.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Environment/Scene/Fragment Trigger.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Sound/Scary (1).wav" type="AudioStream" id=18]
+[ext_resource path="res://Sound/Forest.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sound/Transisi Emo Flare.wav" type="AudioStream" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1312, 128 )
@@ -28,22 +34,29 @@ extents = Vector2( 2640, 24 )
 extents = Vector2( 430.283, 16 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 184, 160 )
+extents = Vector2( 371.708, 127.028 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 408, 154.251 )
+extents = Vector2( 184, 160 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 536, 256 )
+extents = Vector2( 408, 154.251 )
 
 [sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 536, 256 )
+
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 152, 168 )
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=10]
 radius = 32.0
 height = 352.0
 
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 293.281, 79.8906 )
+
 [node name="Village" type="Node2D"]
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
@@ -197,7 +210,7 @@ texture = ExtResource( 8 )
 position = Vector2( 1104, 1360 )
 
 [node name="Marshall" parent="YSort - Player" instance=ExtResource( 5 )]
-position = Vector2( 2157.75, 2822.15 )
+position = Vector2( 95.6576, 6259.39 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
 position = Vector2( 1.56567, 0 )
@@ -764,43 +777,85 @@ shape = SubResource( 2 )
 position = Vector2( 661.31, 2567.9 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall Vilage"]
+[node name="Bawah 2" type="CollisionShape2D" parent="Wall Vilage"]
 position = Vector2( -2994.69, 2567.9 )
 shape = SubResource( 4 )
+
+[node name="Blokade Forest" type="CollisionShape2D" parent="Wall Vilage"]
+position = Vector2( -2253.09, 2373.56 )
+shape = SubResource( 5 )
 
 [node name="Village Properties" type="StaticBody2D" parent="."]
 position = Vector2( 3456.12, 5640.11 )
 
 [node name="Gerbang" type="CollisionShape2D" parent="Village Properties"]
 position = Vector2( -1800.12, 1919.89 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Small House" type="CollisionShape2D" parent="Village Properties"]
 position = Vector2( -112.123, 1015.89 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Small House2" type="CollisionShape2D" parent="Village Properties"]
 position = Vector2( 1927.88, 1215.89 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Small House3" type="CollisionShape2D" parent="Village Properties"]
 position = Vector2( -2280.12, -1352.11 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Big House" type="CollisionShape2D" parent="Village Properties"]
 position = Vector2( 1423.88, -1384.11 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Big House Samping" type="CollisionShape2D" parent="Village Properties"]
 position = Vector2( 2071.88, -1632.11 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Sumur" type="CollisionShape2D" parent="Village Properties"]
 position = Vector2( 839.877, 1223.89 )
 rotation = 1.57079
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="Sumur2" type="CollisionShape2D" parent="Village Properties"]
 position = Vector2( -528.123, -1264.11 )
 rotation = 1.57079
-shape = SubResource( 9 )
+shape = SubResource( 10 )
+
+[node name="Scene Transition" parent="." instance=ExtResource( 16 )]
+
+[node name="Fragment Trigger" parent="." instance=ExtResource( 17 )]
+visible = false
+position = Vector2( 1432.26, 6254.97 )
+
+[node name="CollisionShape2D" parent="Fragment Trigger" index="1"]
+disabled = true
+
+[node name="To Forest" type="Area2D" parent="."]
+position = Vector2( 1173.67, 8228.98 )
+
+[node name="Detection Area" type="CollisionShape2D" parent="To Forest"]
+position = Vector2( 14.2705, -9.51367 )
+shape = SubResource( 11 )
+
+[node name="Bg Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = 3.0
+
+[node name="Scary" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = 10.0
+
+[node name="Emo Trigger" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = 3.0
+
+[connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]
+[connection signal="body_entered" from="Fragment Trigger" to="." method="_on_Fragment_Trigger_body_entered"]
+[connection signal="body_exited" from="Fragment Trigger" to="." method="_on_Fragment_Trigger_body_exited"]
+[connection signal="body_entered" from="To Forest" to="." method="_on_To_Forest_body_entered"]
+[connection signal="finished" from="Bg Sound" to="." method="_on_Bg_Sound_finished"]
+[connection signal="finished" from="Scary" to="." method="_on_Scary_finished"]
+[connection signal="finished" from="Emo Trigger" to="." method="_on_Emo_Trigger_finished"]
+
+[editable path="Fragment Trigger"]

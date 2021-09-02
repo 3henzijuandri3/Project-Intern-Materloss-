@@ -37,6 +37,8 @@ func _process(_delta: float) -> void:
 
 func health_system():
 	if health == 0:
+		health_bar.margin_right = 0
+		
 		$"CanvasLayer/Level UI/Restart".visible = true
 		$"YSort - Player/Marshall".speed = 0
 		$"YSort - Player/Marshall/AnimatedSprite".visible = false
@@ -58,9 +60,8 @@ func health_system():
 		health_bar.margin_right = 190
 	elif health == 3:
 		health_bar.margin_right = 290
-	elif health == 0:
-		health_bar.margin_right = 0
-	
+
+
 func _on_Health_Piece_get_health() -> void:
 	health += 1
 	$"Pickup Items".play()
@@ -76,6 +77,9 @@ func fragment_system():
 	score.text = str(fragment_piece)
 	if fragment_piece == 4:
 		$"Scene Transition".transisi()
+		$"YSort - Player/Weasel".speed = 0
+		$"YSort - Player/Fox".speed = 0
+		$"YSort - Player/Leopard".speed = 0
 	
 func _on_Fragment_Piece_get_fragment() -> void:
 	fragment_piece += 1

@@ -18,6 +18,9 @@ func _process(_delta: float) -> void:
 
 # Function dialogue yang ada di Front House #
 func _ready() -> void:
+	$Forest.play()
+	$Scary.play()
+	
 	marshall.inner_beam = false
 	marshall.shriek = false
 	marshall.dash = false
@@ -26,9 +29,11 @@ func _ready() -> void:
 		marshall.speed = 0
 		add_child(dialogue)
 		dialogue.connect("dialogic_signal",self,"dialogic_signal")
-	
-	$Forest.play()
-	$Scary.play()
+		
+	if Global.level_1_completed == true && Global.level_2_completed == true && Global.level_3_completed == true:
+		$"YSort - Player/YSort - Atas/Mayat".visible = true
+		$"blood_c_0001-removebg-preview".visible = true
+
 
 func dialogic_signal(argument):
 	if argument == "done_front_house":

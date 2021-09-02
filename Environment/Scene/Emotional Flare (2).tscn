@@ -47,9 +47,9 @@ radius = 442.378
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 23 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 19 ), ExtResource( 25 ) ],
 "loop": true,
-"name": "Kanan",
+"name": "Bawah",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 13 ), ExtResource( 14 ) ],
@@ -57,9 +57,9 @@ animations = [ {
 "name": "Kiri",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 19 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 23 ), ExtResource( 27 ) ],
 "loop": true,
-"name": "Bawah",
+"name": "Kanan",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
@@ -73,14 +73,14 @@ radius = 130.106
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Kanan",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Kiri",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Kanan",
 "speed": 8.0
 } ]
 
@@ -202,7 +202,7 @@ position = Vector2( 2728, 808 )
 [node name="YSort - Player" type="YSort" parent="."]
 
 [node name="Marshall" parent="YSort - Player" instance=ExtResource( 2 )]
-position = Vector2( 472, 696 )
+position = Vector2( 465.13, 808 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
 current = true
@@ -349,7 +349,7 @@ visible = false
 
 [node name="Bg Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 33 )
-volume_db = 8.5
+volume_db = 12.0
 
 [node name="Scene Transition" parent="." instance=ExtResource( 34 )]
 
@@ -366,8 +366,8 @@ volume_db = -5.0
 [connection signal="get_damage" from="YSort - Player/Marshall" to="." method="_on_Marshall_get_damage"]
 [connection signal="inner_beam_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Inner Beam" method="_on_Marshall_inner_beam_on"]
 [connection signal="shriek_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Shriek" method="_on_Marshall_shriek_on"]
-[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Leopard" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Fox" method="_on_Marshall_stun_enemy"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Leopard" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
 [connection signal="timeout" from="YSort - Player/Weasel/Patrol Timer" to="YSort - Player/Weasel" method="_on_Patrol_Timer_timeout"]
 [connection signal="timeout" from="YSort - Player/Weasel/Stun Timer" to="YSort - Player/Weasel" method="_on_Stun_Timer_timeout"]

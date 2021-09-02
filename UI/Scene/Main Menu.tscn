@@ -120,6 +120,7 @@ stream = ExtResource( 13 )
 volume_db = -10.0
 
 [connection signal="pressed" from="Play Button" to="." method="_on_Play_Button_pressed"]
+[connection signal="pressed" from="Credits Button" to="." method="_on_Credits_Button_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_Exit_Button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="finished" from="Bg Sound" to="." method="_on_Bg_Sound_finished"]

@@ -4,7 +4,7 @@
 			"character": "character-1630072959.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Aku menemukan benda ini lagi.\nSakit kepala yang disebabkan benda ini memang menyebalkan, tapi aku harus meyentuhnya lagi agar semuanya jelas.\nBaiklah akan aku lakukan....."
+			"text": "Aku menemukan benda ini lagi.\nSakit kepala yang disebabkan benda ini memang menyebalkan, tapi aku harus meyentuhnya lagi agar semuanya jelas.\nAku juga harus secepatnya kembali ke rumah.\nBaiklah akan aku lakukan....."
 		},
 		{
 			"emit_signal": "done_level3_trigger",

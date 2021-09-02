@@ -11,5 +11,5 @@ func dialogic_signal(argument):
 		$"Scene Transition".transisi()
 
 func _on_Scene_Transition_transisi_berjalan() -> void:
-	Global.player_position = Vector2(4104,1256)
+	Global.player_position = Vector2(4256,1784)
 	get_tree().change_scene("res://Environment/Scene/Emotional Flare (3).tscn")

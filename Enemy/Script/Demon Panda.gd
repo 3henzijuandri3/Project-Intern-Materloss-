@@ -14,23 +14,26 @@ enum {
 var state = PATROL
 
 # Variable Movement #
-var speed = 250
+var speed = 200
 var velocity = Vector2()
 
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO
 	
-	match state:
-		PATROL:
-			move_to_marshall()
-		KANAN:
-			move_to_marshall()
-		KIRI:
-			move_to_marshall()
-		ATAS:
-			move_to_marshall()
-		BAWAH:
-			move_to_marshall()
+	if stun == false:
+		match state:
+			PATROL:
+				move_to_marshall()
+			KANAN:
+				move_to_marshall()
+			KIRI:
+				move_to_marshall()
+			ATAS:
+				move_to_marshall()
+			BAWAH:
+				move_to_marshall()
+	elif stun == true:
+		velocity = move_and_slide(Vector2.ZERO)
 	
 	animasi()
 	change_state()

@@ -20,6 +20,11 @@ var dialogue_tigger_level_1 = false
 var dialogue_trigger_level_2 = false
 
 
+# Village global variable #
+var front_village = false
+var is_talk_to_sam = false
+var dialogue_trigger_level_3 = false
+
 
 # Emotional Flare global variable #
 #var emotional_flare_1 = false

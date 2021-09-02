@@ -12,14 +12,24 @@ func _on_Play_Button_pressed() -> void:
 func _on_Exit_Button_pressed() -> void:
 	get_tree().quit()
 
+func _on_Credits_Button_pressed() -> void:
+	scene = "credits"
+	$AnimationPlayer.play("Fade_to_black")
+
+
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "Fade_to_black" && scene == "play":
 		$"Bg Sound".stop()
 		$AnimationPlayer.play("Fade_to_normal")
 		get_tree().change_scene("res://Environment/Scene/Panda House.tscn")
-
+	elif anim_name == "Fade_to_black" && scene == "credits":
+		$"Bg Sound".stop()
+		$AnimationPlayer.play("Fade_to_normal")
+		get_tree().change_scene("res://UI/Scene/Credits.tscn")
+	
 func _on_Bg_Sound_finished() -> void:
 	$"Bg Sound".play()
+
 
 
 

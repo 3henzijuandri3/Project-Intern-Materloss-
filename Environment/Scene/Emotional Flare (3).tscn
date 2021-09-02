@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Environment/Asset/Emotional Flare/Flare Bg (cropped).png" type="Texture" id=1]
 [ext_resource path="res://Environment/Asset/Front House/Jalan.png" type="Texture" id=2]
@@ -51,15 +51,16 @@
 [ext_resource path="res://Sound/Emo Flare.wav" type="AudioStream" id=49]
 [ext_resource path="res://Environment/Scene/Fragment Piece.tscn" type="PackedScene" id=50]
 [ext_resource path="res://Environment/Scene/Health Piece.tscn" type="PackedScene" id=51]
+[ext_resource path="res://UI/Scene/Scene Transition.tscn" type="PackedScene" id=52]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 radius = 442.378
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 34 ), ExtResource( 35 ) ],
 "loop": true,
-"name": "Kanan",
+"name": "Bawah",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 14 ), ExtResource( 10 ) ],
@@ -67,9 +68,9 @@ animations = [ {
 "name": "Kiri",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "Bawah",
+"name": "Kanan",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ) ],
@@ -78,19 +79,19 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 130.106
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 31 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "Kanan",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 32 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "Kiri",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "Kanan",
 "speed": 8.0
 } ]
 
@@ -106,9 +107,9 @@ radius = 296.0
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 39 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 36 ) ],
 "loop": true,
-"name": "Kanan",
+"name": "Bawah",
 "speed": 9.0
 }, {
 "frames": [ ExtResource( 28 ), ExtResource( 38 ), ExtResource( 23 ) ],
@@ -116,9 +117,9 @@ animations = [ {
 "name": "Kiri",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 36 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 39 ) ],
 "loop": true,
-"name": "Bawah",
+"name": "Kanan",
 "speed": 9.0
 }, {
 "frames": [ ExtResource( 33 ), ExtResource( 29 ), ExtResource( 37 ) ],
@@ -129,7 +130,7 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 97.115
-height = 278.632
+height = 157.77
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 192, 32 )
@@ -140,8 +141,15 @@ extents = Vector2( 5248, 16 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 1048, 24 )
 
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 32.0002
+height = 332.0
+
 [node name="Emotional Flare (3)" type="Node2D"]
 script = ExtResource( 47 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 
 [node name="Flare Bg (cropped)" type="Sprite" parent="."]
 position = Vector2( 5216, 1392 )
@@ -304,12 +312,16 @@ texture = ExtResource( 6 )
 [node name="YSort - Player" type="YSort" parent="."]
 
 [node name="Marshall" parent="YSort - Player" instance=ExtResource( 7 )]
-position = Vector2( 4168, 1224 )
+position = Vector2( 4256, 1784 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort - Player/Marshall"]
 position = Vector2( 1.56567, -8 )
 current = true
 zoom = Vector2( 1.3, 1.3 )
+limit_left = 2
+limit_top = 15
+limit_right = 10446
+limit_bottom = 2755
 limit_smoothed = true
 smoothing_enabled = true
 editor_draw_limits = true
@@ -373,7 +385,7 @@ enabled = true
 
 [node name="Trigger Collision" type="CollisionShape2D" parent="YSort - Player/Weasel/Trigger Area"]
 position = Vector2( 0, 2.29761 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort - Player/Weasel"]
 scale = Vector2( 0.3, 0.3 )
@@ -382,7 +394,7 @@ animation = "Bawah"
 
 [node name="Body Collision" type="CollisionShape2D" parent="YSort - Player/Weasel"]
 position = Vector2( -5.58588, -6.31778 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Fox" type="KinematicBody2D" parent="YSort - Player" groups=[
 "Enemy",
@@ -515,16 +527,16 @@ shape = SubResource( 10 )
 position = Vector2( 396.875, 1352 )
 
 [node name="Fragment Piece2" parent="." instance=ExtResource( 50 )]
-position = Vector2( 2184, 1336 )
+position = Vector2( 2192, 1344 )
 
 [node name="Fragment Piece3" parent="." instance=ExtResource( 50 )]
-position = Vector2( 8212.02, 1432 )
+position = Vector2( 7112, 2608 )
 
 [node name="Fragment Piece4" parent="." instance=ExtResource( 50 )]
-position = Vector2( 8952, 2176 )
+position = Vector2( 10304, 1656 )
 
 [node name="Fragment Piece5" parent="." instance=ExtResource( 50 )]
-position = Vector2( 5384, 2360 )
+position = Vector2( 7144, 960 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
@@ -536,7 +548,7 @@ visible = false
 
 [node name="Bg Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 49 )
-volume_db = 8.0
+volume_db = 12.0
 
 [node name="Pickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 48 )
@@ -565,12 +577,19 @@ position = Vector2( 6352, 52.0786 )
 rotation = -1.57079
 shape = SubResource( 12 )
 
+[node name="Sumur" type="CollisionShape2D" parent="Wall Stage"]
+position = Vector2( -14.4063, -35.9204 )
+rotation = 1.57079
+shape = SubResource( 13 )
+
+[node name="Scene Transition" parent="." instance=ExtResource( 52 )]
+
 [connection signal="dash_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Desperate Dash" method="_on_Marshall_dash_on"]
 [connection signal="get_damage" from="YSort - Player/Marshall" to="." method="_on_Marshall_get_damage"]
 [connection signal="inner_beam_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Inner Beam" method="_on_Marshall_inner_beam_on"]
 [connection signal="shriek_on" from="YSort - Player/Marshall" to="CanvasLayer/Level UI/HBoxContainer/Shriek" method="_on_Marshall_shriek_on"]
-[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Leopard" method="_on_Marshall_stun_enemy"]
+[connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Weasel" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Fox" method="_on_Marshall_stun_enemy"]
 [connection signal="stun_enemy" from="YSort - Player/Marshall" to="YSort - Player/Demon Panda" method="_on_Marshall_stun_enemy"]
 [connection signal="timeout" from="YSort - Player/Weasel/Patrol Timer" to="YSort - Player/Weasel" method="_on_Patrol_Timer_timeout"]
@@ -591,5 +610,6 @@ shape = SubResource( 12 )
 [connection signal="get_fragment" from="Fragment Piece5" to="." method="_on_Fragment_Piece_get_fragment"]
 [connection signal="finished" from="Bg Sound" to="." method="_on_Bg_Sound_finished"]
 [connection signal="get_health" from="Health Piece" to="." method="_on_Health_Piece_get_health"]
+[connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]
 
 [editable path="CanvasLayer/Level UI"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Environment/Asset/Emotional Flare/bg.jpg" type="Texture" id=1]
+[ext_resource path="res://Environment/Script/Post Level 3.gd" type="Script" id=2]
+[ext_resource path="res://UI/Scene/Scene Transition.tscn" type="PackedScene" id=3]
+
+[node name="Post Level 3" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -528.0
+margin_top = -320.0
+margin_right = 2432.0
+margin_bottom = 1640.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Scene Transition" parent="." instance=ExtResource( 3 )]
+
+[connection signal="transisi_berjalan" from="Scene Transition" to="." method="_on_Scene_Transition_transisi_berjalan"]

@@ -7,4 +7,4 @@ func muncul_darah():
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "AA":
-		emit_signal("bloody_screen_selesai")
+		pass
