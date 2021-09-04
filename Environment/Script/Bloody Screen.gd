@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-signal bloody_screen_selesai
-
 func muncul_darah():
 	$AnimationPlayer.play("AA")
 

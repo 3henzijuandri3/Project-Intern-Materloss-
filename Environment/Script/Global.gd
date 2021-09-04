@@ -26,7 +26,4 @@ var is_talk_to_sam = false
 var dialogue_trigger_level_3 = false
 
 
-# Emotional Flare global variable #
-#var emotional_flare_1 = false
-#var emotional_flare_2 = false
-#var emotional_flare_3 = false
+var turnips = 0

@@ -1,0 +1,23 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1630765211.cfg"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Marshall dan Ibunya sebenarnya telah lama meninggal. Semenjak Ibu Marshall sakit keras, ia yang tidak tahan akan kondisi itu memutuskan untuk membunuh dirinya sendiri. \nMarshall kecil yang sedih dan bingung karena ditinggal ibunya, memutuskan untuk mengakhiri hidupnya di sumur. \n\"Mereka\" yang mati dengan cara tidak wajar seperti itu, akan tinggal di alam yang 'serupa tapi tak sama'  dengan kita. \nAwalnya \"Mereka\" juga tidak ingat mengapa mereka bisa di sana, namun semakin lama mereka berada di sana, pelan-pelan mereka akan mengingat semuanya. \nMengingat semua penyesalan yang ada."
+		},
+		{
+			"emit_signal": "done_ending",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630765170.json",
+		"name": "Ending Explanation"
+	}
+}

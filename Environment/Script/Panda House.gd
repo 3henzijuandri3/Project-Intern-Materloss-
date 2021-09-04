@@ -43,8 +43,12 @@ func _on_Final_Detection_body_entered(body: Node) -> void:
 
 func dialogic_signal(argument):
 	if argument == "the_end":
-		tujuan = "credits"
-		$"Scene Transition".transisi()
+		if Global.turnips != 3:
+			tujuan = "credits"
+			$"Scene Transition".transisi()
+		elif Global.turnips == 3:
+			tujuan = "explain"
+			$"Scene Transition".transisi()
 
 func _on_Pintu_Keluar_body_entered(body: Node) -> void:
 	if Global.is_talk_to_mom == true:
@@ -67,6 +71,8 @@ func _on_Scene_Transition_transisi_berjalan() -> void:
 		get_tree().change_scene("res://NPC/Scene/Dialogue With Mom.tscn")
 	elif tujuan == "credits":
 		get_tree().change_scene("res://UI/Scene/Credits.tscn")
+	elif tujuan == "explain":
+		get_tree().change_scene("res://Environment/Scene/Explain.tscn")
 
 
 
