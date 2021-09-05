@@ -9,6 +9,11 @@
 		{
 			"emit_signal": "done_level_1",
 			"event_id": "dialogic_040"
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
 		}
 	],
 	"metadata": {

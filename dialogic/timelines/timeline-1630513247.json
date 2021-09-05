@@ -55,6 +55,11 @@
 		{
 			"emit_signal": "post_level3_finished",
 			"event_id": "dialogic_040"
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
 		}
 	],
 	"metadata": {
